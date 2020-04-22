@@ -68,7 +68,7 @@ class Client:
         if self.username:
             final_headers.update({"Authorization": "apikey {}:{}".format(self.username, self.api_key)})
 
-        final_headers.update({"Content-Type": "application/json"})  # headers
+        final_headers.update({"Content-Type": "application/json"})
         if has_files:
             final_headers.pop("Content-Type", "application/x-www-form-urlencoded")
 
@@ -146,8 +146,8 @@ class Client:
         """
         endpoint_name = "/documents/{}/".format(document_id)
         request_arguments = {"id": document_id}
-        response = self._request('GET', endpoint_name, request_arguments)
-        return response
+        document = self._request('GET', endpoint_name, request_arguments)
+        return document
 
     def process_document(self, file_path, categories=None, delete_after_processing=False):
         """
@@ -166,9 +166,9 @@ class Client:
         request_arguments = {"file_name": file_name,
                              "file_data": base64_encoded_string,
                              "categories": categories,
-                             "delete_after_processing": delete_after_processing}
-        docuemnt = self._request('POST', endpoint_name, request_arguments)
-        return docuemnt
+                             "auto_delete": delete_after_processing}
+        document = self._request('POST', endpoint_name, request_arguments)
+        return document
 
     def _process_document_file(self, file_path, categories=None, delete_after_processing=False):
         """
@@ -184,10 +184,10 @@ class Client:
         file_name = os.path.basename(file_path)
         request_arguments = {"file_name": file_name,
                              "categories": categories,
-                             "delete_after_processing": delete_after_processing}
+                             "auto_delete": delete_after_processing}
         with open(file_path) as file_stream:
-            docuemnt = self._request('POST', endpoint_name, request_arguments, file_stream)
-        return docuemnt
+            document = self._request('POST', endpoint_name, request_arguments, file_stream)
+        return document
 
     def process_document_url(self, file_uri, categories=None, delete_after_processing=False):
         """
@@ -199,9 +199,10 @@ class Client:
         """
         endpoint_name = "/documents/"
         request_arguments = {"file_uri": file_uri,
-                             "categories": categories}
-        docuemnt = self._request('POST', endpoint_name, request_arguments)
-        return docuemnt
+                             "categories": categories,
+                             "auto_delete": delete_after_processing}
+        document = self._request('POST', endpoint_name, request_arguments)
+        return document
 
     def delete_document(self, document_id):
         """
