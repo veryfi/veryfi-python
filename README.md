@@ -1,9 +1,9 @@
 # veryfi
+![Veryfi Logo](https://cdn.veryfi.com/wp-content/uploads/veryfi-logo-wide.png)
 
 [![Build Status](https://travis-ci.org/veryfi/veryfi-pyhton.svg?branch=master)](https://travis-ci.org/veryfi/veryfi-python)
 [![PyPI - version](https://img.shields.io/pypi/v/veryfi.svg)](https://pypi.python.org/pypi/veryfi)
 [![PyPI](https://img.shields.io/pypi/pyversions/veryfi.svg)](https://pypi.python.org/pypi/veryfi)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 **veryfi** is a Python module for communicating with the [Veryfi OCR API](https://veryfi.com/api/)
 
