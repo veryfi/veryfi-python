@@ -1,5 +1,4 @@
-# veryfi
-![Veryfi Logo](https://cdn.veryfi.com/wp-content/uploads/veryfi-logo-wide.png)
+![Veryfi Logo](https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png)
 
 [![Build Status](https://travis-ci.org/veryfi/veryfi-pyhton.svg?branch=master)](https://travis-ci.org/veryfi/veryfi-python)
 [![PyPI - version](https://img.shields.io/pypi/v/veryfi.svg)](https://pypi.python.org/pypi/veryfi)
