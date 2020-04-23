@@ -1,21 +1,20 @@
 #!make
 
-# Setting up for local development
-.PHONY: setup
-setup:
-	pip install -r requirements.txt
+.PHONY: venv install test-install test clean nopyc
 
-# Clean the /dist directory for a new publish
-.PHONY: package-clean
-package-clean:
-	@rm -rf dist/*
+venv:
+	@python --version || (echo "Python is not installed, please install Python 3"; exit 1);
+	virtualenv --python=python venv
 
-# Build a new package into the /dist directory
-.PHONY: package-build
-package-build:
-	python setup.py sdist
+install: venv
+	. venv/bin/activate; python setup.py install
+	. venv/bin/activate; pip install -r requirements.txt
 
-# Publish the new /dist package to Pypi
-.PHONY: package-publish
-package-publish:
-	twine upload dist/*
+test-install:
+	. venv/bin/activate; pip install -r test/requirements.txt
+
+clean: nopyc
+	rm -rf venv
+
+nopyc:
+	find . -name \*.pyc -delete
