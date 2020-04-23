@@ -9,3 +9,5 @@ python:
 
 install:
   - make install
+
+scripts: echo foo # replace with command to run tests
