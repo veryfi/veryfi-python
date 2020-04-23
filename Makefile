@@ -1,6 +1,6 @@
 #!make
 
-.PHONY: venv install test-install test clean nopyc
+.PHONY: venv install clean nopyc
 
 venv:
 	@python --version || (echo "Python is not installed, please install Python 3"; exit 1);
@@ -9,9 +9,6 @@ venv:
 install: venv
 	. venv/bin/activate; python setup.py install
 	. venv/bin/activate; pip install -r requirements.txt
-
-test-install:
-	. venv/bin/activate; pip install -r test/requirements.txt
 
 clean: nopyc
 	rm -rf venv
