@@ -97,7 +97,7 @@ print (response.json())
     
     {
       "date": "",
-      "description": "2X\n6 SYP #2 KD-HT UNTREATED",
+      "description": "SYP #2 KD-HT UNTREATED",
       "discount": 0,
       "order": 9,
       "price": 11.49,
@@ -110,7 +110,7 @@ print (response.json())
       "unit_of_measure": "pc"
     }
   ],
-  "ocr_text": "\nACE\nThe helpful place.\n\nAce Hardware\t\t\t\t\t\tINVOICE\n5726 MEMORIAL BLVD\nPO BOX 186\t\t\t\tINVOICE #\t\t1234568\nST. GEORGE. S. C. 29477\n\tDATE\t\t08/01/2019\nPhone: (843) 563-4012\t\t\tDUE DATE\t\t09/01/2019\n\nBILL TO\nTom Bradovski\nFAST ROOFING COMPANY, LLC\n130 INTERSTATE BLVD, SUIT 21\nNASHEVILLE, NC 28806\n\nDESCRIPTION\t\t\t\t\t\t\t\tAMOUNT\nSFTY TAGS LCKED OUT 250BX 426NS\t\t\t\t\t200.00\nWA-12-414 WEDGE ANCHOR. PLATED x 10\t\t\t\t\t375.00\nNS FLASHLIGHT/TOOL KIT\t\t\t\t\t\t\t50.00\nBX NS7000 NUISANCE DUST MASK 50/BX SH605A\t\t\t\t26.56\nHEADLIGHTS - AUTO TO MANUAL\t\t\t\t\t\t12.20\nB3842 TROY LIGHTING MERCHANTILE2-LIGHT FIXTURE VINTAGE\t\t\t81.13\nBRONZEW\nNS FULL HRNS MATING BUCKLE BK DRING\t\t\t\t\t117.0\nEANS LNYRD TIEOFF W/LCK & 2 REBAR SNAP HKS\t\t\t\t98.16\n2X6 SYP #2 KD-HT UNTREATED\n\t11.49\n\tTAX (7.5%)\t48.87\nThank you for your business!\t\tTOTAL\t$ 1020.41\n",
+  "ocr_text": "\nACE\nThe helpful place.\nAce Hardware\t\t\t\t\t\tINVOICE\n5726.....",
   "payment_display_name": "",
   "payment_terms": "",
   "payment_type": "",
