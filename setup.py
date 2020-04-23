@@ -4,6 +4,9 @@ from __future__ import unicode_literals
 
 from setuptools import setup
 
+with open('README.md') as f:
+    long_description = f.read()
+
 setup(
     name="veryfi",
     version="0.0.2",
@@ -19,6 +22,8 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: Implementation :: CPython",
     ],
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     license="MIT",
     url="https://github.com/veryfi/veryfi-python",
     keywords=["veryfi", "veryfi.com", "ocr api"],
