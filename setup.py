@@ -6,7 +6,7 @@ from setuptools import setup
 
 setup(
     name="veryfi",
-    version="0.0.1",
+    version="0.0.2",
     description="Python implementation of the Veryfi OCR APIs",
     author="Veryfi, Inc.",
     author_email="support@veryfi.com",
