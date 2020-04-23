@@ -1,13 +1,18 @@
-dist: xenial # required for Python >= 3.7
+dist: xenial
 language: python
 cache: pip
 python:
-  - 3.5
-  - 3.6
-  - 3.7
-  - 3.8
-
+- 3.5
+- 3.6
+- 3.7
+- 3.8
 install:
-  - make install
-
-scripts: echo foo # replace with command to run tests
+- make install
+scripts: echo foo
+deploy:
+  provider: pypi
+  user: __token__
+  password:
+    secure: jTbDs7qREAucA9Z27UXHGouSER5rFo+eiuqePVQDT0XtWOrRmp41XSSLYy3PdqAbDzxVEqvQlhUe/3EP7zPMkRyBxp0WM1SHo3Pycy0I6sVqEKtzr9bOIsJr2A34nEHr4VqIePmp//7H0JTjAmKh8JfjKxK0r4AIzLbHcP8VBg7UjJt023hYzr+7A2onSpC8riq8EERz1PEQj59nRkcDtvHFbzMUy4QLGniUImCQVmgkixMzK9PxVsrZ8QAS5nqRepKEZY4b/8KEiG6gD3QIeeCiapico/LECNwEMaoDqtXBfsP1S0JCuujldIRIR6W9KX91wsMs6Pzj0zoIwC0lTph1R+VmvU3VgmaO1brukXo1sAV0xleM+EK4cAD/ste5AXixBHyPdfx4CjG2xOr0qbSyJg+bo8+Z+czQPAfYuRZgjki+5dUlLxJFXJbK1913eB7yu1eAKgYgRUYKFZDEEChqrcw2UyInSIJcAMxcbk9VDsp1CK5cnGD/ORdbjilRqNixp311mNLmNSd+ey5b5RL6YxEAMEBbE+N8lUBkr0WzsyPXSreRZRu/+P2sSb0OEjS4SIgZR4NUjTPMo5HNt1p83A5scEgncZNg6vj1A3FI+V/Tob5XCvjMSklDO2NQnJW8yBar3khphZSO98CS5NR9OfOuM0o6/gjvq8ZjkG0=
+  on:
+    branch: master
