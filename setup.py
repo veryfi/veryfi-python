@@ -2,14 +2,14 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open('README.md') as f:
     long_description = f.read()
 
 setup(
     name="veryfi",
-    version="0.0.3",
+    version="0.0.4",
     description="Python implementation of the Veryfi OCR APIs",
     author="Veryfi, Inc.",
     author_email="support@veryfi.com",
@@ -22,6 +22,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: Implementation :: CPython",
     ],
+    packages=find_packages(),
     long_description=long_description,
     long_description_content_type='text/markdown',
     license="MIT",
