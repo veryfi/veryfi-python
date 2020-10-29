@@ -8,6 +8,7 @@ import json
 import time
 import requests
 import os
+from typing import *
 
 from veryfi.errors import VeryfiClientError
 
@@ -53,7 +54,7 @@ class Client:
         self.headers = {}
         self._session = requests.Session()
 
-    def _get_headers(self, has_files=False):
+    def _get_headers(self, has_files:bool=False):
         """
         Prepares the headers needed for a request.
         :param has_files: Are there any files to be submitted as binary
@@ -61,14 +62,14 @@ class Client:
         """
         final_headers = {
             "User-Agent": 'Python Veryfi-Python/0.1',
-            "Content-Type": "application/json;charset=utf-8",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
             "Client-Id": self.client_id
         }
 
         if self.username:
             final_headers.update({"Authorization": "apikey {}:{}".format(self.username, self.api_key)})
 
-        final_headers.update({"Content-Type": "application/json"})
         if has_files:
             final_headers.pop("Content-Type", "application/x-www-form-urlencoded")
 
@@ -189,20 +190,20 @@ class Client:
             document = self._request('POST', endpoint_name, request_arguments, file_stream)
         return document
 
-    def process_document_url(self, file_uri, categories=None, delete_after_processing=False):
+    def process_document_url(self, file_url, categories=None, delete_after_processing=False):
         """
-        Process Document from uri and extract all the fields from it
-        :param file_uri: Valid HTTPS url to a document to process
+        Process Document from url and extract all the fields from it
+        :param file_url: Valid HTTPS url to a document to process
         :param categories: List of categories to use when categorizing the document
         :param delete_after_processing: Delete this document from Veryfi after data has been extracted
         :return: Data extracted from the document
         """
         endpoint_name = "/documents/"
-        request_arguments = {"file_uri": file_uri,
+        request_arguments = {"file_url": file_url,
                              "categories": categories,
                              "auto_delete": delete_after_processing}
-        document = self._request('POST', endpoint_name, request_arguments)
-        return document
+
+        return self._request('POST', endpoint_name, request_arguments)
 
     def delete_document(self, document_id):
         """
