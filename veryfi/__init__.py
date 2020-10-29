@@ -104,7 +104,7 @@ class Client:
                                          timeout=self.timeout)
 
         if response.status_code not in [200, 201, 202, 204]:
-            raise VeryfiClientError(response)
+            raise VeryfiClientError.from_response(response)
 
         return response.json()
 
@@ -157,7 +157,7 @@ class Client:
         :param delete_after_processing: Delete this document from Veryfi after data has been extracted
         :return: Data extracted from the document
         """
-        endpoint_name = "/documents/".format(id)
+        endpoint_name = "/documents/"
         if not categories:
             categories = self.CATEGORIES
         file_name = os.path.basename(file_path)
