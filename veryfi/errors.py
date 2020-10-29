@@ -1,21 +1,15 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import unicode_literals
-
-
 class VeryfiClientError(Exception):
-    required_fields = []
     optional_fields = ["error", "code"]
 
     def __init__(self, raw_response, **error_info):
-        for field_name in self.required_fields:
-            setattr(self, field_name, error_info[field_name])
-
         for field_name in self.optional_fields:
             setattr(self, field_name, error_info.get(field_name))
 
         self.raw_response = raw_response
         self.status = raw_response.status_code
+
+        if getattr(self, "error"):
+            super().__init__(f"{self.status}, {getattr(self, 'error')}")
 
     @staticmethod
     def from_response(raw_response):
@@ -27,7 +21,6 @@ class VeryfiClientError(Exception):
         }
         """
         json_response = raw_response.json()
-        error_info = json_response["error"]
         # TODO Add Error Codes to API response
         # code = error_info.get("code", "")
 
@@ -38,7 +31,7 @@ class VeryfiClientError(Exception):
                 "Unknown error Please contact customer support at support@veryfi.com."
             )
         else:
-            return error_cls(raw_response, **error_info)
+            return error_cls(raw_response, **raw_response.json())
 
 
 class UnauthorizedAccessToken(VeryfiClientError):
