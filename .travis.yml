@@ -7,7 +7,7 @@ python:
   - 3.8
 install:
   - make install
-  - pip install responses
+  - pip install responses git+https://github.com/psf/black
 scripts: pytest .
 after_success:
   - black .
