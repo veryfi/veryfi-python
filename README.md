@@ -1,6 +1,5 @@
 ![Veryfi Logo](https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png)
 
-[![Build Status](https://travis-ci.org/veryfi/veryfi-python.svg?branch=master)](https://travis-ci.org/veryfi/veryfi-python)
 [![PyPI - version](https://img.shields.io/pypi/v/veryfi.svg)](https://pypi.python.org/pypi/veryfi/)
 [![PyPI](https://img.shields.io/pypi/pyversions/veryfi.svg)](https://pypi.python.org/pypi/veryfi)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -15,7 +14,7 @@ package manager for Python.
 
 Install the package from PyPI:
 ```bash
-pip install veryfi
+pip install -U veryfi
 ```
 You may need to run the above commands with `sudo`.
 
