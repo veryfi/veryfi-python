@@ -13,7 +13,7 @@ class VeryfiClientError(Exception):
 
     @staticmethod
     def from_response(raw_response):
-        """ Veryfi API returns error messages with a json body
+        """Veryfi API returns error messages with a json body
         like:
         {
             'status': 'fail',

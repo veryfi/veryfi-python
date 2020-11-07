@@ -1,0 +1,29 @@
+name: Test & Publish
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Test with pytest
+        run: |
+          pytest
+      - name: Publish package
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: eWxDUEw1qkpc980bw738L/uJV0qcIfLTtfAa0n5KnUt0/1ODjtD6f38tCLxWSS60sSAk07/sjTC05bA6CxrkoTcv/JmhpgGIqOetKxhLMOW1jagJ+aqJ1xcU638vjFHBj/XhBen49kEdh1XBQR+FPxq84M5yKn1Zlhm0EbVL8Ko8FM9/vuIk+8ALeGRARnOD6oKJR3Y7Ps81Oz81k6vKqdixHmg5q6vQYNQcF/I3ljKIHH39UAO+2du8r2nbUncMd+PNh5Z0UjpGP905Jzog/D6JD2Rb/JDaRHT4WBlrTjzG2By5J1UIf99cu/fLyo+PXbFeoZt74Ih02S+XthuMOwPwppCu9RsiV6DfftRlGDydpk6GJif+/+JzDSAb52okHiqBbESh/TL5I4JjIme/yCMAu9YwWqxPfOQ49Of19r1FfdkJQryJLFaSP/agICelk44Wbny24Mx4G3oVQfd3DHQmrzRdJoiGiAMbZlUFkiNlNbyHdL4FCK6JZoPNrAJFp0pgSOs9GsqCZVto6FTKrPI5xj70hbiEX4WVV9L6wcrmuNJTwgtmj7IRdILvTz9NgBtDI4C+eEHvkTzzQLlspKrUTA/zRmECLsXBpve0bleKrv/h1g06HGBcaqSfjoj3tyWRYGPd2a+kq7wtCjY2tnnHJ4YbG0k8YyGgi9BQnbU=
