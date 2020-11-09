@@ -206,7 +206,9 @@ class Client:
             document = self._request("POST", endpoint_name, request_arguments, file_stream)
         return document
 
-    def process_document_url(self, file_url, categories=None, delete_after_processing=False):
+    def process_document_url(
+        self, file_url, categories=None, delete_after_processing=False, boost_mode: int = 0
+    ):
         """
         Process Document from url and extract all the fields from it
         :param file_url: Valid HTTPS url to a document to process
@@ -219,6 +221,7 @@ class Client:
             "file_url": file_url,
             "categories": categories,
             "auto_delete": delete_after_processing,
+            "boost_mode": boost_mode,
         }
 
         return self._request("POST", endpoint_name, request_arguments)
