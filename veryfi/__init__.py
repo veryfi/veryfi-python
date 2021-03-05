@@ -133,9 +133,7 @@ class Client:
 
         secret_bytes = bytes(self.client_secret, "utf-8")
         payload_bytes = bytes(payload, "utf-8")
-        tmp_signature = hmac.new(
-            secret_bytes, msg=payload_bytes, digestmod=hashlib.sha256
-        ).digest()
+        tmp_signature = hmac.new(secret_bytes, msg=payload_bytes, digestmod=hashlib.sha256).digest()
         base64_signature = base64.b64encode(tmp_signature).decode("utf-8").strip()
         return base64_signature
 
@@ -207,21 +205,36 @@ class Client:
         return document
 
     def process_document_url(
-        self, file_url, categories=None, delete_after_processing=False, boost_mode: int = 0
-    ):
+        self,
+        file_url: Optional[str] = None,
+        categories: Optional[List[str]] = None,
+        delete_after_processing=False,
+        boost_mode: int = 0,
+        external_id: Optional[str] = None,
+        max_pages_to_process: Optional[int] = None,
+        file_urls: Optional[List[str]] = None,
+    ) -> Dict:
         """
         Process Document from url and extract all the fields from it
-        :param file_url: Valid HTTPS url to a document to process
+        :param file_url: Required if file_urls isn't specified. Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg"
+        :param file_urls: Required if file_url isn't specifies. List of publicly accessible URLs to multiple files, e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]
         :param categories: List of categories to use when categorizing the document
         :param delete_after_processing: Delete this document from Veryfi after data has been extracted
+        :param max_pages_to_process: When sending a long document to Veryfi for processing, this paremeter controls how many pages of the document will be read and processed, starting from page 1.
+        :param boost_mode: Flag that tells Veryfi whether boost mode should be enabled. When set to 1, Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0
+        :param external_id: Optional custom document identifier. Use this if you would like to assign your own ID to documents
+
         :return: Data extracted from the document
         """
         endpoint_name = "/documents/"
         request_arguments = {
-            "file_url": file_url,
-            "categories": categories,
             "auto_delete": delete_after_processing,
             "boost_mode": boost_mode,
+            "categories": categories,
+            "external_id": external_id,
+            "file_url": file_url,
+            "file_urls": file_urls,
+            "max_pages_to_process": max_pages_to_process,
         }
 
         return self._request("POST", endpoint_name, request_arguments)
