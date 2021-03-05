@@ -9,6 +9,8 @@ from typing import *
 
 from veryfi.errors import VeryfiClientError
 
+__version__ = "0.0.6"
+
 
 class Client:
     API_VERSION = "v7"
