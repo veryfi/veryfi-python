@@ -1,0 +1,22 @@
+CHANGES
+=======
+
+* Move version
+* Add version to package
+* Add version to config
+* Add build package
+
+0.0.6
+-----
+
+* Add missing parameters to process\_document\_url
+* Add boost
+* Make it black (#4)
+* Clean python versions
+* Bump to 0.0.5
+* Remove python 3.5 support
+* Add responses
+* Clean setup
+* Add test
+* Fix file\_url parameter, add Accept header
+* Better message in exceptions

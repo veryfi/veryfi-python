@@ -2,14 +2,13 @@ import base64
 import hashlib
 import hmac
 import json
-import time
-import requests
 import os
+import time
 from typing import *
 
-from veryfi.errors import VeryfiClientError
+import requests
 
-__version__ = "0.0.6"
+from veryfi.errors import VeryfiClientError
 
 
 class Client:
