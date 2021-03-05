@@ -1,5 +1,3 @@
-__version__ = "0.0.6"
-
 import base64
 import hashlib
 import hmac
