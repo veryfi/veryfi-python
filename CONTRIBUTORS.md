@@ -1,7 +1,7 @@
 ## Versioning
 
-    pbr manages all the package metadata:
-    * it uses requirements.txt
-    * it adds version
+pbr manages all the package metadata:
+* it uses requirements.txt
+* it adds version
 
-    simply run `python setup.py sdist bdist_wheel`
+To check the package build, simply run `python setup.py sdist bdist_wheel`
