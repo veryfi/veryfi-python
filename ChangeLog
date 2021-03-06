@@ -1,10 +1,12 @@
 CHANGES
 =======
 
-* Move version
-* Add version to package
-* Add version to config
-* Add build package
+0.0.7
+-----
+
+* Add a note on release
+* Fix description, remove authors generation
+
 
 0.0.6
 -----
