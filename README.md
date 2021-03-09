@@ -147,3 +147,8 @@ If you run into any issue or need help installing or using the library, please c
 
 If you found a bug in this library or would like new features added, then open an issue or pull requests against this repo!
 
+To learn more about Veryfi visit https://www.veryfi.com/
+
+## Tutorial Video
+
+[![Watch 'Code with Dmitry' Video](https://img.youtube.com/vi/CwNkFxVEwuo/0.jpg)](https://www.youtube.com/watch?v=CwNkFxVEwuo&list=PLkA-lFc8JUY53MNgA5FWJSLXoW5PWBDfK&index=2)
