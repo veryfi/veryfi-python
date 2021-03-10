@@ -43,8 +43,14 @@ file_path = '/tmp/invoice.jpg'
 # This submits document for processing (takes 3-5 seconds to get response)
 veryfi_client = Client(client_id, client_secret, username, api_key)
 response = veryfi_client.process_document(file_path, categories=categories)
-print (response.json())
+response
+
+# or with url
+
+response = veryfi_client.process_document_url(url, external_id=some_id)
+response
 ```
+
 
 ### JSON Response
 ```json
