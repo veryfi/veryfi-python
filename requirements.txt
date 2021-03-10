@@ -1,4 +1,1 @@
-requests==2.23.0
-responses==0.12.0
-pytest==6.1.2
-pbr
+requests==2.25.1
