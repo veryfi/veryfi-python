@@ -1,9 +1,16 @@
 CHANGES
 =======
 
+1.0.0
+-----
+
+* Clean test deps
+* Update README.md
+
 0.0.7
 -----
 
+* Fix publish package condition
 * Add a note on release
 * Fix description, remove authors generation
 
