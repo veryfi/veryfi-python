@@ -8,9 +8,10 @@ jupyterlab = "*"
 pytest = "*"
 responses = "*"
 black = "*"
+pbr = "*"
 
 [packages]
-requests = "==2.23.0"
+requests = "*"
 
 [requires]
 python_version = "3.8"
