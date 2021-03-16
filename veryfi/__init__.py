@@ -154,7 +154,7 @@ class Client:
         """
         Retrieve document by ID
         :param document_id: ID of the document you'd like to retrieve
-        :return: Date extracted from the Document
+        :return: Data extracted from the Document
         """
         endpoint_name = "/documents/{}/".format(document_id)
         request_arguments = {"id": document_id}
@@ -248,3 +248,17 @@ class Client:
         endpoint_name = "/documents/{0}/".format(document_id)
         request_arguments = {"id": document_id}
         self._request("DELETE", endpoint_name, request_arguments)
+
+    def update_document(self, id: int, **kwargs) -> Dict:
+        """
+        Update data for a previously processed document, including almost any field like `vendor`, `date`, `notes` and etc.
+
+        ```veryfi_client.update_document(id, date="2021-01-01", notes="look what I did")```
+
+        :param kwargs: fields to update
+
+        :return: A document json with updated fields, if fields are writible. Otherwise a document with unchanged fields.
+        """
+        endpoint_name = f"/documents/{id}/"
+
+        return self._request("PUT", endpoint_name, kwargs)
