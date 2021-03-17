@@ -1,3 +1,5 @@
+https://veryfi.github.io/veryfi-python/reference/veryfi/
+
 ![Veryfi Logo](https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png)
 
 [![PyPI - version](https://img.shields.io/pypi/v/veryfi.svg)](https://pypi.python.org/pypi/veryfi/)
