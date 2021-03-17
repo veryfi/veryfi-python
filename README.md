@@ -1,3 +1,5 @@
+https://veryfi.github.io/veryfi-python/reference/veryfi/
+
 ![Veryfi Logo](https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png)
 
 [![PyPI - version](https://img.shields.io/pypi/v/veryfi.svg)](https://pypi.python.org/pypi/veryfi/)
@@ -24,7 +26,7 @@ You may need to run the above commands with `sudo`.
 If you don't have an account with Veryfi, please go ahead and register here: [https://hub.veryfi.com/signup/api/](https://hub.veryfi.com/signup/api/)
 
 ### Python API Client Library
-The **veryfi** library can be used to communicate with Veryfi API,
+The **veryfi** library can be used to communicate with Veryfi API. All available functionality is described here https://veryfi.github.io/veryfi-python/reference/veryfi/#client
 
 Below is the sample script using **veryfi** to OCR and extract data from a document:
 
@@ -46,16 +48,9 @@ response = veryfi_client.process_document(file_path, categories=categories)
 response
 
 # or with url
-
 response = veryfi_client.process_document_url(url, external_id=some_id)
 response
-```
-
-
-### JSON Response
-```json
-{
-  "abn_number": "",
+>>> {"abn_number": "",
   "account_number": "",
   "bill_to_address": "130 INTERSTATE BLVD, SUIT 21\nNASHEVILLE, NC 28806",
   "bill_to_name": "FAST ROOFING COMPANY, LLC",
@@ -147,6 +142,15 @@ response
   "vendor_bank_name": ""
 }
 ``` 
+
+Update a document
+```
+new_vendor = {"name": "Starbucks", "address": "123 Easy Str, San Francisco, CA 94158"}
+category = "Meals & Entertainment"
+new_total = 11.23
+veryfi_client.update_docuement(id=12345, vendor=new_vendor, category=new_category, total=new_total)
+```
+
 
 ## Need help?
 If you run into any issue or need help installing or using the library, please contact support@veryfi.com.
