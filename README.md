@@ -48,13 +48,9 @@ response = veryfi_client.process_document(file_path, categories=categories)
 response
 
 # or with url
-
 response = veryfi_client.process_document_url(url, external_id=some_id)
 response
-```
-```json
-{
-  "abn_number": "",
+>>> {"abn_number": "",
   "account_number": "",
   "bill_to_address": "130 INTERSTATE BLVD, SUIT 21\nNASHEVILLE, NC 28806",
   "bill_to_name": "FAST ROOFING COMPANY, LLC",
