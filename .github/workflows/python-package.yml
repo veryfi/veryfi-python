@@ -34,4 +34,4 @@ jobs:
         with:
           skip_existing: true
           user: __token__
-          password: pypi-AgEIcHlwaS5vcmcCJDBkZTc5ZmMzLTZjZTYtNDFkYS05NmM0LWIzZWQwZmIxNWZiYgACN3sicGVybWlzc2lvbnMiOiB7InByb2plY3RzIjogWyJ2ZXJ5ZmkiXX0sICJ2ZXJzaW9uIjogMX0AAAYgSOgbpaDU8c2fUHaeW-Uf__LkuCgFRwGrfNbIwQQPEmI
+          password: ${{ secrets.PYPI }}
