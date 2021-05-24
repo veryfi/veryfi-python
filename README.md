@@ -148,7 +148,7 @@ Update a document
 new_vendor = {"name": "Starbucks", "address": "123 Easy Str, San Francisco, CA 94158"}
 category = "Meals & Entertainment"
 new_total = 11.23
-veryfi_client.update_docuement(id=12345, vendor=new_vendor, category=new_category, total=new_total)
+veryfi_client.update_document(id=12345, vendor=new_vendor, category=new_category, total=new_total)
 ```
 
 
