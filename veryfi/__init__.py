@@ -14,7 +14,6 @@ from veryfi.errors import VeryfiClientError
 class Client:
     API_VERSION = "v7"
     API_TIMEOUT = 120
-    MAX_FILE_SIZE_MB = 20
     BASE_URL = "https://api.veryfi.com/api/"
     CATEGORIES = [
         "Advertising & Marketing",
