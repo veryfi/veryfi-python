@@ -60,7 +60,7 @@ class Client:
         :return: Dictionary with headers
         """
         final_headers = {
-            "User-Agent": "Python Veryfi-Python/0.1",
+            "User-Agent": "Python Veryfi-Python/1.1.1",
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Client-Id": self.client_id,
