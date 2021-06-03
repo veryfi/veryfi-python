@@ -215,14 +215,12 @@ class Client:
         file_urls: Optional[List[str]] = None,
     ) -> Dict:
         """
-        Process Document from url and extract all the fields from it :param file_url: Required if file_urls isn't
-        specified. Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg" :param file_urls:
-        Required if file_url isn't specifies. List of publicly accessible URLs to multiple files,
-        e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"] :param categories: List
-        of categories to use when categorizing the document
-        :param file_urls: Optional file urls of the documents you want to process.
-        :param categories: List of categories Veryfi can use to categorize the document.
-        :param file_url: Optional file url of the document you want to process.
+        Process Document from url and extract all the fields from it
+        :param file_url: Required if file_urls isn't
+        specified. Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg"
+        :param file_urls: Required if file_url isn't specifies. List of publicly accessible URLs to multiple files,
+        e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]
+        :param categories: List of categories to use when categorizing the document
         :param delete_after_processing: Delete this document from Veryfi after data has been extracted.
         :param max_pages_to_process: When sending a long document to Veryfi for
         processing, this parameter controls how many pages of the document will be read and processed,
