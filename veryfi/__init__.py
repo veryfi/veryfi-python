@@ -250,16 +250,14 @@ class Client:
 
     def update_document(self, document_id: int, **kwargs) -> Dict:
         """
-        Update data for a previously processed document, including almost any field like `vendor`, `date`,
-        `notes` and etc.
+        Update data for a previously processed document, including almost any field like `vendor`, `date`, `notes` and etc.
 
         ```veryfi_client.update_document(id, date="2021-01-01", notes="look what I did")```
 
         :param document_id: ID of the document you'd like to update
         :param kwargs: fields to update
 
-        :return: A document json with updated fields, if fields are writable. Otherwise a document with unchanged
-        fields.
+        :return: A document json with updated fields, if fields are writable. Otherwise a document with unchanged fields.
         """
         endpoint_name = f"/documents/{document_id}/"
 
