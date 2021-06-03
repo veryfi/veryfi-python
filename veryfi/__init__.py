@@ -216,19 +216,14 @@ class Client:
     ) -> Dict:
         """
         Process Document from url and extract all the fields from it
-        :param file_url: Required if file_urls isn't
-        specified. Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg"
-        :param file_urls: Required if file_url isn't specifies. List of publicly accessible URLs to multiple files,
-        e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]
+        :param file_url: Required if file_urls isn't specified. Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg"
+        :param file_urls: Required if file_url isn't specifies. List of publicly accessible URLs to multiple files, e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]
         :param categories: List of categories to use when categorizing the document
-        :param delete_after_processing: Delete this document from Veryfi after data has been extracted.
-        :param max_pages_to_process: When sending a long document to Veryfi for
-        processing, this parameter controls how many pages of the document will be read and processed,
-        starting from page 1.
-        :param boost_mode: Flag that tells Veryfi whether boost mode should be enabled. When set to 1,
-        Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0.
-        :param external_id: Optional custom document identifier. Use this if you would like to assign your own ID
-        to documents.
+        :param delete_after_processing: Delete this document from Veryfi after data has been extracted
+        :param max_pages_to_process: When sending a long document to Veryfi for processing, this paremeter controls how many pages of the document will be read and processed, starting from page 1.
+        :param boost_mode: Flag that tells Veryfi whether boost mode should be enabled. When set to 1, Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0
+        :param external_id: Optional custom document identifier. Use this if you would like to assign your own ID to documents
+
         :return: Data extracted from the document
         """
         endpoint_name = "/documents/"
