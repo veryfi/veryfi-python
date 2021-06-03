@@ -60,7 +60,7 @@ class Client:
         :return: Dictionary with headers
         """
         final_headers = {
-            "User-Agent": "Python Veryfi-Python/0.1",
+            "User-Agent": "Python Veryfi-Python/1.1.1",
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Client-Id": self.client_id,
@@ -220,7 +220,7 @@ class Client:
         :param file_urls: Required if file_url isn't specifies. List of publicly accessible URLs to multiple files, e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]
         :param categories: List of categories to use when categorizing the document
         :param delete_after_processing: Delete this document from Veryfi after data has been extracted
-        :param max_pages_to_process: When sending a long document to Veryfi for processing, this paremeter controls how many pages of the document will be read and processed, starting from page 1.
+        :param max_pages_to_process: When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.
         :param boost_mode: Flag that tells Veryfi whether boost mode should be enabled. When set to 1, Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0
         :param external_id: Optional custom document identifier. Use this if you would like to assign your own ID to documents
 
@@ -244,20 +244,21 @@ class Client:
         Delete Document from Veryfi
         :param document_id: ID of the document you'd like to delete
         """
-        endpoint_name = "/documents/{0}/".format(document_id)
+        endpoint_name = f"/documents/{document_id}/"
         request_arguments = {"id": document_id}
         self._request("DELETE", endpoint_name, request_arguments)
 
-    def update_document(self, id: int, **kwargs) -> Dict:
+    def update_document(self, document_id: int, **kwargs) -> Dict:
         """
         Update data for a previously processed document, including almost any field like `vendor`, `date`, `notes` and etc.
 
         ```veryfi_client.update_document(id, date="2021-01-01", notes="look what I did")```
 
+        :param document_id: ID of the document you'd like to update
         :param kwargs: fields to update
 
-        :return: A document json with updated fields, if fields are writible. Otherwise a document with unchanged fields.
+        :return: A document json with updated fields, if fields are writable. Otherwise a document with unchanged fields.
         """
-        endpoint_name = f"/documents/{id}/"
+        endpoint_name = f"/documents/{document_id}/"
 
         return self._request("PUT", endpoint_name, kwargs)
