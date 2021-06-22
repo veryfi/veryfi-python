@@ -1,6 +1,33 @@
 CHANGES
 =======
 
+2.0.0
+-----
+
+* Make username and apikey required, pass kwargs
+* Add tests
+* Add tox-gh-actions
+* Let tox manage python versions
+* Feature/updates gitignore (#24)
+* Remove MAX\_FILE\_SIZE\_MB
+* Update README.md
+
+1.1.1
+-----
+
+* Unpin requests
+* Update python-package.yml
+* Update README.md
+* Force push fresh autodocs to github pages
+
+1.1.0
+-----
+
+* Add update\_document
+* Add portray autodocs
+* Fix code
+
+
 1.0.0
 -----
 
