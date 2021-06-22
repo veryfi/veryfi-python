@@ -37,8 +37,8 @@ class Client:
         self,
         client_id,
         client_secret,
-        username=None,
-        api_key=None,
+        username,
+        api_key,
         base_url=BASE_URL,
         api_version=API_VERSION,
         timeout=API_TIMEOUT,
@@ -53,7 +53,7 @@ class Client:
         self.headers = {}
         self._session = requests.Session()
 
-    def _get_headers(self, has_files: bool = False):
+    def _get_headers(self, has_files: bool = False) -> Dict:
         """
         Prepares the headers needed for a request.
         :param has_files: Are there any files to be submitted as binary
@@ -66,10 +66,7 @@ class Client:
             "Client-Id": self.client_id,
         }
 
-        if self.username:
-            final_headers.update(
-                {"Authorization": "apikey {}:{}".format(self.username, self.api_key)}
-            )
+        final_headers.update({"Authorization": f"apikey {self.username}:{self.api_key}"})
 
         if has_files:
             final_headers.pop("Content-Type", "application/x-www-form-urlencoded")
@@ -160,12 +157,20 @@ class Client:
         document = self._request("GET", endpoint_name, request_arguments)
         return document
 
-    def process_document(self, file_path, categories=None, delete_after_processing=False):
+    def process_document(
+        self,
+        file_path: str,
+        categories: Optional[List] = None,
+        delete_after_processing: bool = False,
+        **kwargs: Dict,
+    ):
         """
-        Process Document and extract all the fields from it
+        Process a document and extract all the fields from it
         :param file_path: Path on disk to a file to submit for data extraction
         :param categories: List of categories Veryfi can use to categorize the document
         :param delete_after_processing: Delete this document from Veryfi after data has been extracted
+        :param kwargs - additional request parameters
+
         :return: Data extracted from the document
         """
         endpoint_name = "/documents/"
@@ -180,15 +185,25 @@ class Client:
             "categories": categories,
             "auto_delete": delete_after_processing,
         }
+        request_arguments.update(kwargs)
         document = self._request("POST", endpoint_name, request_arguments)
         return document
 
-    def _process_document_file(self, file_path, categories=None, delete_after_processing=False):
+    def process_document_file(
+        self,
+        file_path: str,
+        categories: Optional[List] = None,
+        delete_after_processing: bool = False,
+        **kwargs: Dict,
+    ):
         """
-        Process Document by sending it to Veryfi as multipart form
+        Process Document by sending it to Veryfi as a multipart form
+
         :param file_path: Path on disk to a file to submit for data extraction
         :param categories: List of categories Veryfi can use to categorize the document
         :param delete_after_processing: Delete this document from Veryfi after data has been extracted
+        :param kwargs - additional request parameters
+
         :return: Data extracted from the document
         """
         endpoint_name = "/documents/"
@@ -200,6 +215,7 @@ class Client:
             "categories": categories,
             "auto_delete": delete_after_processing,
         }
+        request_arguments.update(kwargs)
         with open(file_path) as file_stream:
             document = self._request("POST", endpoint_name, request_arguments, file_stream)
         return document
@@ -213,9 +229,11 @@ class Client:
         external_id: Optional[str] = None,
         max_pages_to_process: Optional[int] = None,
         file_urls: Optional[List[str]] = None,
+        **kwargs: Dict,
     ) -> Dict:
         """
         Process Document from url and extract all the fields from it
+
         :param file_url: Required if file_urls isn't specified. Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg"
         :param file_urls: Required if file_url isn't specifies. List of publicly accessible URLs to multiple files, e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]
         :param categories: List of categories to use when categorizing the document
@@ -223,6 +241,7 @@ class Client:
         :param max_pages_to_process: When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.
         :param boost_mode: Flag that tells Veryfi whether boost mode should be enabled. When set to 1, Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0
         :param external_id: Optional custom document identifier. Use this if you would like to assign your own ID to documents
+        :param kwargs - additional request parameters
 
         :return: Data extracted from the document
         """
@@ -236,7 +255,7 @@ class Client:
             "file_urls": file_urls,
             "max_pages_to_process": max_pages_to_process,
         }
-
+        request_arguments.update(kwargs)
         return self._request("POST", endpoint_name, request_arguments)
 
     def delete_document(self, document_id):
