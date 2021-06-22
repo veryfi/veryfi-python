@@ -7,6 +7,7 @@ verify_ssl = true
 black = "*"
 jupyterlab = "*"
 pbr = "*"
+portray = "*"
 pytest = "*"
 responses = "*"
 tox = "*"
