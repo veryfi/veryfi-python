@@ -16,5 +16,6 @@ def test_bad_request():
         status=400,
     )
     response = requests.post(url)
+
     with pytest.raises(BadRequest, match="400, Bad or missing parameters") as e:
         raise VeryfiClientError.from_response(response)

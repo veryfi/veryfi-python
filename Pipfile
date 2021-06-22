@@ -4,11 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+black = "*"
 jupyterlab = "*"
+pbr = "*"
 pytest = "*"
 responses = "*"
-black = "*"
-pbr = "*"
+tox = "*"
 
 [packages]
 requests = "*"
