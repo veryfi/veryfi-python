@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+2.1.0
+-----
+* BREAKING - Remove process\_document\_file
+* Fix docs
+
 2.0.0
 -----
 
