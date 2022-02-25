@@ -8,7 +8,7 @@ import pytest
 
 @responses.activate
 def test_bad_request():
-    url = f"{Client.BASE_URL}v7/partner/documents"
+    url = f"{Client.BASE_URL}v8/partner/documents"
     responses.add(
         responses.POST,
         url,
