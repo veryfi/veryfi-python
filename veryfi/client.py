@@ -12,8 +12,8 @@ from veryfi.errors import VeryfiClientError
 
 
 class Client:
-    API_VERSION = "v7"
-    API_TIMEOUT = 120
+    API_VERSION = "v8"
+    API_TIMEOUT = 30
     BASE_URL = "https://api.veryfi.com/api/"
     CATEGORIES = [
         "Advertising & Marketing",
@@ -48,8 +48,9 @@ class Client:
         self.username = username
         self.api_key = api_key
         self.base_url = base_url
-        self.timeout = timeout
         self.api_version = api_version
+        self.versioned_url = self.base_url + self.api_version
+        self.timeout = timeout
         self.headers = {}
         self._session = requests.Session()
 
@@ -59,7 +60,7 @@ class Client:
         :return: Dictionary with headers
         """
         final_headers = {
-            "User-Agent": "Python Veryfi-Python/2.0.0",
+            "User-Agent": "Python Veryfi-Python/3.0.0",
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Client-Id": self.client_id,
@@ -68,13 +69,6 @@ class Client:
         final_headers.update({"Authorization": f"apikey {self.username}:{self.api_key}"})
 
         return final_headers
-
-    def _get_url(self):
-        """
-        Get API Base URL with API Version
-        :return: Base URL to Veryfi API
-        """
-        return self.base_url + self.api_version
 
     def _request(self, http_verb, endpoint_name, request_arguments):
         """
@@ -85,7 +79,7 @@ class Client:
         :return: A JSON of the response data.
         """
         headers = self._get_headers()
-        api_url = "{0}/partner{1}".format(self._get_url(), endpoint_name)
+        api_url = "{0}/partner{1}".format(self.versioned_url, endpoint_name)
 
         if self.client_secret:
             timestamp = int(time.time() * 1000)

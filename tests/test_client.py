@@ -7,7 +7,6 @@ import pytest
 @pytest.mark.parametrize("client_secret", [None, "s"])
 @responses.activate
 def test_process_document(client_secret):
-    url = f"{Client.BASE_URL}v7/partner/documents/"
     mock = {
         "abn_number": "",
         "account_number": "",
@@ -86,14 +85,13 @@ def test_process_document(client_secret):
         "vendor_bank_swift": "",
         "vendor_iban": "",
     }
+    client = Client(client_id="v", client_secret=client_secret, username="o", api_key="c")
     responses.add(
         responses.POST,
-        url,
+        f"{client.versioned_url}/partner/documents/",
         json=mock,
         status=200,
     )
-
-    client = Client(client_id="v", client_secret=client_secret, username="o", api_key="c")
     d = client.process_document(
         file_path="tests/assets/receipt_public.jpg", delete_after_processing=True, boost_mode=True
     )
@@ -102,7 +100,6 @@ def test_process_document(client_secret):
 
 @responses.activate
 def test_process_document_url():
-    url = f"{Client.BASE_URL}v7/partner/documents/"
     mock = {
         "abn_number": "",
         "account_number": "",
@@ -182,14 +179,13 @@ def test_process_document_url():
         "vendor_iban": "",
     }
 
+    client = Client(client_id="v", client_secret="w", username="o", api_key="c")
     responses.add(
         responses.POST,
-        url,
+        f"{client.versioned_url}/partner/documents/",
         json=mock,
         status=200,
     )
-
-    client = Client(client_id="v", client_secret="w", username="o", api_key="c")
     d = client.process_document_url(
         file_url="http://cdn-dev.veryfi.com/testing/veryfi-python/receipt_public.jpg",
         categories=["Fat"],

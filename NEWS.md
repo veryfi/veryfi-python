@@ -1,6 +1,10 @@
 CHANGES
 =======
 
+3.0.0
+-----
+* Use v8 by default, lower timeout
+
 2.1.0
 -----
 * BREAKING - Remove process\_document\_file
