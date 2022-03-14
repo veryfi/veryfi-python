@@ -3,7 +3,7 @@ CHANGES
 
 3.0.0
 -----
-* Return proper 404 error
+* Return proper 404 and other errors
 
 3.0.0
 -----

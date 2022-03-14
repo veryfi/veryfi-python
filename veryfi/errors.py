@@ -44,10 +44,6 @@ class InternalError(VeryfiClientError):
     pass
 
 
-class InternalError(VeryfiClientError):
-    pass
-
-
 _error_map = {
     400: BadRequest,
     401: UnauthorizedAccessToken,
