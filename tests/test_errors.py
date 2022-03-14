@@ -19,3 +19,18 @@ def test_bad_request():
 
     with pytest.raises(BadRequest, match="400, Bad or missing parameters") as e:
         raise VeryfiClientError.from_response(response)
+
+
+@responses.activate
+def test_not_found():
+    url = f"{Client.BASE_URL}v7/partner/documents"
+    responses.add(
+        responses.PUT,
+        url,
+        json={"status": "fail", "error": "Document not found"},
+        status=404,
+    )
+    response = requests.put(url)
+
+    with pytest.raises(VeryfiClientError, match="404, Document not found") as e:
+        raise VeryfiClientError.from_response(response)

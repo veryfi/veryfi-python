@@ -3,6 +3,10 @@ CHANGES
 
 3.0.0
 -----
+* Return proper 404 error
+
+3.0.0
+-----
 * Use v8 by default, lower timeout
 
 2.1.0
