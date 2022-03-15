@@ -1,6 +1,10 @@
 CHANGES
 =======
 
+3.1.1
+-----
+* Install dependencies in update-docs workflow
+
 3.1.0
 -----
 * Add support for operations with line items
