@@ -20,18 +20,8 @@ class VeryfiClientError(Exception):
             'error': 'Human readable error description.'
         }
         """
-        json_response = raw_response.json()
-        # TODO Add Error Codes to API response
-        # code = error_info.get("code", "")
-
-        try:
-            error_cls = _error_map[raw_response.status_code]
-        except KeyError:
-            raise NotImplementedError(
-                "Unknown error Please contact customer support at support@veryfi.com."
-            )
-        else:
-            return error_cls(raw_response, **raw_response.json())
+        error_cls = _error_map.get(raw_response.status_code) or VeryfiClientError
+        return error_cls(raw_response, **raw_response.json())
 
 
 class UnauthorizedAccessToken(VeryfiClientError):
