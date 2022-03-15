@@ -1,6 +1,10 @@
 CHANGES
 =======
 
+3.1.0
+-----
+* Add support for operations with line items
+
 3.0.0
 -----
 * Return proper 404 and other errors

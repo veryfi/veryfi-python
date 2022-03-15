@@ -8,6 +8,7 @@ from typing import *
 
 import requests
 
+from veryfi.model import AddLineItem, UpdateLineItem
 from veryfi.errors import VeryfiClientError
 
 
@@ -237,3 +238,69 @@ class Client:
         endpoint_name = f"/documents/{document_id}/"
 
         return self._request("PUT", endpoint_name, kwargs)
+
+    def get_line_items(self, document_id):
+        """
+        Retrieve all line items for a document.
+        :param document_id: ID of the document you'd like to retrieve
+        :return: List of line items extracted from the document
+        """
+        endpoint_name = f"/documents/{document_id}/line-items/"
+        request_arguments = {}
+        line_items = self._request("GET", endpoint_name, request_arguments)
+        return line_items
+
+    def get_line_item(self, document_id, line_item_id):
+        """
+        Retrieve a line item for existing document by ID.
+        :param document_id: ID of the document you'd like to retrieve
+        :param line_item_id: ID of the line item you'd like to retrieve
+        :return: Line item extracted from the document
+        """
+        endpoint_name = f"/documents/{document_id}/line-items/{line_item_id}"
+        request_arguments = {}
+        line_items = self._request("GET", endpoint_name, request_arguments)
+        return line_items
+
+    def add_line_item(self, document_id: int, payload: Dict) -> Dict:
+        """
+        Add a new line item on an existing document.
+        :param document_id: ID of the document you'd like to update
+        :param payload: line item object to add
+        :return: Added line item data
+        """
+        endpoint_name = f"/documents/{document_id}/line-items/"
+        request_arguments = AddLineItem(**payload).dict(exclude_none=True)
+        return self._request("POST", endpoint_name, request_arguments)
+
+    def update_line_item(self, document_id: int, line_item_id: int, payload: Dict) -> Dict:
+        """
+        Update an existing line item on an existing document.
+        :param document_id: ID of the document you'd like to update
+        :param line_item_id: ID of the line item you'd like to update
+        :param payload: line item object to update
+
+        :return: Line item data with updated fields, if fields are writable. Otherwise line item data with unchanged fields.
+        """
+        endpoint_name = f"/documents/{document_id}/line-items/{line_item_id}"
+        request_arguments = UpdateLineItem(**payload).dict(exclude_none=True)
+        return self._request("PUT", endpoint_name, request_arguments)
+
+    def delete_line_items(self, document_id):
+        """
+        Delete all line items on an existing document.
+        :param document_id: ID of the document you'd like to delete
+        """
+        endpoint_name = f"/documents/{document_id}/line-items/"
+        request_arguments = {}
+        self._request("DELETE", endpoint_name, request_arguments)
+
+    def delete_line_item(self, document_id, line_item_id):
+        """
+        Delete an existing line item on an existing document.
+        :param document_id: ID of the document you'd like to delete
+        :param line_item_id: ID of the line item you'd like to delete
+        """
+        endpoint_name = f"/documents/{document_id}/line-items/{line_item_id}"
+        request_arguments = {}
+        self._request("DELETE", endpoint_name, request_arguments)

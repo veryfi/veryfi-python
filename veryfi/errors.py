@@ -32,6 +32,10 @@ class BadRequest(VeryfiClientError):
     pass
 
 
+class ResourceNotFound(VeryfiClientError):
+    pass
+
+
 class UnexpectedHTTPMethod(VeryfiClientError):
     pass
 
@@ -46,6 +50,7 @@ class InternalError(VeryfiClientError):
 
 _error_map = {
     400: BadRequest,
+    404: ResourceNotFound,
     401: UnauthorizedAccessToken,
     405: UnexpectedHTTPMethod,
     409: AccessLimitReached,
