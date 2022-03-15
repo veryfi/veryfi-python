@@ -21,4 +21,5 @@ jobs:
         run: |
           mkdir docs
           pip install portray
+          pip install -r requirements.txt
           portray on_github_pages -f
