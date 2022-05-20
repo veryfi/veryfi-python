@@ -215,7 +215,9 @@ class Client:
         request_arguments.update(kwargs)
         return self._request("POST", endpoint_name, request_arguments)
 
-    def process_w9_document_url(self, file_url: str, file_name: Optional[str] = None, **kwargs: Dict) -> Dict:
+    def process_w9_document_url(
+        self, file_url: str, file_name: Optional[str] = None, **kwargs: Dict
+    ) -> Dict:
         """
         Process W9 Document from url and extract all the fields from it.
 
@@ -229,8 +231,8 @@ class Client:
             file_name = os.path.basename(file_url)
         endpoint_name = "/w9s/"
         request_arguments = {
-            'file_name': file_name,
-            'file_url': file_url,
+            "file_name": file_name,
+            "file_url": file_url,
         }
         request_arguments.update(kwargs)
         return self._request("POST", endpoint_name, request_arguments)
