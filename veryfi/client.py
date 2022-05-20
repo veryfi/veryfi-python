@@ -219,8 +219,8 @@ class Client:
         """
         Process W9 Document from url and extract all the fields from it.
 
-        :param file_name: Name of file, eg. receipt.jpg
         :param file_url: Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg".
+        :param file_name: Optional name of file, eg. receipt.jpg
         :param kwargs: Additional request parameters
 
         :return: Data extracted from the document.
@@ -240,7 +240,7 @@ class Client:
         Process W9 Document from url and extract all the fields from it.
 
         :param file_path: Path on disk to a file to submit for data extraction
-        :param file_name: Name of file, eg. receipt.jpg
+        :param file_name: Optional name of file, eg. receipt.jpg
         :param kwargs: Additional request parameters
 
         :return: Data extracted from the document.
