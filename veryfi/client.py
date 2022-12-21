@@ -1,4 +1,5 @@
 import base64
+from datetime import datetime
 import hashlib
 import hmac
 import json
@@ -54,6 +55,7 @@ class Client:
         self.timeout = timeout
         self.headers = {}
         self._session = requests.Session()
+        self.DATETIME_FMT = "%Y-%m-%d+%H:%M:%S"
 
     def _get_headers(self) -> Dict:
         """
@@ -123,14 +125,52 @@ class Client:
         base64_signature = base64.b64encode(tmp_signature).decode("utf-8").strip()
         return base64_signature
 
-    def get_documents(self):
+    def get_documents(
+        self,
+        q: Optional[str] = None,
+        external_id: Optional[str] = None,
+        tag: Optional[str] = None,
+        created_gt: Optional[str] = None,
+        created_gte: Optional[str] = None,
+        created_lt: Optional[str] = None,
+        created_lte: Optional[str] = None,
+        **kwargs: Dict,
+    ):
         """
         Get list of documents
+        :param query: Search term to search for a specific document by its content
+        :param external_id:	Search for documents that match your custom identifier
+        :param tag:	Search for documents with the specified tag
+        :param created__gt:	Search for documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS
+        :param created__gte: Search for documents with a created date greater than or equal to this one. Format YYYY-MM-DD+HH:MM:SS
+        :param created__lt:	Search for documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS
+        :param created__lte: Search for documents with a created date less than or equal to this one. Format YYYY-MM-DD+HH:MM:SS
+        :param kwargs: Additional request parameters
         :return: List of previously processed documents
         """
         endpoint_name = "/documents/"
-        request_arguments = {}
-        documents = self._request("GET", endpoint_name, request_arguments)
+
+        request_params = {}
+        if q:
+            request_params["q"] = q
+        if external_id:
+            request_params["external_id"] = external_id
+        if tag:
+            request_params["tag"] = tag
+        if created_gt:
+            request_params["created__gt"] = created_gt
+        if created_gte:
+            request_params["created__gte"] = created_gte
+        if created_lt:
+            request_params["created__lt"] = created_lt
+        if created_lte:
+            request_params["created__lte"] = created_lte
+        request_params.update(kwargs)
+        if request_params:
+            endpoint_name += "?" + "&".join(f"{k}={v}" for k, v in request_params.items())
+        
+        documents = self._request("GET", endpoint_name,{})
+
         if "documents" in documents:
             return documents["documents"]
         return documents
