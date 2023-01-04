@@ -168,8 +168,8 @@ class Client:
         request_params.update(kwargs)
         if request_params:
             endpoint_name += "?" + "&".join(f"{k}={v}" for k, v in request_params.items())
-        
-        documents = self._request("GET", endpoint_name,{})
+
+        documents = self._request("GET", endpoint_name, {})
 
         if "documents" in documents:
             return documents["documents"]
