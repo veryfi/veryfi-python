@@ -1,5 +1,4 @@
 import base64
-from datetime import datetime
 import hashlib
 import hmac
 import json
@@ -55,7 +54,6 @@ class Client:
         self.timeout = timeout
         self.headers = {}
         self._session = requests.Session()
-        self.DATETIME_FMT = "%Y-%m-%d+%H:%M:%S"
 
     def _get_headers(self) -> Dict:
         """
