@@ -138,13 +138,13 @@ class Client:
     ):
         """
         Get list of documents
-        :param query: Search term to search for a specific document by its content
+        :param query: Search term to search for a specific document by its content. These fields will be searched: external_id, category, vendor.name, notes, invoice_number, total and ocr_text.
         :param external_id:	Search for documents that match your custom identifier
         :param tag:	Search for documents with the specified tag
-        :param created__gt:	Search for documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS
-        :param created__gte: Search for documents with a created date greater than or equal to this one. Format YYYY-MM-DD+HH:MM:SS
-        :param created__lt:	Search for documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS
-        :param created__lte: Search for documents with a created date less than or equal to this one. Format YYYY-MM-DD+HH:MM:SS
+        :param created__gt:	Search for documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don't send both created__gt and created__gte in a single request.
+        :param created__gte: Search for documents with a created date greater than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don't send both created__gt and created__gte in a single request.
+        :param created__lt:	Search for documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don't send both created__lt and created__lte in a single request.
+        :param created__lte: Search for documents with a created date less than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don't send both created__lt and created__lte in a single request.
         :param kwargs: Additional request parameters
         :return: List of previously processed documents
         """
