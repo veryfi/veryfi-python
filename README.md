@@ -1,6 +1,5 @@
 https://veryfi.github.io/veryfi-python/reference/veryfi/
 
-![Veryfi Logo](https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png)
 
 [![PyPI - version](https://img.shields.io/pypi/v/veryfi.svg)](https://pypi.python.org/pypi/veryfi/)
 [![PyPI](https://img.shields.io/pypi/pyversions/veryfi.svg)](https://pypi.python.org/pypi/veryfi)
@@ -19,7 +18,6 @@ Install the package from PyPI:
 ```bash
 pip install -U veryfi
 ```
-You may need to run the above commands with `sudo`.
 
 ## Getting Started
 
