@@ -61,7 +61,7 @@ class Client:
         :return: Dictionary with headers
         """
         final_headers = {
-            "User-Agent": "Python Veryfi-Python/3.0.0",
+            "User-Agent": "Python Veryfi-Python/3.2.0",
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Client-Id": self.client_id,
@@ -387,3 +387,14 @@ class Client:
         endpoint_name = f"/documents/{document_id}/line-items/{line_item_id}"
         request_arguments = {}
         self._request("DELETE", endpoint_name, request_arguments)
+
+    def add_tag(self, document_id, tag_name):
+        """
+        Add a new tag on an existing document.
+        :param document_id: ID of the document you'd like to update
+        :param tag_name: name of the new tag
+        :return: Added tag data
+        """
+        endpoint_name = f"/documents/{document_id}/tags/"
+        request_arguments = {"name": tag_name}
+        return self._request("PUT", endpoint_name, request_arguments)
