@@ -1,6 +1,6 @@
 CHANGES
 =======
-3.2.0
+3.4.0
 -----
 * Add support to add tags on existing documents
 
