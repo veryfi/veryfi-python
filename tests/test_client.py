@@ -368,6 +368,7 @@ def test_get_documents():
     )
     assert d == mock
 
+
 @responses.activate
 def test_tags():
     mock_doc_id = 169985445
