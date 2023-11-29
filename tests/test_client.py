@@ -367,3 +367,16 @@ def test_get_documents():
         **{"created_lt": "2021-07-22+00:00:00"},
     )
     assert d == mock
+
+@responses.activate
+def test_tags():
+    mock_doc_id = 169985445
+    mock_resp = {"id": 6673474, "name": "tag_123"}
+    client = Client(client_id="v", client_secret="w", username="o", api_key="c")
+    responses.put(
+        f"{client.versioned_url}/partner/documents/{mock_doc_id}/tags/",
+        json=mock_resp,
+        status=200,
+    )
+    d = client.add_tag(mock_doc_id, "tag_123")
+    assert d == mock_resp
