@@ -1,5 +1,9 @@
 CHANGES
 =======
+3.4.1
+-----
+* Add support to add multiple tags on existing documents
+
 3.4.0
 -----
 * Add support to add tags on existing documents
