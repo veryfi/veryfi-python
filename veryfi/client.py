@@ -399,6 +399,17 @@ class Client:
         request_arguments = {"name": tag_name}
         return self._request("PUT", endpoint_name, request_arguments)
 
+    def replace_tags(self, document_id, tags):
+        """
+        Replace multiple tags on an existing document.
+        :param document_id: ID of the document you'd like to update
+        :param tags: array of strings
+        :return: Added tags data
+        """
+        endpoint_name = f"/documents/{document_id}/"
+        request_arguments = {"tags": tags}
+        return self._request("PUT", endpoint_name, request_arguments)
+
     def add_tags(self, document_id, tags):
         """
         Add multiple tags on an existing document.
@@ -408,4 +419,4 @@ class Client:
         """
         endpoint_name = f"/documents/{document_id}/tags/"
         request_arguments = {"tags": tags}
-        return self._request("PUT", endpoint_name, request_arguments)
+        return self._request("POST", endpoint_name, request_arguments)
