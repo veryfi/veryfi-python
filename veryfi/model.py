@@ -3,20 +3,20 @@ from pydantic import BaseModel
 
 
 class SharedLineItem(BaseModel):
-    sku: Optional[str]
-    category: Optional[str]
-    tax: Optional[float]
-    price: Optional[float]
-    unit_of_measure: Optional[str]
-    quantity: Optional[float]
-    upc: Optional[str]
-    tax_rate: Optional[float]
-    discount_rate: Optional[float]
-    start_date: Optional[str]
-    end_date: Optional[str]
-    hsn: Optional[str]
-    section: Optional[str]
-    weight: Optional[str]
+    sku: Optional[str] = None
+    category: Optional[str] = None
+    tax: Optional[float] = None
+    price: Optional[float] = None
+    unit_of_measure: Optional[str] = None
+    quantity: Optional[float] = None
+    upc: Optional[str] = None
+    tax_rate: Optional[float] = None
+    discount_rate: Optional[float] = None
+    start_date: Optional[str] = None
+    end_date: Optional[str] = None
+    hsn: Optional[str] = None
+    section: Optional[str] = None
+    weight: Optional[str] = None
 
 
 class AddLineItem(SharedLineItem):
@@ -26,6 +26,6 @@ class AddLineItem(SharedLineItem):
 
 
 class UpdateLineItem(SharedLineItem):
-    order: Optional[int]
-    description: Optional[str]
-    total: Optional[float]
+    order: Optional[int] = None
+    description: Optional[str] = None
+    total: Optional[float] = None
