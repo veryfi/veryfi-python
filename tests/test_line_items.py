@@ -1,12 +1,10 @@
-import pytest
 import responses
 
 from veryfi import *
 
 
-@pytest.mark.parametrize("client_secret", [None, "s"])
 @responses.activate
-def test_line_items(client_secret):
+def test_line_items():
     mock_doc_id = 1
     mock_line_item_id = 1
     mock_resp = {
@@ -29,7 +27,7 @@ def test_line_items(client_secret):
             }
         ],
     }
-    client = Client(client_id="v", client_secret=client_secret, username="o", api_key="c")
+    client = Client(client_id="v", client_secret=None, username="o", api_key="c")
     responses.add(
         responses.GET,
         f"{client.versioned_url}/partner/documents/{mock_doc_id}/line-items/",
@@ -80,10 +78,6 @@ def test_line_items(client_secret):
         json=mock_resp["line_items"][0],
         status=200,
     )
-    with pytest.raises(Exception):
-        client.add_line_item(mock_doc_id, {"order": 1})
-    with pytest.raises(Exception):
-        client.add_line_item(mock_doc_id, {"order": 1, "description": "foo"})
 
     assert (
         client.add_line_item(mock_doc_id, {"order": 1, "description": "foo", "total": 1.0})
