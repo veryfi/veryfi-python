@@ -1,7 +1,7 @@
+import pytest
 import responses
 
-from veryfi import *
-import pytest
+from veryfi import Client
 
 
 @pytest.mark.parametrize("client_secret", [None, "s"])
@@ -197,82 +197,6 @@ def test_process_document_url():
 
 
 @responses.activate
-def test_process_w9_document_url():
-    mock = {
-        "account_numbers": "",
-        "address1": "28 E 3rd Ave, Suite 201",
-        "address2": "San Mateo, California, 94401",
-        "business_name": "",
-        "c_corp": 0,
-        "ein": "",
-        "exempt_payee_code": "",
-        "exemption": "",
-        "individual": 0,
-        "llc": 0,
-        "name": "Veryfi, Inc.",
-        "other": 0,
-        "other_description": "",
-        "partnership": 0,
-        "pdf_url": "https://scdn.veryfi.com/w9s/ec278ba0-31d6-4bd4-9d18-cb6a1232788e/output-1.pdf?Expires=1653031170&Signature=bftl34pf~Yni3ysaauqwL4BkfzgMPdAwMpw-SkjKZaxkgSt2~EYmX7NK~BGZ5IFUNdUIGBxTIsBsVWrP8LDQ3fME3kFM6qSn-udZp9Y8WJ-HbqQrIf1DwZQp-A2NSBCkRWgqAtYJo5dQW~UJJdCJx19ZIaYQZzYVQvuHmornzBStTV6D2qXQKUZpv9d5BrvTExZDnIxKy-ibyy09CfUPMc-lsVQLQEb-uQvud-JTf9Guy6k9Y4oT32HSvKcL0pMLvJqYC6mJUM2-5MJiBsYQSNs2e6s8xXcSBotiChMQwBg3RhGv5y-o8Aih1GNmBcvPHJIEyKOuiHeC9TUSELvp~w__&Key-Pair-Id=APKAJCILBXEJFZF4DCHQ",
-        "requester": "AcMe Corporation 1010 Elm Str,\nMountain View, CA 94043",
-        "s_corp": 1,
-        "signature": 1,
-        "signature_date": "June 19, 2020",
-        "ssn": "",
-        "trust_estate": 0,
-    }
-
-    client = Client(client_id="v", client_secret="w", username="o", api_key="c")
-    responses.add(
-        responses.POST,
-        f"{client.versioned_url}/partner/w9s/",
-        json=mock,
-        status=200,
-    )
-    d = client.process_w9_document_url(
-        file_url="http://cdn-dev.veryfi.com/testing/veryfi-python/receipt_public.jpg",
-    )
-    assert d == mock
-
-
-@responses.activate
-def test_process_w9_document():
-    mock = {
-        "account_numbers": "",
-        "address1": "28 E 3rd Ave, Suite 201",
-        "address2": "San Mateo, California, 94401",
-        "business_name": "",
-        "c_corp": 0,
-        "ein": "",
-        "exempt_payee_code": "",
-        "exemption": "",
-        "individual": 0,
-        "llc": 0,
-        "name": "Veryfi, Inc.",
-        "other": 0,
-        "other_description": "",
-        "partnership": 0,
-        "pdf_url": "https://scdn.veryfi.com/w9s/ec278ba0-31d6-4bd4-9d18-cb6a1232788e/output-1.pdf?Expires=1653031170&Signature=bftl34pf~Yni3ysaauqwL4BkfzgMPdAwMpw-SkjKZaxkgSt2~EYmX7NK~BGZ5IFUNdUIGBxTIsBsVWrP8LDQ3fME3kFM6qSn-udZp9Y8WJ-HbqQrIf1DwZQp-A2NSBCkRWgqAtYJo5dQW~UJJdCJx19ZIaYQZzYVQvuHmornzBStTV6D2qXQKUZpv9d5BrvTExZDnIxKy-ibyy09CfUPMc-lsVQLQEb-uQvud-JTf9Guy6k9Y4oT32HSvKcL0pMLvJqYC6mJUM2-5MJiBsYQSNs2e6s8xXcSBotiChMQwBg3RhGv5y-o8Aih1GNmBcvPHJIEyKOuiHeC9TUSELvp~w__&Key-Pair-Id=APKAJCILBXEJFZF4DCHQ",
-        "requester": "AcMe Corporation 1010 Elm Str,\nMountain View, CA 94043",
-        "s_corp": 1,
-        "signature": 1,
-        "signature_date": "June 19, 2020",
-        "ssn": "",
-        "trust_estate": 0,
-    }
-
-    client = Client(client_id="v", client_secret="w", username="o", api_key="c")
-    responses.add(
-        responses.POST,
-        f"{client.versioned_url}/partner/w9s/",
-        json=mock,
-        status=200,
-    )
-    d = client.process_w9_document(file_path="tests/assets/receipt_public.jpg")
-    assert d == mock
-
-
-@responses.activate
 def test_get_documents():
     mock = [
         {
@@ -367,45 +291,3 @@ def test_get_documents():
         **{"created_lt": "2021-07-22+00:00:00"},
     )
     assert d == mock
-
-
-@responses.activate
-def test_tags():
-    mock_doc_id = 169985445
-    mock_resp = {"id": 6673474, "name": "tag_123"}
-    client = Client(client_id="v", client_secret="w", username="o", api_key="c")
-    responses.put(
-        f"{client.versioned_url}/partner/documents/{mock_doc_id}/tags/",
-        json=mock_resp,
-        status=200,
-    )
-    d = client.add_tag(mock_doc_id, "tag_123")
-    assert d == mock_resp
-
-
-@responses.activate
-def test_replace_multiple_tags():
-    mock_doc_id = 169985445
-    mock_resp = {"id": 6673474, "tags": ["tag_1", "tag_2", "tag_3"]}
-    client = Client(client_id="v", client_secret="w", username="o", api_key="c")
-    responses.put(
-        f"{client.versioned_url}/partner/documents/{mock_doc_id}/",
-        json=mock_resp,
-        status=200,
-    )
-    d = client.replace_tags(mock_doc_id, ["tag_1", "tag_2", "tag_3"])
-    assert d == mock_resp
-
-
-@responses.activate
-def test_add_multiple_tags():
-    mock_doc_id = 169985445
-    mock_resp = {"id": 6673474, "tags": ["tag_1", "tag_2", "tag_3"]}
-    client = Client(client_id="v", client_secret="w", username="o", api_key="c")
-    responses.post(
-        f"{client.versioned_url}/partner/documents/{mock_doc_id}/tags/",
-        json=mock_resp,
-        status=200,
-    )
-    d = client.add_tags(mock_doc_id, ["tag_1", "tag_2", "tag_3"])
-    assert d == mock_resp

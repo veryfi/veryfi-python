@@ -1,6 +1,6 @@
 import responses
 
-from veryfi import *
+from veryfi import Client
 
 
 @responses.activate
