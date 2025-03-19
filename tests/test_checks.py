@@ -27,16 +27,13 @@ MOCK = {
     "receiver_name": "Dmitry Birulia",
     "is_signed": True,
     "is_endorsed": None,
-    "endorsement": {
-        "is_signed": None,
-        "is_mobile_or_remote_deposit_only": None
-    },
+    "endorsement": {"is_signed": None, "is_mobile_or_remote_deposit_only": None},
     "micr": {
         "routing_number": "031923284",
         "account_number": "8765129397",
         "serial_number": None,
-        "raw": "C0118408359C A031923284A 8765129397C"
-    }
+        "raw": "C0118408359C A031923284A 8765129397C",
+    },
 }
 
 

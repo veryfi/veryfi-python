@@ -48,16 +48,16 @@ MOCK = {
     "is_13c": False,
     "states": [
         {
-        "state": "PAL",
-        "employer_state_id": "1235",
-        "state_wages_tips": 50000,
-        "state_income_tax": 1535,
-        "local_wages_tips": 50000,
-        "local_income_tax": 750,
-        "locality_name": "MU"
+            "state": "PAL",
+            "employer_state_id": "1235",
+            "state_wages_tips": 50000,
+            "state_income_tax": 1535,
+            "local_wages_tips": 50000,
+            "local_income_tax": 750,
+            "locality_name": "MU",
         }
     ],
-    "field_14_other": []
+    "field_14_other": [],
 }
 
 

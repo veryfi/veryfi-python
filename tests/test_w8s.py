@@ -160,7 +160,7 @@ MOCK = {
     "passive_nffe_owners": [],
     "signature_date": None,
     "signature_name": None,
-    "signed": True
+    "signed": True,
 }
 
 
