@@ -1,6 +1,6 @@
 import os
 import base64
-from typing import *
+from typing import Dict, Optional
 
 from veryfi.client_base import Client
 
@@ -33,7 +33,7 @@ class BussinesCards:
 
     def process_bussines_card_document(
         self, file_path: str, file_name: Optional[str] = None, **kwargs
-    ):
+    ) -> Dict:
         """
         Process bussiness card from url and extract all the fields from it.
         https://docs.veryfi.com/api/business-cards/process-a-business-card/
@@ -55,7 +55,7 @@ class BussinesCards:
         request_arguments.update(kwargs)
         return self.client._request("POST", endpoint_name, request_arguments)
 
-    def get_business_cards(self, **kwargs: Dict):
+    def get_business_cards(self, **kwargs):
         """
         Get list of business card documents.
         https://docs.veryfi.com/api/business-cards/get-business-cards/
@@ -66,7 +66,7 @@ class BussinesCards:
         endpoint_name = "/business-cards/"
         return self.client._request("GET", endpoint_name, {}, kwargs)
 
-    def get_business_card(self, document_id: int, **kwargs: Dict):
+    def get_business_card(self, document_id: int, **kwargs) -> Dict:
         """
         Get a business card document.
         https://docs.veryfi.com/api/business-cards/get-a-business-card/

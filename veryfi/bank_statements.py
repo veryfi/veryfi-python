@@ -1,6 +1,6 @@
 import os
 import base64
-from typing import *
+from typing import Dict, Optional
 
 from veryfi.client_base import Client
 
@@ -33,7 +33,7 @@ class BankStatements:
 
     def process_bank_statement_document(
         self, file_path: str, file_name: Optional[str] = None, **kwargs
-    ):
+    ) -> Dict:
         """
         Process bank statement document from url and extract all the fields from it.
         https://docs.veryfi.com/api/bank-statements/process-a-bank-statement/

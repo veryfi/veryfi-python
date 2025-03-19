@@ -1,6 +1,6 @@
 import os
 import base64
-from typing import *
+from typing import Dict, List, Optional
 
 from veryfi._documents.line_items import LineItems
 from veryfi._documents.tags import Tags
@@ -79,7 +79,7 @@ class Documents(Tags, LineItems, PDFSplit):
         endpoint_name = "/documents/"
         return self.client._request("GET", endpoint_name, {}, query_params)
 
-    def get_document(self, document_id, **kwargs) -> Dict:
+    def get_document(self, document_id: int, **kwargs) -> Dict:
         """
         Retrieve document by ID
         https://docs.veryfi.com/api/receipts-invoices/get-a-document/

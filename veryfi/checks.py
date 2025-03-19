@@ -1,6 +1,6 @@
 import os
 import base64
-from typing import *
+from typing import Dict, List, Optional
 
 from veryfi.client_base import Client
 
@@ -16,7 +16,7 @@ class Checks:
         created_date__lt: Optional[str] = None,
         created_date__lte: Optional[str] = None,
         **kwargs,
-    ) -> List[Dict]:
+    ):
         """
         Get list of checks
         https://docs.veryfi.com/api/checks/get-checks/
@@ -59,7 +59,7 @@ class Checks:
         self,
         file_path: str,
         **kwargs,
-    ):
+    ) -> Dict:
         """
         Process a check document and extract all the fields from it
         https://docs.veryfi.com/api/checks/process-a-check/

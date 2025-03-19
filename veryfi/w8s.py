@@ -1,6 +1,6 @@
 import os
 import base64
-from typing import *
+from typing import Dict, Optional
 
 from veryfi.client_base import Client
 
@@ -10,7 +10,7 @@ class W8s:
         self.client = client
 
     def process_w8_document_url(
-        self, file_url: str, file_name: Optional[str] = None, **kwargs: Dict
+        self, file_url: str, file_name: Optional[str] = None, **kwargs
     ) -> Dict:
         """
         Process W2 Document from url and extract all the fields from it.
@@ -31,7 +31,9 @@ class W8s:
         request_arguments.update(kwargs)
         return self.client._request("POST", endpoint_name, request_arguments)
 
-    def process_w8_document(self, file_path: str, file_name: Optional[str] = None, **kwargs):
+    def process_w8_document(
+        self, file_path: str, file_name: Optional[str] = None, **kwargs
+    ) -> Dict:
         """
         Process W8 Document from url and extract all the fields from it.
         https://docs.veryfi.com/api/w-8ben-e/process-a-w-8-ben-e/
@@ -71,7 +73,7 @@ class W8s:
         created_date_gte: Optional[str] = None,
         created_date_lt: Optional[str] = None,
         created_date_lte: Optional[str] = None,
-        **kwargs: Dict,
+        **kwargs,
     ):
         """
         Get list of w8s documents

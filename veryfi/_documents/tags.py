@@ -1,4 +1,3 @@
-from typing import *
 from veryfi.client_base import Client
 
 

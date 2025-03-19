@@ -1,6 +1,6 @@
 import os
 import base64
-from typing import *
+from typing import Dict, Optional
 
 from veryfi.client_base import Client
 
@@ -31,7 +31,9 @@ class W9s:
         request_arguments.update(kwargs)
         return self.client._request("POST", endpoint_name, request_arguments)
 
-    def process_w9_document(self, file_path: str, file_name: Optional[str] = None, **kwargs):
+    def process_w9_document(
+        self, file_path: str, file_name: Optional[str] = None, **kwargs
+    ) -> Dict:
         """
         Process W9 Document from url and extract all the fields from it.
         https://docs.veryfi.com/api/w9s/process-a-w-9/
@@ -72,7 +74,7 @@ class W9s:
         created_date_gte: Optional[str] = None,
         created_date_lt: Optional[str] = None,
         created_date_lte: Optional[str] = None,
-        **kwargs: Dict,
+        **kwargs,
     ):
         """
         Get list of w9s documents

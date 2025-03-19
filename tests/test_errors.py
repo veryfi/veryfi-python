@@ -1,8 +1,8 @@
 import responses
 import requests
 
-from veryfi.errors import *
-from veryfi import *
+from veryfi.errors import BadRequest, VeryfiClientError
+from veryfi import Client
 import pytest
 
 

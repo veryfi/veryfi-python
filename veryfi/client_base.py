@@ -4,8 +4,7 @@ import hashlib
 import hmac
 import json
 import time
-from typing import *
-from urllib.parse import urlencode
+from typing import Dict, Optional
 
 from veryfi.errors import VeryfiClientError
 
@@ -18,13 +17,13 @@ class Client:
 
     def __init__(
         self,
-        client_id,
-        client_secret,
-        username,
-        api_key,
-        base_url=BASE_URL,
-        api_version=API_VERSION,
-        timeout=API_TIMEOUT,
+        client_id: str,
+        client_secret: str,
+        username: str,
+        api_key: str,
+        base_url: str = BASE_URL,
+        api_version: str = API_VERSION,
+        timeout: int = API_TIMEOUT,
     ):
         self.client_id = client_id
         self.client_secret = client_secret
@@ -53,7 +52,13 @@ class Client:
 
         return final_headers
 
-    def _request(self, http_verb, endpoint_name, request_arguments=None, query_params=None):
+    def _request(
+        self,
+        http_verb: str,
+        endpoint_name: str,
+        request_arguments: Optional[Dict] = None,
+        query_params: Optional[Dict] = None,
+    ):
         """
         Submit the HTTP request.
         :param http_verb: HTTP Method
@@ -62,7 +67,7 @@ class Client:
         :return: A JSON of the response data.
         """
         headers = self._get_headers()
-        api_url = "{0}/partner{1}".format(self.versioned_url, endpoint_name)
+        api_url = f"{self.versioned_url}/partner{endpoint_name}"
         request_arguments = request_arguments or {}
 
         if self.client_secret:
@@ -89,7 +94,7 @@ class Client:
 
         return response.json()
 
-    def _generate_signature(self, payload_params, timestamp):
+    def _generate_signature(self, payload_params: Dict, timestamp: int) -> str:
         """
         Generate unique signature for payload params.
         :param payload_params: JSON params to be sent to API request

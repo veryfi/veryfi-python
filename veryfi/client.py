@@ -13,13 +13,13 @@ from veryfi.w9s import W9s
 class Client(ClientBase, ADocs, BankStatements, BussinesCards, Checks, Documents, W2s, W8s, W9s):
     def __init__(
         self,
-        client_id,
-        client_secret,
-        username,
-        api_key,
-        base_url=ClientBase.BASE_URL,
-        api_version=ClientBase.API_VERSION,
-        timeout=ClientBase.API_TIMEOUT,
+        client_id: str,
+        client_secret: str,
+        username: str,
+        api_key: str,
+        base_url: str = ClientBase.BASE_URL,
+        api_version: str = ClientBase.API_VERSION,
+        timeout: int = ClientBase.API_TIMEOUT,
     ):
         super().__init__(
             client_id=client_id,

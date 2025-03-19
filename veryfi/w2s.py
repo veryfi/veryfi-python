@@ -1,6 +1,6 @@
 import os
 import base64
-from typing import *
+from typing import Dict, Optional
 
 from veryfi.client_base import Client
 from veryfi._w2s.w2_split import W2Split
@@ -32,7 +32,9 @@ class W2s(W2Split):
         request_arguments.update(kwargs)
         return self.client._request("POST", endpoint_name, request_arguments)
 
-    def process_w2_document(self, file_path: str, file_name: Optional[str] = None, **kwargs):
+    def process_w2_document(
+        self, file_path: str, file_name: Optional[str] = None, **kwargs
+    ) -> Dict:
         """
         Process W2 Document from url and extract all the fields from it.
         https://docs.veryfi.com/api/w2s/process-a-w-2/

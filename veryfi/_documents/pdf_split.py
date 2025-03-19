@@ -1,6 +1,6 @@
 import os
 import base64
-from typing import *
+from typing import Dict, List, Optional
 
 from veryfi.client_base import Client
 
