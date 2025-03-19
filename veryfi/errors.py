@@ -48,6 +48,10 @@ class InternalError(VeryfiClientError):
     pass
 
 
+class ServiceUnavailable(VeryfiClientError):
+    pass
+
+
 _error_map = {
     400: BadRequest,
     404: ResourceNotFound,
@@ -55,4 +59,5 @@ _error_map = {
     405: UnexpectedHTTPMethod,
     409: AccessLimitReached,
     500: InternalError,
+    503: ServiceUnavailable,
 }
