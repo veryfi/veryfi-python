@@ -1,0 +1,2048 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.4">
+    
+    
+      
+        <title>W2S - veryfi-python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.80dcb947.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="lightgreen">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-veryfiw2s" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="veryfi-python" class="md-header__button md-logo" aria-label="veryfi-python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            veryfi-python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              W2S
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/veryfi/veryfi-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    veryfi-python
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="veryfi-python" class="md-nav__button md-logo" aria-label="veryfi-python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    veryfi-python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/veryfi/veryfi-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    veryfi-python
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTORS/" class="md-nav__link">
+        Contributors
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../NEWS/" class="md-nav__link">
+        News
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Veryfi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Veryfi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Veryfi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a_docs/" class="md-nav__link">
+        A Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bank_statements/" class="md-nav__link">
+        Bank Statements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bussines_cards/" class="md-nav__link">
+        Bussines Cards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checks/" class="md-nav__link">
+        Checks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client_base/" class="md-nav__link">
+        Client Base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documents/" class="md-nav__link">
+        Documents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        Errors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          W2S
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        W2S
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#w2s" class="md-nav__link">
+    W2s
+  </a>
+  
+    <nav class="md-nav" aria-label="W2s">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descendants" class="md-nav__link">
+    Descendants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_w2" class="md-nav__link">
+    delete_w2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_documents_from_w2" class="md-nav__link">
+    get_documents_from_w2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_list_of_w2s" class="md-nav__link">
+    get_list_of_w2s
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_w2" class="md-nav__link">
+    get_w2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_w2s" class="md-nav__link">
+    get_w2s
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_w2_document" class="md-nav__link">
+    process_w2_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_w2_document_url" class="md-nav__link">
+    process_w2_document_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split_and_process_w2" class="md-nav__link">
+    split_and_process_w2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split_and_process_w2_url" class="md-nav__link">
+    split_and_process_w2_url
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w8s/" class="md-nav__link">
+        W8S
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w9s/" class="md-nav__link">
+        W9S
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#w2s" class="md-nav__link">
+    W2s
+  </a>
+  
+    <nav class="md-nav" aria-label="W2s">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descendants" class="md-nav__link">
+    Descendants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_w2" class="md-nav__link">
+    delete_w2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_documents_from_w2" class="md-nav__link">
+    get_documents_from_w2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_list_of_w2s" class="md-nav__link">
+    get_list_of_w2s
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_w2" class="md-nav__link">
+    get_w2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_w2s" class="md-nav__link">
+    get_w2s
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_w2_document" class="md-nav__link">
+    process_w2_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_w2_document_url" class="md-nav__link">
+    process_w2_document_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split_and_process_w2" class="md-nav__link">
+    split_and_process_w2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split_and_process_w2_url" class="md-nav__link">
+    split_and_process_w2_url
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/veryfi/veryfi-python/edit/main/reference/veryfi/w2s.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="module-veryfiw2s">Module veryfi.w2s</h1>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">veryfi.client_base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Client</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">veryfi._w2s.w2_split</span><span class="w"> </span><span class="kn">import</span> <span class="n">W2Split</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">W2s</span><span class="p">(</span><span class="n">W2Split</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Client</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_w2_document_url</span><span class="p">(</span>
+
+        <span class="bp">self</span><span class="p">,</span> <span class="n">file_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Process W2 Document from url and extract all the fields from it.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/w2s/process-a-w-2/</span>
+
+<span class="sd">        :param file_url: Publicly accessible URL to a file, e.g. &quot;https://cdn.example.com/receipt.jpg&quot;.</span>
+
+<span class="sd">        :param file_name: Optional name of file, eg. receipt.jpg</span>
+
+<span class="sd">        :param kwargs: Additional body parameters</span>
+
+<span class="sd">        :return: Data extracted from the w2.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+
+        <span class="n">endpoint_name</span> <span class="o">=</span> <span class="s2">&quot;/w2s/&quot;</span>
+
+        <span class="n">request_arguments</span> <span class="o">=</span> <span class="p">{</span>
+
+            <span class="s2">&quot;file_name&quot;</span><span class="p">:</span> <span class="n">file_name</span><span class="p">,</span>
+
+            <span class="s2">&quot;file_url&quot;</span><span class="p">:</span> <span class="n">file_url</span><span class="p">,</span>
+
+        <span class="p">}</span>
+
+        <span class="n">request_arguments</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="p">,</span> <span class="n">request_arguments</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_w2_document</span><span class="p">(</span>
+
+        <span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Process W2 Document from url and extract all the fields from it.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/w2s/process-a-w-2/</span>
+
+<span class="sd">        :param file_path: Path on disk to a file to submit for data extraction</span>
+
+<span class="sd">        :param file_name: Optional name of file, eg. receipt.jpg</span>
+
+<span class="sd">        :param kwargs: Additional body parameters</span>
+
+<span class="sd">        :return: Data extracted from the w2.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">endpoint_name</span> <span class="o">=</span> <span class="s2">&quot;/w2s/&quot;</span>
+
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+
+            <span class="n">base64_encoded_string</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+        <span class="n">request_arguments</span> <span class="o">=</span> <span class="p">{</span>
+
+            <span class="s2">&quot;file_name&quot;</span><span class="p">:</span> <span class="n">file_name</span><span class="p">,</span>
+
+            <span class="s2">&quot;file_data&quot;</span><span class="p">:</span> <span class="n">base64_encoded_string</span><span class="p">,</span>
+
+        <span class="p">}</span>
+
+        <span class="n">request_arguments</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="p">,</span> <span class="n">request_arguments</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_w2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get W-2 endpoint allows you to retrieve a previously processed W-2</span>
+
+<span class="sd">        https://docs.veryfi.com/api/w2s/get-a-w-2/</span>
+
+<span class="sd">        :param document_id: The unique identifier of the document.</span>
+
+<span class="sd">        :param kwargs: Additional query parameters</span>
+
+<span class="sd">        :return: Document Data</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">endpoint_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/w2s/</span><span class="si">{</span><span class="n">document_id</span><span class="si">}</span><span class="s2">/&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="p">,</span> <span class="p">{},</span> <span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_w2s</span><span class="p">(</span>
+
+        <span class="bp">self</span><span class="p">,</span>
+
+        <span class="n">created_date_gt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">created_date_gte</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">created_date_lt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">created_date_lte</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
+
+    <span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get list of w2s documents.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/w2s/get-w-2-s/</span>
+
+<span class="sd">        :param created_date__gt:    Search for w2s documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__gt and created_date__gte in a single request.</span>
+
+<span class="sd">        :param created_date__gte: Search for w2s documents with a created date greater than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__gt and created_date__gte in a single request.</span>
+
+<span class="sd">        :param created_date__lt:    Search for w2s documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__lt and created_date__lte in a single request.</span>
+
+<span class="sd">        :param created_date__lte: Search for w2s documents with a created date less than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__lt and created_date__lte in a single request.</span>
+
+<span class="sd">        :param kwargs: Additional query parameters</span>
+
+<span class="sd">        :return: List of previously processed documents</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="n">created_date_gt</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;created_date__gt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">created_date_gt</span>
+
+        <span class="k">if</span> <span class="n">created_date_gte</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;created_date__gte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">created_date_gte</span>
+
+        <span class="k">if</span> <span class="n">created_date_lt</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;created_date__lt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">created_date_lt</span>
+
+        <span class="k">if</span> <span class="n">created_date_lte</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;created_date__lte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">created_date_lte</span>
+
+        <span class="n">query_params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">endpoint_name</span> <span class="o">=</span> <span class="s2">&quot;/w2s/&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="p">,</span> <span class="p">{},</span> <span class="n">query_params</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_w2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Delete a w2 document.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/w2s/delete-a-w-2/</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">endpoint_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/w2s/</span><span class="si">{</span><span class="n">document_id</span><span class="si">}</span><span class="s2">/&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;DELETE&quot;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="p">,</span> <span class="p">{})</span>
+</code></pre></div>
+
+</details>
+<h2 id="classes">Classes</h2>
+<h3 id="w2s">W2s</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">W2s</span><span class="p">(</span>
+    <span class="n">client</span><span class="p">:</span> <span class="n">veryfi</span><span class="o">.</span><span class="n">client_base</span><span class="o">.</span><span class="n">Client</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="n">W2s</span><span class="p">(</span><span class="n">W2Split</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">client</span><span class="p">:</span><span class="w"> </span><span class="n">Client</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_w2_document_url</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">file_url</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span><span class="p">,</span><span class="w"> </span><span class="nf">file_name</span><span class="err">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Process W2 Document from url and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/w2s/process-a-w-2/</span>
+
+<span class="ss">        :param file_url: Publicly accessible URL to a file, e.g. &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;.</span>
+
+<span class="ss">        :param file_name: Optional name of file, eg. receipt.jpg</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the w2.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nf">file_name</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">None</span><span class="err">:</span>
+
+<span class="w">            </span><span class="nf">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/w2s/&quot;</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;file_name&quot;</span><span class="err">:</span><span class="w"> </span><span class="nf">file_name</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_url&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_url</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_w2_document</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">file_path</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span><span class="p">,</span><span class="w"> </span><span class="nf">file_name</span><span class="err">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Process W2 Document from url and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/w2s/process-a-w-2/</span>
+
+<span class="ss">        :param file_path: Path on disk to a file to submit for data extraction</span>
+
+<span class="ss">        :param file_name: Optional name of file, eg. receipt.jpg</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the w2.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/w2s/&quot;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nf">file_name</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">None</span><span class="err">:</span>
+
+<span class="w">            </span><span class="nf">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;rb&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nl">image_file</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">base64_encoded_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="p">.</span><span class="k">read</span><span class="p">()).</span><span class="n">decode</span><span class="p">(</span><span class="ss">&quot;utf-8&quot;</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;file_name&quot;</span><span class="err">:</span><span class="w"> </span><span class="nf">file_name</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_data&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">base64_encoded_string</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_w2</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">document_id</span><span class="p">:</span><span class="w"> </span><span class="nc">int</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Get W-2 endpoint allows you to retrieve a previously processed W-2</span>
+
+<span class="ss">        https://docs.veryfi.com/api/w2s/get-a-w-2/</span>
+
+<span class="ss">        :param document_id: The unique identifier of the document.</span>
+
+<span class="ss">        :param kwargs: Additional query parameters</span>
+
+<span class="ss">        :return: Document Data</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="ss">&quot;/w2s/{document_id}/&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w"> </span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_w2s</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_date_gt</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_date_gte</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_date_lt</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_date_lte</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="nl">kwargs</span><span class="p">:</span><span class="w"> </span><span class="n">Dict</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Get list of w2s documents.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/w2s/get-w-2-s/</span>
+
+<span class="ss">        :param created_date__gt:    Search for w2s documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__gt and created_date__gte in a single request.</span>
+
+<span class="ss">        :param created_date__gte: Search for w2s documents with a created date greater than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__gt and created_date__gte in a single request.</span>
+
+<span class="ss">        :param created_date__lt:    Search for w2s documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__lt and created_date__lte in a single request.</span>
+
+<span class="ss">        :param created_date__lte: Search for w2s documents with a created date less than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__lt and created_date__lte in a single request.</span>
+
+<span class="ss">        :param kwargs: Additional query parameters</span>
+
+<span class="ss">        :return: List of previously processed documents</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">query_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_date_gt</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created_date__gt&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_date_gt</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_date_gte</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created_date__gte&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_date_gte</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_date_lt</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created_date__lt&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_date_lt</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_date_lte</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created_date__lte&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_date_lte</span>
+
+<span class="w">        </span><span class="n">query_params</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/w2s/&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w"> </span><span class="n">query_params</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">delete_w2</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">document_id</span><span class="p">:</span><span class="w"> </span><span class="nc">int</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Delete a w2 document.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/w2s/delete-a-w-2/</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="ss">&quot;/w2s/{document_id}/&quot;</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;DELETE&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="err">{}</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro">Ancestors (in MRO)</h4>
+<ul>
+<li>veryfi._w2s.w2_split.W2Split</li>
+</ul>
+<h4 id="descendants">Descendants</h4>
+<ul>
+<li>veryfi.client.Client</li>
+</ul>
+<h4 id="methods">Methods</h4>
+<h4 id="delete_w2">delete_w2</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">delete_w2</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Delete a w2 document.</p>
+<p>https://docs.veryfi.com/api/w2s/delete-a-w-2/</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def delete_w2(self, document_id: int):
+
+        &quot;&quot;&quot;
+
+        Delete a w2 document.
+
+        https://docs.veryfi.com/api/w2s/delete-a-w-2/
+
+        &quot;&quot;&quot;
+
+        endpoint_name = f&quot;/w2s/{document_id}/&quot;
+
+        self.client._request(&quot;DELETE&quot;, endpoint_name, {})
+</code></pre></div>
+
+</details>
+<h4 id="get_documents_from_w2">get_documents_from_w2</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_documents_from_w2</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Veryfi's Get Documents from W-2 endpoint allows you to retrieve a collection of previously processed W-2s.</p>
+<p>https://docs.veryfi.com/api/get-documents-from-w-2/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>The unique identifier of the document.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Document Response</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_documents_from_w2</span><span class="p">(</span><span class="kr">self</span><span class="p">,</span><span class="w"> </span><span class="n">document_id</span><span class="o">:</span><span class="w"> </span><span class="n">int</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Dict</span><span class="o">:</span>
+
+<span class="w">        </span><span class="s">&quot;&quot;&quot;</span>
+
+<span class="s">        Veryfi&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">Get</span><span class="w"> </span><span class="n">Documents</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">W</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="kd">endp</span><span class="n">oint</span><span class="w"> </span><span class="n">allows</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">retrieve</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="kr">of</span><span class="w"> </span><span class="n">previously</span><span class="w"> </span><span class="n">processed</span><span class="w"> </span><span class="n">W</span><span class="o">-</span><span class="mi">2</span><span class="n">s</span><span class="p">.</span>
+
+<span class="w">        </span><span class="n">https</span><span class="o">://</span><span class="n">docs</span><span class="p">.</span><span class="n">veryfi</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">get</span><span class="o">-</span><span class="n">documents</span><span class="o">-</span><span class="n">from</span><span class="o">-</span><span class="n">w</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span>
+
+<span class="w">        </span><span class="o">:</span><span class="n">param</span><span class="w"> </span><span class="n">document_id</span><span class="o">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">unique</span><span class="w"> </span><span class="n">identifier</span><span class="w"> </span><span class="kr">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">document</span><span class="p">.</span>
+
+<span class="w">        </span><span class="o">:</span><span class="kr">return</span><span class="o">:</span><span class="w"> </span><span class="n">Document</span><span class="w"> </span><span class="n">Response</span>
+
+<span class="w">        </span><span class="s">&quot;&quot;&quot;</span>
+
+<span class="s">        endpoint_name = f&quot;</span><span class="o">/</span><span class="n">w2s</span><span class="o">-</span><span class="nf">set</span><span class="o">/</span><span class="p">{</span><span class="n">document_id</span><span class="p">}</span><span class="o">/</span><span class="s">&quot;</span>
+
+<span class="s">        return self.client._request(&quot;</span><span class="n">GET</span><span class="s">&quot;, endpoint_name, {})</span>
+</code></pre></div>
+
+</details>
+<h4 id="get_list_of_w2s">get_list_of_w2s</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_list_of_w2s</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Veryfi's Get List of W-2s endpoint allows you to retrieve a collection of previously processed W-2s.</p>
+<p>https://docs.veryfi.com/api/get-list-of-documents-from-w-2/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Query parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>List of W-2s</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def get_list_of_w2s(self, **kwargs) -&gt; Dict:
+
+        &quot;&quot;&quot;
+
+        Veryfi&#39;s Get List of W-2s endpoint allows you to retrieve a collection of previously processed W-2s.
+
+        https://docs.veryfi.com/api/get-list-of-documents-from-w-2/
+
+        :param kwargs: Query parameters
+
+        :return: List of W-2s
+
+        &quot;&quot;&quot;
+
+        endpoint_name = &quot;/w2s-set/&quot;
+
+        return self.client._request(&quot;GET&quot;, endpoint_name, {}, kwargs)
+</code></pre></div>
+
+</details>
+<h4 id="get_w2">get_w2</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_w2</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Get W-2 endpoint allows you to retrieve a previously processed W-2</p>
+<p>https://docs.veryfi.com/api/w2s/get-a-w-2/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>The unique identifier of the document.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional query parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Document Data</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def get_w2(self, document_id: int, **kwargs) -&gt; Dict:
+
+        &quot;&quot;&quot;
+
+        Get W-2 endpoint allows you to retrieve a previously processed W-2
+
+        https://docs.veryfi.com/api/w2s/get-a-w-2/
+
+        :param document_id: The unique identifier of the document.
+
+        :param kwargs: Additional query parameters
+
+        :return: Document Data
+
+        &quot;&quot;&quot;
+
+        endpoint_name = f&quot;/w2s/{document_id}/&quot;
+
+        return self.client._request(&quot;GET&quot;, endpoint_name, {}, kwargs)
+</code></pre></div>
+
+</details>
+<h4 id="get_w2s">get_w2s</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_w2s</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">created_date_gt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">created_date_gte</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">created_date_lt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">created_date_lte</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Get list of w2s documents.</p>
+<p>https://docs.veryfi.com/api/w2s/get-w-2-s/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>created_date__gt</td>
+<td>None</td>
+<td>Search for w2s documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don't send both created_date__gt and created_date__gte in a single request.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>created_date__gte</td>
+<td>None</td>
+<td>Search for w2s documents with a created date greater than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don't send both created_date__gt and created_date__gte in a single request.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>created_date__lt</td>
+<td>None</td>
+<td>Search for w2s documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don't send both created_date__lt and created_date__lte in a single request.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>created_date__lte</td>
+<td>None</td>
+<td>Search for w2s documents with a created date less than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don't send both created_date__lt and created_date__lte in a single request.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional query parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>List of previously processed documents</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_w2s</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_date_gt</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_date_gte</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_date_lt</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_date_lte</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="nl">kwargs</span><span class="p">:</span><span class="w"> </span><span class="n">Dict</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Get list of w2s documents.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/w2s/get-w-2-s/</span>
+
+<span class="ss">        :param created_date__gt:    Search for w2s documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__gt and created_date__gte in a single request.</span>
+
+<span class="ss">        :param created_date__gte: Search for w2s documents with a created date greater than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__gt and created_date__gte in a single request.</span>
+
+<span class="ss">        :param created_date__lt:    Search for w2s documents with a created date greater than this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__lt and created_date__lte in a single request.</span>
+
+<span class="ss">        :param created_date__lte: Search for w2s documents with a created date less than or equal to this one. Format YYYY-MM-DD+HH:MM:SS. Don&#39;t send both created_date__lt and created_date__lte in a single request.</span>
+
+<span class="ss">        :param kwargs: Additional query parameters</span>
+
+<span class="ss">        :return: List of previously processed documents</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">query_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_date_gt</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created_date__gt&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_date_gt</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_date_gte</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created_date__gte&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_date_gte</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_date_lt</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created_date__lt&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_date_lt</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_date_lte</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created_date__lte&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_date_lte</span>
+
+<span class="w">        </span><span class="n">query_params</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/w2s/&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w"> </span><span class="n">query_params</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="process_w2_document">process_w2_document</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">process_w2_document</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Process W2 Document from url and extract all the fields from it.</p>
+<p>https://docs.veryfi.com/api/w2s/process-a-w-2/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_path</td>
+<td>None</td>
+<td>Path on disk to a file to submit for data extraction</td>
+<td>None</td>
+</tr>
+<tr>
+<td>file_name</td>
+<td>None</td>
+<td>Optional name of file, eg. receipt.jpg</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional body parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Data extracted from the w2.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_w2_document</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">file_path</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span><span class="p">,</span><span class="w"> </span><span class="nf">file_name</span><span class="err">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Process W2 Document from url and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/w2s/process-a-w-2/</span>
+
+<span class="ss">        :param file_path: Path on disk to a file to submit for data extraction</span>
+
+<span class="ss">        :param file_name: Optional name of file, eg. receipt.jpg</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the w2.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/w2s/&quot;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nf">file_name</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">None</span><span class="err">:</span>
+
+<span class="w">            </span><span class="nf">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;rb&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nl">image_file</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">base64_encoded_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="p">.</span><span class="k">read</span><span class="p">()).</span><span class="n">decode</span><span class="p">(</span><span class="ss">&quot;utf-8&quot;</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;file_name&quot;</span><span class="err">:</span><span class="w"> </span><span class="nf">file_name</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_data&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">base64_encoded_string</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="process_w2_document_url">process_w2_document_url</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">process_w2_document_url</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">file_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Process W2 Document from url and extract all the fields from it.</p>
+<p>https://docs.veryfi.com/api/w2s/process-a-w-2/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_url</td>
+<td>None</td>
+<td>Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg".</td>
+<td>None</td>
+</tr>
+<tr>
+<td>file_name</td>
+<td>None</td>
+<td>Optional name of file, eg. receipt.jpg</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional body parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Data extracted from the w2.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_w2_document_url</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">file_url</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span><span class="p">,</span><span class="w"> </span><span class="nf">file_name</span><span class="err">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Process W2 Document from url and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/w2s/process-a-w-2/</span>
+
+<span class="ss">        :param file_url: Publicly accessible URL to a file, e.g. &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;.</span>
+
+<span class="ss">        :param file_name: Optional name of file, eg. receipt.jpg</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the w2.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nf">file_name</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">None</span><span class="err">:</span>
+
+<span class="w">            </span><span class="nf">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_url</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/w2s/&quot;</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;file_name&quot;</span><span class="err">:</span><span class="w"> </span><span class="nf">file_name</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_url&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_url</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="split_and_process_w2">split_and_process_w2</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">split_and_process_w2</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Process a document and extract all the fields from it</p>
+<p>https://docs.veryfi.com/api/split-and-process-a-w-2/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_path</td>
+<td>None</td>
+<td>Path on disk to a file to submit for data extraction</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional body parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Data extracted from the document</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def split_and_process_w2(self, file_path: str, **kwargs) -&gt; Dict:
+
+        &quot;&quot;&quot;
+
+        Process a document and extract all the fields from it
+
+        https://docs.veryfi.com/api/split-and-process-a-w-2/
+
+        :param file_path: Path on disk to a file to submit for data extraction
+
+        :param kwargs: Additional body parameters
+
+        :return: Data extracted from the document
+
+        &quot;&quot;&quot;
+
+        endpoint_name = &quot;/w2s-set/&quot;
+
+        file_name = os.path.basename(file_path)
+
+        with open(file_path, &quot;rb&quot;) as image_file:
+
+            base64_encoded_string = base64.b64encode(image_file.read()).decode(&quot;utf-8&quot;)
+
+        request_arguments = {
+
+            &quot;file_name&quot;: file_name,
+
+            &quot;file_data&quot;: base64_encoded_string,
+
+        }
+
+        request_arguments.update(kwargs)
+
+        return self.client._request(&quot;POST&quot;, endpoint_name, request_arguments)
+</code></pre></div>
+
+</details>
+<h4 id="split_and_process_w2_url">split_and_process_w2_url</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">split_and_process_w2_url</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">file_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">file_urls</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">max_pages_to_process</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Process Document from url and extract all the fields from it.</p>
+<p>https://docs.veryfi.com/api/split-and-process-a-w-2/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_url</td>
+<td>None</td>
+<td>Required if file_urls isn't specified. Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg".</td>
+<td>None</td>
+</tr>
+<tr>
+<td>file_urls</td>
+<td>None</td>
+<td>Required if file_url isn't specifies. List of publicly accessible URLs to multiple files, e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]</td>
+<td>None</td>
+</tr>
+<tr>
+<td>max_pages_to_process</td>
+<td>None</td>
+<td>When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional body parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Data extracted from the document.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">split_and_process_w2_url</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_url</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_urls</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List[str</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">max_pages_to_process</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">int</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Process Document from url and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/split-and-process-a-w-2/</span>
+
+<span class="ss">        :param file_url: Required if file_urls isn&#39;t specified. Publicly accessible URL to a file, e.g. &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;.</span>
+
+<span class="ss">        :param file_urls: Required if file_url isn&#39;t specifies. List of publicly accessible URLs to multiple files, e.g. [&quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt1</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;, &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt2</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;]</span>
+
+<span class="ss">        :param max_pages_to_process: When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the document.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/w2s-set/&quot;</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;file_url&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_url</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_urls&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_urls</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;max_pages_to_process&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">max_pages_to_process</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+    
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Index
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../w8s/" class="md-footer__link md-footer__link--next" aria-label="Next: W8S" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                W8S
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+            
+            Powered by
+            <a href="http://timothycrosley.github.io/portray">portray.</a>
+            You too can
+            <a href="http://timothycrosley.github.io/portray">
+              portray</a>
+            your Python project well using automatic documentation.
+          </div>
+        
+      </div>
+    </div>
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

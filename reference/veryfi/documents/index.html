@@ -1,0 +1,3692 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.4">
+    
+    
+      
+        <title>Documents - veryfi-python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.80dcb947.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="lightgreen">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-veryfidocuments" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="veryfi-python" class="md-header__button md-logo" aria-label="veryfi-python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            veryfi-python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documents
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/veryfi/veryfi-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    veryfi-python
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="veryfi-python" class="md-nav__button md-logo" aria-label="veryfi-python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    veryfi-python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/veryfi/veryfi-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    veryfi-python
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTORS/" class="md-nav__link">
+        Contributors
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../NEWS/" class="md-nav__link">
+        News
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Veryfi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Veryfi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Veryfi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a_docs/" class="md-nav__link">
+        A Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bank_statements/" class="md-nav__link">
+        Bank Statements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bussines_cards/" class="md-nav__link">
+        Bussines Cards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checks/" class="md-nav__link">
+        Checks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client_base/" class="md-nav__link">
+        Client Base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Documents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Documents
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documents" class="md-nav__link">
+    Documents
+  </a>
+  
+    <nav class="md-nav" aria-label="Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descendants" class="md-nav__link">
+    Descendants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_line_item" class="md-nav__link">
+    add_line_item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_tag" class="md-nav__link">
+    add_tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_tags" class="md-nav__link">
+    add_tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_document" class="md-nav__link">
+    delete_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_line_item" class="md-nav__link">
+    delete_line_item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_line_items" class="md-nav__link">
+    delete_line_items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_tag" class="md-nav__link">
+    delete_tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_tags" class="md-nav__link">
+    delete_tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_document" class="md-nav__link">
+    get_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_documents" class="md-nav__link">
+    get_documents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_documents_from_pdf" class="md-nav__link">
+    get_documents_from_pdf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_line_item" class="md-nav__link">
+    get_line_item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_line_items" class="md-nav__link">
+    get_line_items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pdf" class="md-nav__link">
+    get_pdf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_tags" class="md-nav__link">
+    get_tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_document" class="md-nav__link">
+    process_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_document_url" class="md-nav__link">
+    process_document_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_documents_bulk" class="md-nav__link">
+    process_documents_bulk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace_tags" class="md-nav__link">
+    replace_tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split_and_process_pdf" class="md-nav__link">
+    split_and_process_pdf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split_and_process_pdf_url" class="md-nav__link">
+    split_and_process_pdf_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_document" class="md-nav__link">
+    update_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_line_item" class="md-nav__link">
+    update_line_item
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        Errors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w2s/" class="md-nav__link">
+        W2S
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w8s/" class="md-nav__link">
+        W8S
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w9s/" class="md-nav__link">
+        W9S
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documents" class="md-nav__link">
+    Documents
+  </a>
+  
+    <nav class="md-nav" aria-label="Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descendants" class="md-nav__link">
+    Descendants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_line_item" class="md-nav__link">
+    add_line_item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_tag" class="md-nav__link">
+    add_tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_tags" class="md-nav__link">
+    add_tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_document" class="md-nav__link">
+    delete_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_line_item" class="md-nav__link">
+    delete_line_item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_line_items" class="md-nav__link">
+    delete_line_items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_tag" class="md-nav__link">
+    delete_tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_tags" class="md-nav__link">
+    delete_tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_document" class="md-nav__link">
+    get_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_documents" class="md-nav__link">
+    get_documents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_documents_from_pdf" class="md-nav__link">
+    get_documents_from_pdf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_line_item" class="md-nav__link">
+    get_line_item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_line_items" class="md-nav__link">
+    get_line_items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_pdf" class="md-nav__link">
+    get_pdf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_tags" class="md-nav__link">
+    get_tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_document" class="md-nav__link">
+    process_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_document_url" class="md-nav__link">
+    process_document_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process_documents_bulk" class="md-nav__link">
+    process_documents_bulk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace_tags" class="md-nav__link">
+    replace_tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split_and_process_pdf" class="md-nav__link">
+    split_and_process_pdf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split_and_process_pdf_url" class="md-nav__link">
+    split_and_process_pdf_url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_document" class="md-nav__link">
+    update_document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_line_item" class="md-nav__link">
+    update_line_item
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/veryfi/veryfi-python/edit/main/reference/veryfi/documents.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="module-veryfidocuments">Module veryfi.documents</h1>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">veryfi._documents.line_items</span><span class="w"> </span><span class="kn">import</span> <span class="n">LineItems</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">veryfi._documents.tags</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tags</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">veryfi._documents.pdf_split</span><span class="w"> </span><span class="kn">import</span> <span class="n">PDFSplit</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">veryfi.client_base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Client</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Documents</span><span class="p">(</span><span class="n">Tags</span><span class="p">,</span> <span class="n">LineItems</span><span class="p">,</span> <span class="n">PDFSplit</span><span class="p">):</span>
+
+    <span class="n">DEFAULT_CATEGORIES</span> <span class="o">=</span> <span class="p">[</span>
+
+        <span class="s2">&quot;Advertising &amp; Marketing&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Automotive&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Bank Charges &amp; Fees&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Legal &amp; Professional Services&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Insurance&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Meals &amp; Entertainment&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Office Supplies &amp; Software&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Taxes &amp; Licenses&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Travel&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Rent &amp; Lease&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Repairs &amp; Maintenance&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Payroll&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Utilities&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Job Supplies&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;Grocery&quot;</span><span class="p">,</span>
+
+    <span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Client</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
+
+        <span class="n">LineItems</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">)</span>
+
+        <span class="n">Tags</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">)</span>
+
+        <span class="n">PDFSplit</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_documents</span><span class="p">(</span>
+
+        <span class="bp">self</span><span class="p">,</span>
+
+        <span class="n">q</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">external_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">tag</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">created_gt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">created_gte</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">created_lt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">created_lte</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Get list of documents.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/receipts-invoices/search-documents/</span>
+
+<span class="sd">        :param q: Search query</span>
+
+<span class="sd">        :param external_id: Search by external ID</span>
+
+<span class="sd">        :param tag: Search by tag</span>
+
+<span class="sd">        :param created_gt: Search by created date greater than</span>
+
+<span class="sd">        :param created_gte: Search by created date greater than or equal to</span>
+
+<span class="sd">        :param created_lt: Search by created date less than</span>
+
+<span class="sd">        :param created_lte: Search by created date less than or equal to</span>
+
+<span class="sd">        :param kwargs: Additional query parameters</span>
+
+<span class="sd">        :return: List of previously processed documents</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">query_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="n">q</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">q</span>
+
+        <span class="k">if</span> <span class="n">external_id</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;external_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">external_id</span>
+
+        <span class="k">if</span> <span class="n">tag</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;tag&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tag</span>
+
+        <span class="k">if</span> <span class="n">created_gt</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;created__gt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">created_gt</span>
+
+        <span class="k">if</span> <span class="n">created_gte</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;created__gte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">created_gte</span>
+
+        <span class="k">if</span> <span class="n">created_lt</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;created__lt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">created_lt</span>
+
+        <span class="k">if</span> <span class="n">created_lte</span><span class="p">:</span>
+
+            <span class="n">query_params</span><span class="p">[</span><span class="s2">&quot;created__lte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">created_lte</span>
+
+        <span class="n">query_params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">endpoint_name</span> <span class="o">=</span> <span class="s2">&quot;/documents/&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="p">,</span> <span class="p">{},</span> <span class="n">query_params</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_document</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Retrieve document by ID</span>
+
+<span class="sd">        https://docs.veryfi.com/api/receipts-invoices/get-a-document/</span>
+
+<span class="sd">        :param document_id: ID of the document you&#39;d like to retrieve</span>
+
+<span class="sd">        :param kwargs: Additional query parameters</span>
+
+<span class="sd">        :return: Data extracted from the Document</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">endpoint_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/documents/</span><span class="si">{</span><span class="n">document_id</span><span class="si">}</span><span class="s2">/&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="p">,</span> <span class="p">{},</span> <span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_document</span><span class="p">(</span>
+
+        <span class="bp">self</span><span class="p">,</span>
+
+        <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+
+        <span class="n">categories</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">delete_after_processing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Process a document and extract all the fields from it.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/receipts-invoices/process-a-document/</span>
+
+<span class="sd">        :param file_path: Path on disk to a file to submit for data extraction</span>
+
+<span class="sd">        :param categories: List of categories Veryfi can use to categorize the document</span>
+
+<span class="sd">        :param delete_after_processing: Delete this document from Veryfi after data has been extracted</span>
+
+<span class="sd">        :param kwargs: Additional body parameters</span>
+
+<span class="sd">        :return: Data extracted from the document</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">categories</span><span class="p">:</span>
+
+            <span class="n">categories</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_CATEGORIES</span>
+
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+
+            <span class="n">base64_encoded_string</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+        <span class="n">request_arguments</span> <span class="o">=</span> <span class="p">{</span>
+
+            <span class="s2">&quot;file_name&quot;</span><span class="p">:</span> <span class="n">file_name</span><span class="p">,</span>
+
+            <span class="s2">&quot;file_data&quot;</span><span class="p">:</span> <span class="n">base64_encoded_string</span><span class="p">,</span>
+
+            <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="n">categories</span><span class="p">,</span>
+
+            <span class="s2">&quot;auto_delete&quot;</span><span class="p">:</span> <span class="n">delete_after_processing</span><span class="p">,</span>
+
+        <span class="p">}</span>
+
+        <span class="n">request_arguments</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="s2">&quot;/documents/&quot;</span><span class="p">,</span> <span class="n">request_arguments</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_document_url</span><span class="p">(</span>
+
+        <span class="bp">self</span><span class="p">,</span>
+
+        <span class="n">file_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">categories</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">delete_after_processing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+
+        <span class="n">boost_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+
+        <span class="n">external_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">max_pages_to_process</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="n">file_urls</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process Document from url and extract all the fields from it.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/receipts-invoices/process-a-document/</span>
+
+<span class="sd">        :param file_url: Required if file_urls isn&#39;t specified. Publicly accessible URL to a file, e.g. &quot;https://cdn.example.com/receipt.jpg&quot;.</span>
+
+<span class="sd">        :param file_urls: Required if file_url isn&#39;t specifies. List of publicly accessible URLs to multiple files, e.g. [&quot;https://cdn.example.com/receipt1.jpg&quot;, &quot;https://cdn.example.com/receipt2.jpg&quot;]</span>
+
+<span class="sd">        :param categories: List of categories to use when categorizing the document</span>
+
+<span class="sd">        :param delete_after_processing: Delete this document from Veryfi after data has been extracted</span>
+
+<span class="sd">        :param max_pages_to_process: When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.</span>
+
+<span class="sd">        :param boost_mode: Flag that tells Veryfi whether boost mode should be enabled. When set to 1, Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0</span>
+
+<span class="sd">        :param external_id: Optional custom document identifier. Use this if you would like to assign your own ID to documents</span>
+
+<span class="sd">        :param kwargs: Additional body parameters</span>
+
+<span class="sd">        :return: Data extracted from the document.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">endpoint_name</span> <span class="o">=</span> <span class="s2">&quot;/documents/&quot;</span>
+
+        <span class="n">request_arguments</span> <span class="o">=</span> <span class="p">{</span>
+
+            <span class="s2">&quot;auto_delete&quot;</span><span class="p">:</span> <span class="n">delete_after_processing</span><span class="p">,</span>
+
+            <span class="s2">&quot;boost_mode&quot;</span><span class="p">:</span> <span class="n">boost_mode</span><span class="p">,</span>
+
+            <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="n">categories</span><span class="p">,</span>
+
+            <span class="s2">&quot;external_id&quot;</span><span class="p">:</span> <span class="n">external_id</span><span class="p">,</span>
+
+            <span class="s2">&quot;file_url&quot;</span><span class="p">:</span> <span class="n">file_url</span><span class="p">,</span>
+
+            <span class="s2">&quot;file_urls&quot;</span><span class="p">:</span> <span class="n">file_urls</span><span class="p">,</span>
+
+            <span class="s2">&quot;max_pages_to_process&quot;</span><span class="p">:</span> <span class="n">max_pages_to_process</span><span class="p">,</span>
+
+        <span class="p">}</span>
+
+        <span class="n">request_arguments</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="p">,</span> <span class="n">request_arguments</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_documents_bulk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_urls</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Process multiple documents from urls and extract all the fields from it.</span>
+
+<span class="sd">        If you want to use this endpoint, please contact support@veryfi.com first. Veryfi&#39;s Bulk upload allows you to process multiple Documents.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/receipts-invoices/bulk-process-multiple-documents/</span>
+
+<span class="sd">        :param file_urls: List of publicly accessible URLs to multiple files, e.g. [&quot;https://cdn.example.com/receipt1.jpg&quot;, &quot;https://cdn.example.com/receipt2.jpg&quot;]</span>
+
+<span class="sd">        :return: List of document IDs being processed</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">endpoint_name</span> <span class="o">=</span> <span class="s2">&quot;/documents/bulk/&quot;</span>
+
+        <span class="n">request_arguments</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;file_urls&quot;</span><span class="p">:</span> <span class="n">file_urls</span><span class="p">}</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="p">,</span> <span class="n">request_arguments</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete_document</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Delete Document from Veryfi</span>
+
+<span class="sd">        https://docs.veryfi.com/api/receipts-invoices/delete-a-document/</span>
+
+<span class="sd">        :param document_id: ID of the document you&#39;d like to delete</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;DELETE&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;/documents/</span><span class="si">{</span><span class="n">document_id</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">document_id</span><span class="p">})</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_document</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Update data for a previously processed document, including almost any field like `vendor`, `date`, `notes` and etc.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/receipts-invoices/update-a-document/</span>
+
+<span class="sd">        ```veryfi_client.update_document(id, date=&quot;2021-01-01&quot;, notes=&quot;look what I did&quot;)```</span>
+
+<span class="sd">        :param document_id: ID of the document you&#39;d like to update</span>
+
+<span class="sd">        :param kwargs: fields to update</span>
+
+<span class="sd">        :return: A document json with updated fields, if fields are writable. Otherwise a document with unchanged fields.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;/documents/</span><span class="si">{</span><span class="n">document_id</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h2 id="classes">Classes</h2>
+<h3 id="documents">Documents</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Documents</span><span class="p">(</span>
+    <span class="n">client</span><span class="p">:</span> <span class="n">veryfi</span><span class="o">.</span><span class="n">client_base</span><span class="o">.</span><span class="n">Client</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="n">Documents</span><span class="p">(</span><span class="n">Tags</span><span class="p">,</span><span class="w"> </span><span class="n">LineItems</span><span class="p">,</span><span class="w"> </span><span class="n">PDFSplit</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">DEFAULT_CATEGORIES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+
+<span class="n">        &quot;Advertising &amp; Marketing&quot;,</span>
+
+<span class="n">        &quot;Automotive&quot;,</span>
+
+<span class="n">        &quot;Bank Charges &amp; Fees&quot;,</span>
+
+<span class="n">        &quot;Legal &amp; Professional Services&quot;,</span>
+
+<span class="n">        &quot;Insurance&quot;,</span>
+
+<span class="n">        &quot;Meals &amp; Entertainment&quot;,</span>
+
+<span class="n">        &quot;Office Supplies &amp; Software&quot;,</span>
+
+<span class="n">        &quot;Taxes &amp; Licenses&quot;,</span>
+
+<span class="n">        &quot;Travel&quot;,</span>
+
+<span class="n">        &quot;Rent &amp; Lease&quot;,</span>
+
+<span class="n">        &quot;Repairs &amp; Maintenance&quot;,</span>
+
+<span class="n">        &quot;Payroll&quot;,</span>
+
+<span class="n">        &quot;Utilities&quot;,</span>
+
+<span class="n">        &quot;Job Supplies&quot;,</span>
+
+<span class="n">        &quot;Grocery&quot;,</span>
+
+<span class="n">    </span><span class="o">]</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">client</span><span class="p">:</span><span class="w"> </span><span class="n">Client</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span>
+
+<span class="w">        </span><span class="n">LineItems</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">Tags</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">PDFSplit</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_documents</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">q</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">external_id</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">tag</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_gt</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_gte</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_lt</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_lte</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Get list of documents.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/search-documents/</span>
+
+<span class="ss">        :param q: Search query</span>
+
+<span class="ss">        :param external_id: Search by external ID</span>
+
+<span class="ss">        :param tag: Search by tag</span>
+
+<span class="ss">        :param created_gt: Search by created date greater than</span>
+
+<span class="ss">        :param created_gte: Search by created date greater than or equal to</span>
+
+<span class="ss">        :param created_lt: Search by created date less than</span>
+
+<span class="ss">        :param created_lte: Search by created date less than or equal to</span>
+
+<span class="ss">        :param kwargs: Additional query parameters</span>
+
+<span class="ss">        :return: List of previously processed documents</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">query_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">q</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;q&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">external_id</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;external_id&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">external_id</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">tag</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;tag&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tag</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_gt</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created__gt&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_gt</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_gte</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created__gte&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_gte</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_lt</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created__lt&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_lt</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_lte</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created__lte&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_lte</span>
+
+<span class="w">        </span><span class="n">query_params</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/documents/&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w"> </span><span class="n">query_params</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_document</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">document_id</span><span class="p">:</span><span class="w"> </span><span class="nc">int</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Retrieve document by ID</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/get-a-document/</span>
+
+<span class="ss">        :param document_id: ID of the document you&#39;d like to retrieve</span>
+
+<span class="ss">        :param kwargs: Additional query parameters</span>
+
+<span class="ss">        :return: Data extracted from the Document</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="ss">&quot;/documents/{document_id}/&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w"> </span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_document</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_path</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">categories</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">delete_after_processing</span><span class="p">:</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Process a document and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/process-a-document/</span>
+
+<span class="ss">        :param file_path: Path on disk to a file to submit for data extraction</span>
+
+<span class="ss">        :param categories: List of categories Veryfi can use to categorize the document</span>
+
+<span class="ss">        :param delete_after_processing: Delete this document from Veryfi after data has been extracted</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the document</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nl">categories</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">DEFAULT_CATEGORIES</span>
+
+<span class="w">        </span><span class="nf">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;rb&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nl">image_file</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">base64_encoded_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="p">.</span><span class="k">read</span><span class="p">()).</span><span class="n">decode</span><span class="p">(</span><span class="ss">&quot;utf-8&quot;</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;file_name&quot;</span><span class="err">:</span><span class="w"> </span><span class="nf">file_name</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_data&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">base64_encoded_string</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;categories&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">categories</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;auto_delete&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">delete_after_processing</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;/documents/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_document_url</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_url</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">categories</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List[str</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">delete_after_processing</span><span class="p">:</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">boost_mode</span><span class="p">:</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">external_id</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">max_pages_to_process</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">int</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_urls</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List[str</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Process Document from url and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/process-a-document/</span>
+
+<span class="ss">        :param file_url: Required if file_urls isn&#39;t specified. Publicly accessible URL to a file, e.g. &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;.</span>
+
+<span class="ss">        :param file_urls: Required if file_url isn&#39;t specifies. List of publicly accessible URLs to multiple files, e.g. [&quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt1</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;, &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt2</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;]</span>
+
+<span class="ss">        :param categories: List of categories to use when categorizing the document</span>
+
+<span class="ss">        :param delete_after_processing: Delete this document from Veryfi after data has been extracted</span>
+
+<span class="ss">        :param max_pages_to_process: When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.</span>
+
+<span class="ss">        :param boost_mode: Flag that tells Veryfi whether boost mode should be enabled. When set to 1, Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0</span>
+
+<span class="ss">        :param external_id: Optional custom document identifier. Use this if you would like to assign your own ID to documents</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the document.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/documents/&quot;</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;auto_delete&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">delete_after_processing</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;boost_mode&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">boost_mode</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;categories&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">categories</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;external_id&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">external_id</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_url&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_url</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_urls&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_urls</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;max_pages_to_process&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">max_pages_to_process</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_documents_bulk</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">file_urls</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">List</span><span class="o">[</span><span class="n">int</span><span class="o">]</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Process multiple documents from urls and extract all the fields from it.</span>
+
+<span class="ss">        If you want to use this endpoint, please contact support@veryfi.com first. Veryfi&#39;s Bulk upload allows you to process multiple Documents.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/bulk-process-multiple-documents/</span>
+
+<span class="ss">        :param file_urls: List of publicly accessible URLs to multiple files, e.g. [&quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt1</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;, &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt2</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;]</span>
+
+<span class="ss">        :return: List of document IDs being processed</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/documents/bulk/&quot;</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;file_urls&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_urls</span><span class="err">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">delete_document</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">document_id</span><span class="p">:</span><span class="w"> </span><span class="nc">int</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Delete Document from Veryfi</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/delete-a-document/</span>
+
+<span class="ss">        :param document_id: ID of the document you&#39;d like to delete</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;DELETE&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="ss">&quot;/documents/{document_id}/&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;id&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">document_id</span><span class="err">}</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">update_document</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">document_id</span><span class="p">:</span><span class="w"> </span><span class="nc">int</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Update data for a previously processed document, including almost any field like `vendor`, `date`, `notes` and etc.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/update-a-document/</span>
+
+<span class="ss">        ```veryfi_client.update_document(id, date=&quot;</span><span class="mi">2021</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="ss">&quot;, notes=&quot;</span><span class="n">look</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">did</span><span class="ss">&quot;)```</span>
+
+<span class="ss">        :param document_id: ID of the document you&#39;d like to update</span>
+
+<span class="ss">        :param kwargs: fields to update</span>
+
+<span class="ss">        :return: A document json with updated fields, if fields are writable. Otherwise a document with unchanged fields.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;PUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="ss">&quot;/documents/{document_id}/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro">Ancestors (in MRO)</h4>
+<ul>
+<li>veryfi._documents.tags.Tags</li>
+<li>veryfi._documents.line_items.LineItems</li>
+<li>veryfi._documents.pdf_split.PDFSplit</li>
+</ul>
+<h4 id="descendants">Descendants</h4>
+<ul>
+<li>veryfi.client.Client</li>
+</ul>
+<h4 id="class-variables">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">DEFAULT_CATEGORIES</span>
+</code></pre></div>
+
+<h4 id="methods">Methods</h4>
+<h4 id="add_line_item">add_line_item</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_line_item</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">payload</span><span class="p">:</span> <span class="n">Dict</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Add a new line item on an existing document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/create-a-line-item/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to update</td>
+<td>None</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>None</td>
+<td>line item object to add</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Added line item data</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">add_line_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">document_id</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span><span class="w"> </span><span class="n">payload</span><span class="p">:</span><span class="w"> </span><span class="n">Dict</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Add a new line item on an existing document.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/receipts-invoices/create-a-line-item/</span>
+
+<span class="sd">        :param document_id: ID of the document you&#39;d like to update</span>
+
+<span class="sd">        :param payload: line item object to add</span>
+
+<span class="sd">        :return: Added line item data</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="s2">&quot;/documents/{document_id}/line-items/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="add_tag">add_tag</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_tag</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">,</span>
+    <span class="n">tag_name</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Add a new tag on an existing document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/add-a-tag-to-a-document/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to update</td>
+<td>None</td>
+</tr>
+<tr>
+<td>tag_name</td>
+<td>None</td>
+<td>name of the new tag</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Added tag data</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def add_tag(self, document_id, tag_name):
+
+        &quot;&quot;&quot;
+
+        Add a new tag on an existing document.
+
+        https://docs.veryfi.com/api/receipts-invoices/add-a-tag-to-a-document/
+
+        :param document_id: ID of the document you&#39;d like to update
+
+        :param tag_name: name of the new tag
+
+        :return: Added tag data
+
+        &quot;&quot;&quot;
+
+        endpoint_name = f&quot;/documents/{document_id}/tags/&quot;
+
+        request_arguments = {&quot;name&quot;: tag_name}
+
+        return self.client._request(&quot;PUT&quot;, endpoint_name, request_arguments)
+</code></pre></div>
+
+</details>
+<h4 id="add_tags">add_tags</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_tags</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">,</span>
+    <span class="n">tags</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Add multiple tags on an existing document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/add-tags-to-a-document/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to update</td>
+<td>None</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>None</td>
+<td>array of strings</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Added tags data</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def add_tags(self, document_id, tags):
+
+        &quot;&quot;&quot;
+
+        Add multiple tags on an existing document.
+
+        https://docs.veryfi.com/api/receipts-invoices/add-tags-to-a-document/
+
+        :param document_id: ID of the document you&#39;d like to update
+
+        :param tags: array of strings
+
+        :return: Added tags data
+
+        &quot;&quot;&quot;
+
+        endpoint_name = f&quot;/documents/{document_id}/tags/&quot;
+
+        request_arguments = {&quot;tags&quot;: tags}
+
+        return self.client._request(&quot;POST&quot;, endpoint_name, request_arguments)
+</code></pre></div>
+
+</details>
+<h4 id="delete_document">delete_document</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">delete_document</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Delete Document from Veryfi</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/delete-a-document/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to delete</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def delete_document(self, document_id: int):
+
+        &quot;&quot;&quot;
+
+        Delete Document from Veryfi
+
+        https://docs.veryfi.com/api/receipts-invoices/delete-a-document/
+
+        :param document_id: ID of the document you&#39;d like to delete
+
+        &quot;&quot;&quot;
+
+        self.client._request(&quot;DELETE&quot;, f&quot;/documents/{document_id}/&quot;, {&quot;id&quot;: document_id})
+</code></pre></div>
+
+</details>
+<h4 id="delete_line_item">delete_line_item</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">delete_line_item</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">line_item_id</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Delete an existing line item on an existing document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/delete-a-line-item/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to delete</td>
+<td>None</td>
+</tr>
+<tr>
+<td>line_item_id</td>
+<td>None</td>
+<td>ID of the line item you'd like to delete</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def delete_line_item(self, document_id: int, line_item_id: int):
+
+        &quot;&quot;&quot;
+
+        Delete an existing line item on an existing document.
+
+        https://docs.veryfi.com/api/receipts-invoices/delete-a-line-item/
+
+        :param document_id: ID of the document you&#39;d like to delete
+
+        :param line_item_id: ID of the line item you&#39;d like to delete
+
+        &quot;&quot;&quot;
+
+        self.client._request(&quot;DELETE&quot;, f&quot;/documents/{document_id}/line-items/{line_item_id}&quot;)
+</code></pre></div>
+
+</details>
+<h4 id="delete_line_items">delete_line_items</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">delete_line_items</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Delete all line items on an existing document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/delete-all-document-line-items/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to delete</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def delete_line_items(self, document_id: int):
+
+        &quot;&quot;&quot;
+
+        Delete all line items on an existing document.
+
+        https://docs.veryfi.com/api/receipts-invoices/delete-all-document-line-items/
+
+        :param document_id: ID of the document you&#39;d like to delete
+
+        &quot;&quot;&quot;
+
+        self.client._request(&quot;DELETE&quot;, f&quot;/documents/{document_id}/line-items/&quot;)
+</code></pre></div>
+
+</details>
+<h4 id="delete_tag">delete_tag</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">delete_tag</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">,</span>
+    <span class="n">tag_id</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Unlink a tag from the list of tags assigned to a specific Document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/unlink-a-tag-from-a-document/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document</td>
+<td>None</td>
+</tr>
+<tr>
+<td>tag_id</td>
+<td>None</td>
+<td>ID of the tag you'd like to unlink</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">delete_tag</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">document_id</span><span class="p">,</span><span class="w"> </span><span class="n">tag_id</span><span class="p">)</span><span class="o">:</span>
+
+<span class="w">        </span><span class="s">&quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">Unlink</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">tags</span><span class="w"> </span><span class="n">assigned</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">specific</span><span class="w"> </span><span class="n">Document</span><span class="p">.</span>
+
+<span class="w">        </span><span class="nl">https:</span><span class="c1">//docs.veryfi.com/api/receipts-invoices/unlink-a-tag-from-a-document/</span>
+
+<span class="w">        </span><span class="o">:</span><span class="n">param</span><span class="w"> </span><span class="nl">document_id:</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">document</span>
+
+<span class="w">        </span><span class="o">:</span><span class="n">param</span><span class="w"> </span><span class="nl">tag_id:</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">you</span><span class="p">&#39;</span><span class="n">d</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">unlink</span>
+
+<span class="w">        </span><span class="s">&quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="s">&quot;/documents/{document_id}/tags/{tag_id}&quot;</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="s">&quot;DELETE&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="p">{})</span>
+</code></pre></div>
+
+</details>
+<h4 id="delete_tags">delete_tags</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">delete_tags</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Unlink all tags assigned to a specific Document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/unlink-all-tags-from-a-document/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">delete_tags</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">document_id</span><span class="p">)</span><span class="o">:</span>
+
+<span class="w">        </span><span class="s">&quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">Unlink</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">tags</span><span class="w"> </span><span class="n">assigned</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">specific</span><span class="w"> </span><span class="n">Document</span><span class="p">.</span>
+
+<span class="w">        </span><span class="nl">https:</span><span class="c1">//docs.veryfi.com/api/receipts-invoices/unlink-all-tags-from-a-document/</span>
+
+<span class="w">        </span><span class="o">:</span><span class="n">param</span><span class="w"> </span><span class="nl">document_id:</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">document</span>
+
+<span class="w">        </span><span class="s">&quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="s">&quot;/documents/{document_id}/tags&quot;</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="s">&quot;DELETE&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="p">{})</span>
+</code></pre></div>
+
+</details>
+<h4 id="get_document">get_document</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_document</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Retrieve document by ID</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/get-a-document/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to retrieve</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional query parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Data extracted from the Document</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def get_document(self, document_id: int, **kwargs) -&gt; Dict:
+
+        &quot;&quot;&quot;
+
+        Retrieve document by ID
+
+        https://docs.veryfi.com/api/receipts-invoices/get-a-document/
+
+        :param document_id: ID of the document you&#39;d like to retrieve
+
+        :param kwargs: Additional query parameters
+
+        :return: Data extracted from the Document
+
+        &quot;&quot;&quot;
+
+        endpoint_name = f&quot;/documents/{document_id}/&quot;
+
+        return self.client._request(&quot;GET&quot;, endpoint_name, {}, kwargs)
+</code></pre></div>
+
+</details>
+<h4 id="get_documents">get_documents</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_documents</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">q</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">external_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">tag</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">created_gt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">created_gte</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">created_lt</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">created_lte</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Get list of documents.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/search-documents/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>q</td>
+<td>None</td>
+<td>Search query</td>
+<td>None</td>
+</tr>
+<tr>
+<td>external_id</td>
+<td>None</td>
+<td>Search by external ID</td>
+<td>None</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>None</td>
+<td>Search by tag</td>
+<td>None</td>
+</tr>
+<tr>
+<td>created_gt</td>
+<td>None</td>
+<td>Search by created date greater than</td>
+<td>None</td>
+</tr>
+<tr>
+<td>created_gte</td>
+<td>None</td>
+<td>Search by created date greater than or equal to</td>
+<td>None</td>
+</tr>
+<tr>
+<td>created_lt</td>
+<td>None</td>
+<td>Search by created date less than</td>
+<td>None</td>
+</tr>
+<tr>
+<td>created_lte</td>
+<td>None</td>
+<td>Search by created date less than or equal to</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional query parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>List of previously processed documents</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_documents</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">q</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">external_id</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">tag</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_gt</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_gte</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_lt</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">created_lte</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Get list of documents.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/search-documents/</span>
+
+<span class="ss">        :param q: Search query</span>
+
+<span class="ss">        :param external_id: Search by external ID</span>
+
+<span class="ss">        :param tag: Search by tag</span>
+
+<span class="ss">        :param created_gt: Search by created date greater than</span>
+
+<span class="ss">        :param created_gte: Search by created date greater than or equal to</span>
+
+<span class="ss">        :param created_lt: Search by created date less than</span>
+
+<span class="ss">        :param created_lte: Search by created date less than or equal to</span>
+
+<span class="ss">        :param kwargs: Additional query parameters</span>
+
+<span class="ss">        :return: List of previously processed documents</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">query_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">q</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;q&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">external_id</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;external_id&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">external_id</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">tag</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;tag&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tag</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_gt</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created__gt&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_gt</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_gte</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created__gte&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_gte</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_lt</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created__lt&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_lt</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">created_lte</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">query_params</span><span class="o">[</span><span class="n">&quot;created__lte&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created_lte</span>
+
+<span class="w">        </span><span class="n">query_params</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/documents/&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="err">{}</span><span class="p">,</span><span class="w"> </span><span class="n">query_params</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="get_documents_from_pdf">get_documents_from_pdf</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_documents_from_pdf</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Get Documents from PDF endpoint allows you to retrieve a collection of previously processed documents.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/get-documents-from-pdf/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to retrieve</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>The processed Document response.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def get_documents_from_pdf(self, document_id: int):
+
+        &quot;&quot;&quot;
+
+        Get Documents from PDF endpoint allows you to retrieve a collection of previously processed documents.
+
+        https://docs.veryfi.com/api/receipts-invoices/get-documents-from-pdf/
+
+        :param document_id: ID of the document you&#39;d like to retrieve
+
+        :return: The processed Document response.
+
+        &quot;&quot;&quot;
+
+        endpoint_name = f&quot;/documents-set/{document_id}&quot;
+
+        return self.client._request(&quot;GET&quot;, endpoint_name, {})
+</code></pre></div>
+
+</details>
+<h4 id="get_line_item">get_line_item</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_line_item</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">line_item_id</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Retrieve a line item for existing document by ID.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/get-a-line-item/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to retrieve</td>
+<td>None</td>
+</tr>
+<tr>
+<td>line_item_id</td>
+<td>None</td>
+<td>ID of the line item you'd like to retrieve</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Line item extracted from the document</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def get_line_item(self, document_id: int, line_item_id: int):
+
+        &quot;&quot;&quot;
+
+        Retrieve a line item for existing document by ID.
+
+        https://docs.veryfi.com/api/receipts-invoices/get-a-line-item/
+
+        :param document_id: ID of the document you&#39;d like to retrieve
+
+        :param line_item_id: ID of the line item you&#39;d like to retrieve
+
+        :return: Line item extracted from the document
+
+        &quot;&quot;&quot;
+
+        return self.client._request(&quot;GET&quot;, f&quot;/documents/{document_id}/line-items/{line_item_id}&quot;)
+</code></pre></div>
+
+</details>
+<h4 id="get_line_items">get_line_items</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_line_items</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Retrieve all line items for a document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/get-document-line-items/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to retrieve</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>List of line items extracted from the document</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def get_line_items(self, document_id: int):
+
+        &quot;&quot;&quot;
+
+        Retrieve all line items for a document.
+
+        https://docs.veryfi.com/api/receipts-invoices/get-document-line-items/
+
+        :param document_id: ID of the document you&#39;d like to retrieve
+
+        :return: List of line items extracted from the document
+
+        &quot;&quot;&quot;
+
+        return self.client._request(&quot;GET&quot;, f&quot;/documents/{document_id}/line-items/&quot;)
+</code></pre></div>
+
+</details>
+<h4 id="get_pdf">get_pdf</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_pdf</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Get a Submitted PDF endpoint allows you to retrieve a collection of previously processed.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/get-submitted-pdf/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional query parameters.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>The processed Document response.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def get_pdf(self, **kwargs):
+
+        &quot;&quot;&quot;
+
+        Get a Submitted PDF endpoint allows you to retrieve a collection of previously processed.
+
+        https://docs.veryfi.com/api/receipts-invoices/get-submitted-pdf/
+
+        :param kwargs: Additional query parameters.
+
+        :return: The processed Document response.
+
+        &quot;&quot;&quot;
+
+        endpoint_name = &quot;/documents-set/&quot;
+
+        return self.client._request(&quot;GET&quot;, endpoint_name, {}, kwargs)
+</code></pre></div>
+
+</details>
+<h4 id="get_tags">get_tags</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_tags</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Return all Tag assigned to a specific Document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/get-document-tags/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to get</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Added tags data</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_tags</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">document_id</span><span class="p">)</span><span class="o">:</span>
+
+<span class="w">        </span><span class="s">&quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">Return</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">Tag</span><span class="w"> </span><span class="n">assigned</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">specific</span><span class="w"> </span><span class="n">Document</span><span class="p">.</span>
+
+<span class="w">        </span><span class="nl">https:</span><span class="c1">//docs.veryfi.com/api/receipts-invoices/get-document-tags/</span>
+
+<span class="w">        </span><span class="o">:</span><span class="n">param</span><span class="w"> </span><span class="nl">document_id:</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">document</span><span class="w"> </span><span class="n">you</span><span class="p">&#39;</span><span class="n">d</span><span class="w"> </span><span class="n">like</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">get</span>
+
+<span class="w">        </span><span class="o">:</span><span class="k">return</span><span class="o">:</span><span class="w"> </span><span class="n">Added</span><span class="w"> </span><span class="n">tags</span><span class="w"> </span><span class="n">data</span>
+
+<span class="w">        </span><span class="s">&quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="s">&quot;/documents/{document_id}/tags&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="s">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="p">{})</span>
+</code></pre></div>
+
+</details>
+<h4 id="process_document">process_document</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">process_document</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">categories</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">delete_after_processing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Process a document and extract all the fields from it.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/process-a-document/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_path</td>
+<td>None</td>
+<td>Path on disk to a file to submit for data extraction</td>
+<td>None</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>None</td>
+<td>List of categories Veryfi can use to categorize the document</td>
+<td>None</td>
+</tr>
+<tr>
+<td>delete_after_processing</td>
+<td>None</td>
+<td>Delete this document from Veryfi after data has been extracted</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional body parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Data extracted from the document</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_document</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_path</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">categories</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">delete_after_processing</span><span class="p">:</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Process a document and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/process-a-document/</span>
+
+<span class="ss">        :param file_path: Path on disk to a file to submit for data extraction</span>
+
+<span class="ss">        :param categories: List of categories Veryfi can use to categorize the document</span>
+
+<span class="ss">        :param delete_after_processing: Delete this document from Veryfi after data has been extracted</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the document</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nl">categories</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">DEFAULT_CATEGORIES</span>
+
+<span class="w">        </span><span class="nf">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;rb&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nl">image_file</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">base64_encoded_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="p">.</span><span class="k">read</span><span class="p">()).</span><span class="n">decode</span><span class="p">(</span><span class="ss">&quot;utf-8&quot;</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;file_name&quot;</span><span class="err">:</span><span class="w"> </span><span class="nf">file_name</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_data&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">base64_encoded_string</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;categories&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">categories</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;auto_delete&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">delete_after_processing</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;/documents/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="process_document_url">process_document_url</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">process_document_url</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">file_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">categories</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">delete_after_processing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">boost_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">external_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">max_pages_to_process</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">file_urls</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Process Document from url and extract all the fields from it.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/process-a-document/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_url</td>
+<td>None</td>
+<td>Required if file_urls isn't specified. Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg".</td>
+<td>None</td>
+</tr>
+<tr>
+<td>file_urls</td>
+<td>None</td>
+<td>Required if file_url isn't specifies. List of publicly accessible URLs to multiple files, e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]</td>
+<td>None</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>None</td>
+<td>List of categories to use when categorizing the document</td>
+<td>None</td>
+</tr>
+<tr>
+<td>delete_after_processing</td>
+<td>None</td>
+<td>Delete this document from Veryfi after data has been extracted</td>
+<td>None</td>
+</tr>
+<tr>
+<td>max_pages_to_process</td>
+<td>None</td>
+<td>When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>boost_mode</td>
+<td>None</td>
+<td>Flag that tells Veryfi whether boost mode should be enabled. When set to 1, Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0</td>
+<td>None</td>
+</tr>
+<tr>
+<td>external_id</td>
+<td>None</td>
+<td>Optional custom document identifier. Use this if you would like to assign your own ID to documents</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional body parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Data extracted from the document.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_document_url</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_url</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">categories</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List[str</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">delete_after_processing</span><span class="p">:</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">boost_mode</span><span class="p">:</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">external_id</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">max_pages_to_process</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">int</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_urls</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List[str</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Process Document from url and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/process-a-document/</span>
+
+<span class="ss">        :param file_url: Required if file_urls isn&#39;t specified. Publicly accessible URL to a file, e.g. &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;.</span>
+
+<span class="ss">        :param file_urls: Required if file_url isn&#39;t specifies. List of publicly accessible URLs to multiple files, e.g. [&quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt1</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;, &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt2</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;]</span>
+
+<span class="ss">        :param categories: List of categories to use when categorizing the document</span>
+
+<span class="ss">        :param delete_after_processing: Delete this document from Veryfi after data has been extracted</span>
+
+<span class="ss">        :param max_pages_to_process: When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.</span>
+
+<span class="ss">        :param boost_mode: Flag that tells Veryfi whether boost mode should be enabled. When set to 1, Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0</span>
+
+<span class="ss">        :param external_id: Optional custom document identifier. Use this if you would like to assign your own ID to documents</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the document.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/documents/&quot;</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;auto_delete&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">delete_after_processing</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;boost_mode&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">boost_mode</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;categories&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">categories</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;external_id&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">external_id</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_url&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_url</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_urls&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_urls</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;max_pages_to_process&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">max_pages_to_process</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="process_documents_bulk">process_documents_bulk</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">process_documents_bulk</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">file_urls</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Process multiple documents from urls and extract all the fields from it.</p>
+<p>If you want to use this endpoint, please contact support@veryfi.com first. Veryfi's Bulk upload allows you to process multiple Documents.
+https://docs.veryfi.com/api/receipts-invoices/bulk-process-multiple-documents/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_urls</td>
+<td>None</td>
+<td>List of publicly accessible URLs to multiple files, e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>List of document IDs being processed</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">process_documents_bulk</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">file_urls</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">List</span><span class="o">[</span><span class="n">int</span><span class="o">]</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Process multiple documents from urls and extract all the fields from it.</span>
+
+<span class="ss">        If you want to use this endpoint, please contact support@veryfi.com first. Veryfi&#39;s Bulk upload allows you to process multiple Documents.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/bulk-process-multiple-documents/</span>
+
+<span class="ss">        :param file_urls: List of publicly accessible URLs to multiple files, e.g. [&quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt1</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;, &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt2</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;]</span>
+
+<span class="ss">        :return: List of document IDs being processed</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/documents/bulk/&quot;</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="ss">&quot;file_urls&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_urls</span><span class="err">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="replace_tags">replace_tags</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">replace_tags</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">,</span>
+    <span class="n">tags</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Replace multiple tags on an existing document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/update-a-document/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to update</td>
+<td>None</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>None</td>
+<td>array of strings</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Added tags data</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code>    def replace_tags(self, document_id, tags):
+
+        &quot;&quot;&quot;
+
+        Replace multiple tags on an existing document.
+
+        https://docs.veryfi.com/api/receipts-invoices/update-a-document/
+
+        :param document_id: ID of the document you&#39;d like to update
+
+        :param tags: array of strings
+
+        :return: Added tags data
+
+        &quot;&quot;&quot;
+
+        endpoint_name = f&quot;/documents/{document_id}/&quot;
+
+        request_arguments = {&quot;tags&quot;: tags}
+
+        return self.client._request(&quot;PUT&quot;, endpoint_name, request_arguments)
+</code></pre></div>
+
+</details>
+<h4 id="split_and_process_pdf">split_and_process_pdf</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">split_and_process_pdf</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">categories</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Process a document and extract all the fields from it</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/split-and-process-a-pdf/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_path</td>
+<td>None</td>
+<td>Path on disk to a file to submit for data extraction</td>
+<td>None</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>None</td>
+<td>List of categories Veryfi can use to categorize the document</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional body parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Data extracted from the document</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">split_and_process_pdf</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_path</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">categories</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Process a document and extract all the fields from it</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/split-and-process-a-pdf/</span>
+
+<span class="ss">        :param file_path: Path on disk to a file to submit for data extraction</span>
+
+<span class="ss">        :param categories: List of categories Veryfi can use to categorize the document</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the document</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/documents-set/&quot;</span>
+
+<span class="w">        </span><span class="n">categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categories</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="err">[]</span>
+
+<span class="w">        </span><span class="nf">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os</span><span class="p">.</span><span class="k">path</span><span class="p">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">with</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;rb&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nl">image_file</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">base64_encoded_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="p">.</span><span class="k">read</span><span class="p">()).</span><span class="n">decode</span><span class="p">(</span><span class="ss">&quot;utf-8&quot;</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;file_name&quot;</span><span class="err">:</span><span class="w"> </span><span class="nf">file_name</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_data&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">base64_encoded_string</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;categories&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">categories</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="split_and_process_pdf_url">split_and_process_pdf_url</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">split_and_process_pdf_url</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">file_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">categories</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">max_pages_to_process</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">file_urls</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Process Document from url and extract all the fields from it.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/split-and-process-a-pdf/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_url</td>
+<td>None</td>
+<td>Required if file_urls isn't specified. Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg".</td>
+<td>None</td>
+</tr>
+<tr>
+<td>file_urls</td>
+<td>None</td>
+<td>Required if file_url isn't specifies. List of publicly accessible URLs to multiple files, e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]</td>
+<td>None</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>None</td>
+<td>List of categories to use when categorizing the document</td>
+<td>None</td>
+</tr>
+<tr>
+<td>max_pages_to_process</td>
+<td>None</td>
+<td>When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>Additional body parameters</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Data extracted from the document.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">split_and_process_pdf_url</span><span class="p">(</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_url</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">categories</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List[str</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">max_pages_to_process</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">int</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">file_urls</span><span class="p">:</span><span class="w"> </span><span class="n">Optional</span><span class="o">[</span><span class="n">List[str</span><span class="o">]</span><span class="err">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">,</span>
+
+<span class="w">        </span><span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nl">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Process Document from url and extract all the fields from it.</span>
+
+<span class="ss">        https://docs.veryfi.com/api/receipts-invoices/split-and-process-a-pdf/</span>
+
+<span class="ss">        :param file_url: Required if file_urls isn&#39;t specified. Publicly accessible URL to a file, e.g. &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;.</span>
+
+<span class="ss">        :param file_urls: Required if file_url isn&#39;t specifies. List of publicly accessible URLs to multiple files, e.g. [&quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt1</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;, &quot;</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdn</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">receipt2</span><span class="p">.</span><span class="n">jpg</span><span class="ss">&quot;]</span>
+
+<span class="ss">        :param categories: List of categories to use when categorizing the document</span>
+
+<span class="ss">        :param max_pages_to_process: When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.</span>
+
+<span class="ss">        :param kwargs: Additional body parameters</span>
+
+<span class="ss">        :return: Data extracted from the document.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">endpoint_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;/documents-set/&quot;</span>
+
+<span class="w">        </span><span class="n">categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categories</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="err">[]</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">            </span><span class="ss">&quot;categories&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">categories</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_url&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_url</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;file_urls&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">file_urls</span><span class="p">,</span>
+
+<span class="w">            </span><span class="ss">&quot;max_pages_to_process&quot;</span><span class="err">:</span><span class="w"> </span><span class="n">max_pages_to_process</span><span class="p">,</span>
+
+<span class="w">        </span><span class="err">}</span>
+
+<span class="w">        </span><span class="n">request_arguments</span><span class="p">.</span><span class="k">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="ss">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">endpoint_name</span><span class="p">,</span><span class="w"> </span><span class="n">request_arguments</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="update_document">update_document</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">update_document</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Update data for a previously processed document, including almost any field like <code>vendor</code>, <code>date</code>, <code>notes</code> and etc.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/update-a-document/</p>
+<p><code>veryfi_client.update_document(id, date="2021-01-01", notes="look what I did")</code></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to update</td>
+<td>None</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>None</td>
+<td>fields to update</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>A document json with updated fields, if fields are writable. Otherwise a document with unchanged fields.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">update_document</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">document_id</span><span class="o">:</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Dict</span><span class="o">:</span>
+
+<span class="w">        </span><span class="s2">&quot;</span><span class="se">&quot;&quot;</span>
+
+<span class="s2">        Update data for a previously processed document, including almost any field like `vendor`, `date`, `notes` and etc.</span>
+
+<span class="s2">        https://docs.veryfi.com/api/receipts-invoices/update-a-document/</span>
+
+<span class="s2">        ```veryfi_client.update_document(id, date=&quot;</span><span class="mi">2021</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="s2">&quot;, notes=&quot;</span><span class="n">look</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">did</span><span class="s2">&quot;)```</span>
+
+<span class="s2">        :param document_id: ID of the document you&#39;d like to update</span>
+
+<span class="s2">        :param kwargs: fields to update</span>
+
+<span class="s2">        :return: A document json with updated fields, if fields are writable. Otherwise a document with unchanged fields.</span>
+
+<span class="s2">        </span><span class="se">&quot;&quot;</span><span class="s2">&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="k">client</span><span class="p">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="s2">&quot;/documents/{document_id}/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+<h4 id="update_line_item">update_line_item</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">update_line_item</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">document_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">line_item_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">payload</span><span class="p">:</span> <span class="n">Dict</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span>
+</code></pre></div>
+
+<p>Update an existing line item on an existing document.</p>
+<p>https://docs.veryfi.com/api/receipts-invoices/update-a-line-item/</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_id</td>
+<td>None</td>
+<td>ID of the document you'd like to update</td>
+<td>None</td>
+</tr>
+<tr>
+<td>line_item_id</td>
+<td>None</td>
+<td>ID of the line item you'd like to update</td>
+<td>None</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>None</td>
+<td>line item object to update</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Line item data with updated fields, if fields are writable. Otherwise line item data with unchanged fields.</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">update_line_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">document_id</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span><span class="w"> </span><span class="n">line_item_id</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span><span class="w"> </span><span class="n">payload</span><span class="p">:</span><span class="w"> </span><span class="n">Dict</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Dict</span><span class="p">:</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Update an existing line item on an existing document.</span>
+
+<span class="sd">        https://docs.veryfi.com/api/receipts-invoices/update-a-line-item/</span>
+
+<span class="sd">        :param document_id: ID of the document you&#39;d like to update</span>
+
+<span class="sd">        :param line_item_id: ID of the line item you&#39;d like to update</span>
+
+<span class="sd">        :param payload: line item object to update</span>
+
+<span class="sd">        :return: Line item data with updated fields, if fields are writable. Otherwise line item data with unchanged fields.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span>
+
+<span class="w">            </span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="s2">&quot;/documents/{document_id}/line-items/{line_item_id}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">payload</span>
+
+<span class="w">        </span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+    
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../client_base/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Client Base" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Client Base
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../errors/" class="md-footer__link md-footer__link--next" aria-label="Next: Errors" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Errors
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+            
+            Powered by
+            <a href="http://timothycrosley.github.io/portray">portray.</a>
+            You too can
+            <a href="http://timothycrosley.github.io/portray">
+              portray</a>
+            your Python project well using automatic documentation.
+          </div>
+        
+      </div>
+    </div>
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2329 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.4">
+    
+    
+      
+        <title>Errors - veryfi-python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.80dcb947.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="lightgreen">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-veryfierrors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="veryfi-python" class="md-header__button md-logo" aria-label="veryfi-python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            veryfi-python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Errors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/veryfi/veryfi-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    veryfi-python
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="veryfi-python" class="md-nav__button md-logo" aria-label="veryfi-python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    veryfi-python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/veryfi/veryfi-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    veryfi-python
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CONTRIBUTORS/" class="md-nav__link">
+        Contributors
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../NEWS/" class="md-nav__link">
+        News
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Veryfi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Veryfi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Veryfi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../a_docs/" class="md-nav__link">
+        A Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bank_statements/" class="md-nav__link">
+        Bank Statements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bussines_cards/" class="md-nav__link">
+        Bussines Cards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checks/" class="md-nav__link">
+        Checks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        Client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client_base/" class="md-nav__link">
+        Client Base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documents/" class="md-nav__link">
+        Documents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Errors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Errors
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accesslimitreached" class="md-nav__link">
+    AccessLimitReached
+  </a>
+  
+    <nav class="md-nav" aria-label="AccessLimitReached">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#badrequest" class="md-nav__link">
+    BadRequest
+  </a>
+  
+    <nav class="md-nav" aria-label="BadRequest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_1" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_1" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_1" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_1" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_1" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internalerror" class="md-nav__link">
+    InternalError
+  </a>
+  
+    <nav class="md-nav" aria-label="InternalError">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_2" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_2" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_2" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_2" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_2" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_2" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resourcenotfound" class="md-nav__link">
+    ResourceNotFound
+  </a>
+  
+    <nav class="md-nav" aria-label="ResourceNotFound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_3" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_3" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_3" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_3" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_3" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_3" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serviceunavailable" class="md-nav__link">
+    ServiceUnavailable
+  </a>
+  
+    <nav class="md-nav" aria-label="ServiceUnavailable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_4" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_4" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_4" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_4" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_4" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_4" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unauthorizedaccesstoken" class="md-nav__link">
+    UnauthorizedAccessToken
+  </a>
+  
+    <nav class="md-nav" aria-label="UnauthorizedAccessToken">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_5" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_5" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_5" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_5" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_5" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_5" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unexpectedhttpmethod" class="md-nav__link">
+    UnexpectedHTTPMethod
+  </a>
+  
+    <nav class="md-nav" aria-label="UnexpectedHTTPMethod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_6" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_6" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_6" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_6" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_6" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_6" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veryficlienterror" class="md-nav__link">
+    VeryfiClientError
+  </a>
+  
+    <nav class="md-nav" aria-label="VeryfiClientError">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_7" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descendants" class="md-nav__link">
+    Descendants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_7" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_7" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_7" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_7" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_7" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w2s/" class="md-nav__link">
+        W2S
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w8s/" class="md-nav__link">
+        W8S
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w9s/" class="md-nav__link">
+        W9S
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accesslimitreached" class="md-nav__link">
+    AccessLimitReached
+  </a>
+  
+    <nav class="md-nav" aria-label="AccessLimitReached">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#badrequest" class="md-nav__link">
+    BadRequest
+  </a>
+  
+    <nav class="md-nav" aria-label="BadRequest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_1" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_1" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_1" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_1" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_1" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internalerror" class="md-nav__link">
+    InternalError
+  </a>
+  
+    <nav class="md-nav" aria-label="InternalError">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_2" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_2" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_2" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_2" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_2" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_2" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resourcenotfound" class="md-nav__link">
+    ResourceNotFound
+  </a>
+  
+    <nav class="md-nav" aria-label="ResourceNotFound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_3" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_3" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_3" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_3" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_3" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_3" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serviceunavailable" class="md-nav__link">
+    ServiceUnavailable
+  </a>
+  
+    <nav class="md-nav" aria-label="ServiceUnavailable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_4" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_4" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_4" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_4" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_4" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_4" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unauthorizedaccesstoken" class="md-nav__link">
+    UnauthorizedAccessToken
+  </a>
+  
+    <nav class="md-nav" aria-label="UnauthorizedAccessToken">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_5" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_5" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_5" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_5" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_5" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_5" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unexpectedhttpmethod" class="md-nav__link">
+    UnexpectedHTTPMethod
+  </a>
+  
+    <nav class="md-nav" aria-label="UnexpectedHTTPMethod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_6" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_6" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_6" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_6" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_6" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_6" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veryficlienterror" class="md-nav__link">
+    VeryfiClientError
+  </a>
+  
+    <nav class="md-nav" aria-label="VeryfiClientError">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ancestors-in-mro_7" class="md-nav__link">
+    Ancestors (in MRO)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descendants" class="md-nav__link">
+    Descendants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-variables_7" class="md-nav__link">
+    Class variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-methods_7" class="md-nav__link">
+    Static methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_response_7" class="md-nav__link">
+    from_response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_7" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_traceback_7" class="md-nav__link">
+    with_traceback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/veryfi/veryfi-python/edit/main/reference/veryfi/errors.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="module-veryfierrors">Module veryfi.errors</h1>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="n">VeryfiClientError</span><span class="p">(</span><span class="k">Exception</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">optional_fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;error&quot;, &quot;code&quot;</span><span class="o">]</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">error_info</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">field_name</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="nl">optional_fields</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">setattr</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">field_name</span><span class="p">,</span><span class="w"> </span><span class="n">error_info</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">field_name</span><span class="p">))</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">raw_response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw_response</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">getattr</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;error&quot;</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">            </span><span class="n">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="n">f</span><span class="ss">&quot;{self.status}, {getattr(self, &#39;error&#39;)}&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+<span class="k">class</span><span class="w"> </span><span class="n">UnauthorizedAccessToken</span><span class="p">(</span><span class="n">VeryfiClientError</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="n">BadRequest</span><span class="p">(</span><span class="n">VeryfiClientError</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="n">ResourceNotFound</span><span class="p">(</span><span class="n">VeryfiClientError</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="n">UnexpectedHTTPMethod</span><span class="p">(</span><span class="n">VeryfiClientError</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="n">AccessLimitReached</span><span class="p">(</span><span class="n">VeryfiClientError</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="n">InternalError</span><span class="p">(</span><span class="n">VeryfiClientError</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">pass</span>
+
+<span class="k">class</span><span class="w"> </span><span class="n">ServiceUnavailable</span><span class="p">(</span><span class="n">VeryfiClientError</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">pass</span>
+
+<span class="n">_error_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+
+<span class="w">    </span><span class="mi">400</span><span class="err">:</span><span class="w"> </span><span class="n">BadRequest</span><span class="p">,</span>
+
+<span class="w">    </span><span class="mi">404</span><span class="err">:</span><span class="w"> </span><span class="n">ResourceNotFound</span><span class="p">,</span>
+
+<span class="w">    </span><span class="mi">401</span><span class="err">:</span><span class="w"> </span><span class="n">UnauthorizedAccessToken</span><span class="p">,</span>
+
+<span class="w">    </span><span class="mi">405</span><span class="err">:</span><span class="w"> </span><span class="n">UnexpectedHTTPMethod</span><span class="p">,</span>
+
+<span class="w">    </span><span class="mi">409</span><span class="err">:</span><span class="w"> </span><span class="n">AccessLimitReached</span><span class="p">,</span>
+
+<span class="w">    </span><span class="mi">500</span><span class="err">:</span><span class="w"> </span><span class="n">InternalError</span><span class="p">,</span>
+
+<span class="w">    </span><span class="mi">503</span><span class="err">:</span><span class="w"> </span><span class="n">ServiceUnavailable</span><span class="p">,</span>
+
+<span class="err">}</span>
+</code></pre></div>
+
+</details>
+<h2 id="classes">Classes</h2>
+<h3 id="accesslimitreached">AccessLimitReached</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">AccessLimitReached</span><span class="p">(</span>
+    <span class="n">raw_response</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">error_info</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Common base class for all non-exit exceptions.</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">AccessLimitReached</span>(<span class="n">VeryfiClientError</span>):
+
+    <span class="nb">pass</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro">Ancestors (in MRO)</h4>
+<ul>
+<li>veryfi.errors.VeryfiClientError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h4 id="class-variables">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">args</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">optional_fields</span>
+</code></pre></div>
+
+<h4 id="static-methods">Static methods</h4>
+<h4 id="from_response">from_response</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_response</span><span class="p">(</span>
+    <span class="n">raw_response</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Veryfi API returns error messages with a json body</p>
+<p>like:
+{
+    'status': 'fail',
+    'error': 'Human readable error description.'
+}</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+
+</details>
+<h4 id="methods">Methods</h4>
+<h4 id="with_traceback">with_traceback</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">with_traceback</span><span class="p">(</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Exception.with_traceback(tb) --</p>
+<p>set self.<strong>traceback</strong> to tb and return self.</p>
+<h3 id="badrequest">BadRequest</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">BadRequest</span><span class="p">(</span>
+    <span class="n">raw_response</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">error_info</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Common base class for all non-exit exceptions.</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">BadRequest</span>(<span class="n">VeryfiClientError</span>):
+
+    <span class="nb">pass</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro_1">Ancestors (in MRO)</h4>
+<ul>
+<li>veryfi.errors.VeryfiClientError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h4 id="class-variables_1">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">args</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">optional_fields</span>
+</code></pre></div>
+
+<h4 id="static-methods_1">Static methods</h4>
+<h4 id="from_response_1">from_response</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_response</span><span class="p">(</span>
+    <span class="n">raw_response</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Veryfi API returns error messages with a json body</p>
+<p>like:
+{
+    'status': 'fail',
+    'error': 'Human readable error description.'
+}</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+
+</details>
+<h4 id="methods_1">Methods</h4>
+<h4 id="with_traceback_1">with_traceback</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">with_traceback</span><span class="p">(</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Exception.with_traceback(tb) --</p>
+<p>set self.<strong>traceback</strong> to tb and return self.</p>
+<h3 id="internalerror">InternalError</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">InternalError</span><span class="p">(</span>
+    <span class="n">raw_response</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">error_info</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Common base class for all non-exit exceptions.</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">InternalError</span>(<span class="n">VeryfiClientError</span>):
+
+    <span class="nb">pass</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro_2">Ancestors (in MRO)</h4>
+<ul>
+<li>veryfi.errors.VeryfiClientError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h4 id="class-variables_2">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">args</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">optional_fields</span>
+</code></pre></div>
+
+<h4 id="static-methods_2">Static methods</h4>
+<h4 id="from_response_2">from_response</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_response</span><span class="p">(</span>
+    <span class="n">raw_response</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Veryfi API returns error messages with a json body</p>
+<p>like:
+{
+    'status': 'fail',
+    'error': 'Human readable error description.'
+}</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+
+</details>
+<h4 id="methods_2">Methods</h4>
+<h4 id="with_traceback_2">with_traceback</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">with_traceback</span><span class="p">(</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Exception.with_traceback(tb) --</p>
+<p>set self.<strong>traceback</strong> to tb and return self.</p>
+<h3 id="resourcenotfound">ResourceNotFound</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ResourceNotFound</span><span class="p">(</span>
+    <span class="n">raw_response</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">error_info</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Common base class for all non-exit exceptions.</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">ResourceNotFound</span>(<span class="n">VeryfiClientError</span>):
+
+    <span class="nb">pass</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro_3">Ancestors (in MRO)</h4>
+<ul>
+<li>veryfi.errors.VeryfiClientError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h4 id="class-variables_3">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">args</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">optional_fields</span>
+</code></pre></div>
+
+<h4 id="static-methods_3">Static methods</h4>
+<h4 id="from_response_3">from_response</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_response</span><span class="p">(</span>
+    <span class="n">raw_response</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Veryfi API returns error messages with a json body</p>
+<p>like:
+{
+    'status': 'fail',
+    'error': 'Human readable error description.'
+}</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+
+</details>
+<h4 id="methods_3">Methods</h4>
+<h4 id="with_traceback_3">with_traceback</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">with_traceback</span><span class="p">(</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Exception.with_traceback(tb) --</p>
+<p>set self.<strong>traceback</strong> to tb and return self.</p>
+<h3 id="serviceunavailable">ServiceUnavailable</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ServiceUnavailable</span><span class="p">(</span>
+    <span class="n">raw_response</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">error_info</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Common base class for all non-exit exceptions.</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">ServiceUnavailable</span>(<span class="n">VeryfiClientError</span>):
+
+    <span class="nb">pass</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro_4">Ancestors (in MRO)</h4>
+<ul>
+<li>veryfi.errors.VeryfiClientError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h4 id="class-variables_4">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">args</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">optional_fields</span>
+</code></pre></div>
+
+<h4 id="static-methods_4">Static methods</h4>
+<h4 id="from_response_4">from_response</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_response</span><span class="p">(</span>
+    <span class="n">raw_response</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Veryfi API returns error messages with a json body</p>
+<p>like:
+{
+    'status': 'fail',
+    'error': 'Human readable error description.'
+}</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+
+</details>
+<h4 id="methods_4">Methods</h4>
+<h4 id="with_traceback_4">with_traceback</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">with_traceback</span><span class="p">(</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Exception.with_traceback(tb) --</p>
+<p>set self.<strong>traceback</strong> to tb and return self.</p>
+<h3 id="unauthorizedaccesstoken">UnauthorizedAccessToken</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UnauthorizedAccessToken</span><span class="p">(</span>
+    <span class="n">raw_response</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">error_info</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Common base class for all non-exit exceptions.</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">UnauthorizedAccessToken</span>(<span class="n">VeryfiClientError</span>):
+
+    <span class="nb">pass</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro_5">Ancestors (in MRO)</h4>
+<ul>
+<li>veryfi.errors.VeryfiClientError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h4 id="class-variables_5">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">args</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">optional_fields</span>
+</code></pre></div>
+
+<h4 id="static-methods_5">Static methods</h4>
+<h4 id="from_response_5">from_response</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_response</span><span class="p">(</span>
+    <span class="n">raw_response</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Veryfi API returns error messages with a json body</p>
+<p>like:
+{
+    'status': 'fail',
+    'error': 'Human readable error description.'
+}</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+
+</details>
+<h4 id="methods_5">Methods</h4>
+<h4 id="with_traceback_5">with_traceback</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">with_traceback</span><span class="p">(</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Exception.with_traceback(tb) --</p>
+<p>set self.<strong>traceback</strong> to tb and return self.</p>
+<h3 id="unexpectedhttpmethod">UnexpectedHTTPMethod</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UnexpectedHTTPMethod</span><span class="p">(</span>
+    <span class="n">raw_response</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">error_info</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Common base class for all non-exit exceptions.</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">UnexpectedHTTPMethod</span>(<span class="n">VeryfiClientError</span>):
+
+    <span class="nb">pass</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro_6">Ancestors (in MRO)</h4>
+<ul>
+<li>veryfi.errors.VeryfiClientError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h4 id="class-variables_6">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">args</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">optional_fields</span>
+</code></pre></div>
+
+<h4 id="static-methods_6">Static methods</h4>
+<h4 id="from_response_6">from_response</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_response</span><span class="p">(</span>
+    <span class="n">raw_response</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Veryfi API returns error messages with a json body</p>
+<p>like:
+{
+    'status': 'fail',
+    'error': 'Human readable error description.'
+}</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+
+</details>
+<h4 id="methods_6">Methods</h4>
+<h4 id="with_traceback_6">with_traceback</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">with_traceback</span><span class="p">(</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Exception.with_traceback(tb) --</p>
+<p>set self.<strong>traceback</strong> to tb and return self.</p>
+<h3 id="veryficlienterror">VeryfiClientError</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">VeryfiClientError</span><span class="p">(</span>
+    <span class="n">raw_response</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">error_info</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Common base class for all non-exit exceptions.</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="n">VeryfiClientError</span><span class="p">(</span><span class="k">Exception</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">    </span><span class="n">optional_fields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">&quot;error&quot;, &quot;code&quot;</span><span class="o">]</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">error_info</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">field_name</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="nl">optional_fields</span><span class="p">:</span>
+
+<span class="w">            </span><span class="n">setattr</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">field_name</span><span class="p">,</span><span class="w"> </span><span class="n">error_info</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">field_name</span><span class="p">))</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">raw_response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw_response</span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">getattr</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;error&quot;</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">            </span><span class="n">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="n">f</span><span class="ss">&quot;{self.status}, {getattr(self, &#39;error&#39;)}&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+
+</details>
+<hr />
+<h4 id="ancestors-in-mro_7">Ancestors (in MRO)</h4>
+<ul>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+<h4 id="descendants">Descendants</h4>
+<ul>
+<li>veryfi.errors.UnauthorizedAccessToken</li>
+<li>veryfi.errors.BadRequest</li>
+<li>veryfi.errors.ResourceNotFound</li>
+<li>veryfi.errors.UnexpectedHTTPMethod</li>
+<li>veryfi.errors.AccessLimitReached</li>
+<li>veryfi.errors.InternalError</li>
+<li>veryfi.errors.ServiceUnavailable</li>
+</ul>
+<h4 id="class-variables_7">Class variables</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">args</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">optional_fields</span>
+</code></pre></div>
+
+<h4 id="static-methods_7">Static methods</h4>
+<h4 id="from_response_7">from_response</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">from_response</span><span class="p">(</span>
+    <span class="n">raw_response</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Veryfi API returns error messages with a json body</p>
+<p>like:
+{
+    'status': 'fail',
+    'error': 'Human readable error description.'
+}</p>
+<details class="example">
+<summary>View Source</summary>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">from_response</span><span class="p">(</span><span class="n">raw_response</span><span class="p">)</span><span class="err">:</span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;Veryfi API returns error messages with a json body</span>
+
+<span class="ss">        like:</span>
+
+<span class="ss">        {</span>
+
+<span class="ss">            &#39;status&#39;: &#39;fail&#39;,</span>
+
+<span class="ss">            &#39;error&#39;: &#39;Human readable error description.&#39;</span>
+
+<span class="ss">        }</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+<span class="w">        </span><span class="n">error_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_error_map</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">raw_response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">VeryfiClientError</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">error_cls</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">raw_response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+
+</details>
+<h4 id="methods_7">Methods</h4>
+<h4 id="with_traceback_7">with_traceback</h4>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">with_traceback</span><span class="p">(</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Exception.with_traceback(tb) --</p>
+<p>set self.<strong>traceback</strong> to tb and return self.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+    
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../documents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Documents" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Documents
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Index
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+            
+            Powered by
+            <a href="http://timothycrosley.github.io/portray">portray.</a>
+            You too can
+            <a href="http://timothycrosley.github.io/portray">
+              portray</a>
+            your Python project well using automatic documentation.
+          </div>
+        
+      </div>
+    </div>
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
