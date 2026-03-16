@@ -2,7 +2,6 @@ import responses
 
 from veryfi import Client
 
-
 MOCK = {
     "id": 12345,
     "document_type": {
@@ -21,9 +20,7 @@ def test_classify_document_url():
         json=MOCK,
         status=200,
     )
-    d = client.classify_document_url(
-        file_url="https://cdn.example.com/receipt.jpg"
-    )
+    d = client.classify_document_url(file_url="https://cdn.example.com/receipt.jpg")
     assert d == MOCK
 
 

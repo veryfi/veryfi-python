@@ -11,7 +11,9 @@ from veryfi.w8s import W8s
 from veryfi.w9s import W9s
 
 
-class Client(ClientBase, ADocs, BankStatements, BussinesCards, Checks, Classify, Documents, W2s, W8s, W9s):
+class Client(
+    ClientBase, ADocs, BankStatements, BussinesCards, Checks, Classify, Documents, W2s, W8s, W9s
+):
     def __init__(
         self,
         client_id: str,
