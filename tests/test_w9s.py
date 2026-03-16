@@ -2,7 +2,6 @@ import responses
 
 from veryfi import Client
 
-
 MOCK = {
     "account_numbers": "",
     "address1": "28 E 3rd Ave, Suite 201",
