@@ -4,13 +4,14 @@ from veryfi.a_docs import ADocs
 from veryfi.bank_statements import BankStatements
 from veryfi.bussines_cards import BussinesCards
 from veryfi.checks import Checks
+from veryfi.classify import Classify
 from veryfi.documents import Documents
 from veryfi.w2s import W2s
 from veryfi.w8s import W8s
 from veryfi.w9s import W9s
 
 
-class Client(ClientBase, ADocs, BankStatements, BussinesCards, Checks, Documents, W2s, W8s, W9s):
+class Client(ClientBase, ADocs, BankStatements, BussinesCards, Checks, Classify, Documents, W2s, W8s, W9s):
     def __init__(
         self,
         client_id: str,
@@ -34,6 +35,7 @@ class Client(ClientBase, ADocs, BankStatements, BussinesCards, Checks, Documents
         BankStatements.__init__(self, super())
         BussinesCards.__init__(self, super())
         Checks.__init__(self, super())
+        Classify.__init__(self, super())
         Documents.__init__(self, super())
         W2s.__init__(self, super())
         W8s.__init__(self, super())
