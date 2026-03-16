@@ -2,7 +2,6 @@ import responses
 
 from veryfi import Client
 
-
 MOCK = {
     "pdf_url": None,
     "id": 4559395,

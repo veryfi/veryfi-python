@@ -2,7 +2,6 @@ import responses
 
 from veryfi import Client
 
-
 MOCK = {
     "transactions": [
         {

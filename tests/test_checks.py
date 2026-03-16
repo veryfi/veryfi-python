@@ -2,7 +2,6 @@ import responses
 
 from veryfi import Client
 
-
 MOCK = {
     "pdf_url": "https://scdn.veryfi.com/checks/919ba4778c039560/78535c60-e371-40fd-ae78-6d0c019b2c35/067e7057-e38b-4c32-9d87-720e0a8e232f.pdf?Expires=1730233783&Signature=fbR-arwLoH1YC8GVK52SvvilH59eHWIYp1o2WXw5UWr0s0CjKkrJ1Bx-PORKVzLbnJHOoYJDC4lU1iiqdq4~yDyz~-ygRHTNxyT9BJovFSzCBAc3Gnzv7uWMNIp-9mdV0QGk-Fu25eZfwd56Dfd2ZhG-EzreCRfh66r6338UF4EaHK5SG5b4i-NwkDaZ~qRZC6jNzYUJOGbXexYPbQxF5tMinc97ok~~fLQ--r0HWr7SvQyJisUqDnKS0DMTQujDz-7lStMJmvvlQX0jmpdcsq8DBIR6SnWZxHA7tM-ydD27Jt8l753X3uNtZuao61CeGSpQP09CnWlctTewm4IHKQ__&Key-Pair-Id=APKAJCILBXEJFZF4DCHQ",
     "id": 4662680,

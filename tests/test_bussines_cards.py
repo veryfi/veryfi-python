@@ -2,7 +2,6 @@ import responses
 
 from veryfi import Client
 
-
 MOCK = {
     "text": "Dmitry Birulia\ndmitry@veryfi.com\nVERYFI\twww.veryfi.com",
     "id": 4662609,
