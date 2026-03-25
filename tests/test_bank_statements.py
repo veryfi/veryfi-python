@@ -285,3 +285,25 @@ def test_get_bank_statements():
     )
     d = client.get_bank_statements()
     assert d == mock
+
+
+@responses.activate
+def test_process_bank_statement_with_categories():
+    client = Client(client_id="v", client_secret="w", username="o", api_key="c")
+    responses.add(
+        responses.POST,
+        f"{client.versioned_url}/partner/bank-statements/",
+        json=MOCK,
+        status=200,
+    )
+    categories = ["Transfer", "Credit Card Payments", "Restaurants / Dining / Meals"]
+    d = client.process_bank_statement_document_url(
+        file_url="http://cdn-dev.veryfi.com/testing/veryfi-python/receipt_public.jpg",
+        categories=categories,
+    )
+    assert d == MOCK
+    assert responses.calls[0].request.body is not None
+    import json
+
+    body = json.loads(responses.calls[0].request.body)
+    assert body["categories"] == categories
