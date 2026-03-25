@@ -1,6 +1,6 @@
 import os
 import base64
-from typing import Dict, Optional
+from typing import Dict, List, Optional
 
 from veryfi.client_base import Client
 
@@ -10,7 +10,11 @@ class BankStatements:
         self.client = client
 
     def process_bank_statement_document_url(
-        self, file_url: str, file_name: Optional[str] = None, **kwargs
+        self,
+        file_url: str,
+        file_name: Optional[str] = None,
+        categories: Optional[List[str]] = None,
+        **kwargs,
     ) -> Dict:
         """
         Process bank statement document from url and extract all the fields from it.
@@ -18,6 +22,7 @@ class BankStatements:
 
         :param file_url: Publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg".
         :param file_name: Optional name of file, eg. receipt.jpg
+        :param categories: Optional list of categories to classify transactions, e.g. ["Transfer", "Credit Card Payments"].
         :param kwargs: Additional body parameters.
         :return: Data extracted from the bank statement.
         """
@@ -27,12 +32,17 @@ class BankStatements:
         request_arguments = {
             "file_name": file_name,
             "file_url": file_url,
+            "categories": categories,
         }
         request_arguments.update(kwargs)
         return self.client._request("POST", endpoint_name, request_arguments)
 
     def process_bank_statement_document(
-        self, file_path: str, file_name: Optional[str] = None, **kwargs
+        self,
+        file_path: str,
+        file_name: Optional[str] = None,
+        categories: Optional[List[str]] = None,
+        **kwargs,
     ) -> Dict:
         """
         Process bank statement document from url and extract all the fields from it.
@@ -40,6 +50,7 @@ class BankStatements:
 
         :param file_path: Path on disk to a file to submit for data extraction
         :param file_name: Optional name of file, eg. receipt.jpg
+        :param categories: Optional list of categories to classify transactions, e.g. ["Transfer", "Credit Card Payments"].
         :param kwargs: Additional body parameters.
         :return: Data extracted from the bank statement.
         """
@@ -51,6 +62,7 @@ class BankStatements:
         request_arguments = {
             "file_name": file_name,
             "file_data": base64_encoded_string,
+            "categories": categories,
         }
         request_arguments.update(kwargs)
         document = self.client._request("POST", endpoint_name, request_arguments)
