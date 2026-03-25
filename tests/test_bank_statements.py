@@ -304,5 +304,6 @@ def test_process_bank_statement_with_categories():
     assert d == MOCK
     assert responses.calls[0].request.body is not None
     import json
+
     body = json.loads(responses.calls[0].request.body)
     assert body["categories"] == categories
