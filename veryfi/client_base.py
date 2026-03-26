@@ -48,9 +48,7 @@ class Client:
             "Client-Id": self.client_id,
         }
 
-        final_headers.update(
-            {"Authorization": f"apikey {self.username}:{self.api_key}"}
-        )
+        final_headers.update({"Authorization": f"apikey {self.username}:{self.api_key}"})
 
         return final_headers
 
@@ -110,8 +108,6 @@ class Client:
 
         secret_bytes = bytes(self.client_secret, "utf-8")
         payload_bytes = bytes(payload, "utf-8")
-        tmp_signature = hmac.new(
-            secret_bytes, msg=payload_bytes, digestmod=hashlib.sha256
-        ).digest()
+        tmp_signature = hmac.new(secret_bytes, msg=payload_bytes, digestmod=hashlib.sha256).digest()
         base64_signature = base64.b64encode(tmp_signature).decode("utf-8").strip()
         return base64_signature
