@@ -1,4 +1,3 @@
-import requests
 import base64
 import hashlib
 import hmac
@@ -6,11 +5,12 @@ import json
 import time
 from typing import Dict, Optional
 
+import requests
+
 from veryfi.errors import VeryfiClientError
 
 
 class Client:
-
     API_VERSION = "v8"
     API_TIMEOUT = 30
     BASE_URL = "https://api.veryfi.com/api/"
@@ -42,13 +42,15 @@ class Client:
         :return: Dictionary with headers
         """
         final_headers = {
-            "User-Agent": "Python Veryfi-Python/5.0.0",
+            "User-Agent": "Python Veryfi-Python/5.0.1",
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Client-Id": self.client_id,
         }
 
-        final_headers.update({"Authorization": f"apikey {self.username}:{self.api_key}"})
+        final_headers.update(
+            {"Authorization": f"apikey {self.username}:{self.api_key}"}
+        )
 
         return final_headers
 
@@ -108,6 +110,8 @@ class Client:
 
         secret_bytes = bytes(self.client_secret, "utf-8")
         payload_bytes = bytes(payload, "utf-8")
-        tmp_signature = hmac.new(secret_bytes, msg=payload_bytes, digestmod=hashlib.sha256).digest()
+        tmp_signature = hmac.new(
+            secret_bytes, msg=payload_bytes, digestmod=hashlib.sha256
+        ).digest()
         base64_signature = base64.b64encode(tmp_signature).decode("utf-8").strip()
         return base64_signature
