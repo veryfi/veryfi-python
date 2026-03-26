@@ -52,7 +52,7 @@ Requires Python 3.9 or later.
 
 ### Obtaining credentials
 
-If you don't have a Veryfi account, register at [hub.veryfi.com/signup/api/](https://hub.veryfi.com/signup/api/).
+If you don't have a Veryfi account, register at [app.veryfi.com/signup/api/](https://app.veryfi.com/signup/api/).
 
 ### Initialize the client
 

@@ -1,4 +1,3 @@
-import requests
 import base64
 import hashlib
 import hmac
@@ -6,11 +5,12 @@ import json
 import time
 from typing import Dict, Optional
 
+import requests
+
 from veryfi.errors import VeryfiClientError
 
 
 class Client:
-
     API_VERSION = "v8"
     API_TIMEOUT = 30
     BASE_URL = "https://api.veryfi.com/api/"
@@ -42,7 +42,7 @@ class Client:
         :return: Dictionary with headers
         """
         final_headers = {
-            "User-Agent": "Python Veryfi-Python/5.0.0",
+            "User-Agent": "Python Veryfi-Python/5.0.1",
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Client-Id": self.client_id,
