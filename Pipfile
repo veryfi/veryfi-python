@@ -14,6 +14,7 @@ tox = "*"
 
 [packages]
 requests = "*"
+typer = ">=0.12.0"
 
 [requires]
 python_version = "3.9"
