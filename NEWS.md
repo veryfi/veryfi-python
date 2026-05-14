@@ -1,5 +1,16 @@
 CHANGES
 =======
+5.1.0
+-----
+* Add `veryfi` command-line interface and `python -m veryfi` module entry point
+* Add one Typer sub-app per resource (documents, bank-statements, checks, business-cards, w2s, w8s, w9s, any-docs, classify) with nested line-items, tags, and PDF/W-2 split commands
+* Read credentials from environment variables (VERYFI\_CLIENT\_ID, VERYFI\_CLIENT\_SECRET, VERYFI\_USERNAME, VERYFI\_API\_KEY) and optional VERYFI\_BASE\_URL / VERYFI\_API\_VERSION / VERYFI\_TIMEOUT
+* Emit JSON responses on stdout and structured JSON errors on stderr; map API errors to exit codes (HTTP status clipped to 1-255) so AI agents can branch without parsing tracebacks
+* Add `veryfi schema` command that emits a machine-readable manifest of every command and parameter for tool registration
+* Support repeatable `--field KEY=VALUE` and `--json-body` for endpoints that take `**kwargs`, plus stdin file input via `--file -`
+* Resolve User-Agent header dynamically from the installed package version so it stays in sync with the `pbr`-derived release
+* Add `typer>=0.12.0` as a runtime dependency
+
 3.4.1
 -----
 * Add support to add multiple tags on existing documents
