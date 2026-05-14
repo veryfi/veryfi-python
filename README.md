@@ -29,6 +29,7 @@ Extract structured data from receipts, invoices, bank statements, checks, W-2s, 
   - [Any Document](#any-document)
   - [Classify](#classify)
 - [Error Handling](#error-handling)
+- [Command-line interface](#command-line-interface)
 - [Contributing](#contributing)
 - [Need Help?](#need-help)
 - [Changelog](#changelog)
@@ -366,6 +367,118 @@ except VeryfiClientError as e:
 
 ---
 
+## Command-line interface
+
+Installing `veryfi` also installs a `veryfi` console script (and the equivalent `python -m veryfi`). The CLI is a thin wrapper around the Python `Client` and exposes every supported resource as a sub-command — designed for shell users and AI agents that drive the SDK from a terminal.
+
+Verify the install:
+
+```bash
+veryfi --help
+# or, equivalently:
+python -m veryfi --help
+```
+
+### Authentication
+
+Credentials are read from environment variables (preferred for agents) or equivalent flags:
+
+| Env var | Flag | Description |
+|---------|------|-------------|
+| `VERYFI_CLIENT_ID` | `--client-id` | Required |
+| `VERYFI_CLIENT_SECRET` | `--client-secret` | Optional — enables HMAC request signing |
+| `VERYFI_USERNAME` | `--username` | Required |
+| `VERYFI_API_KEY` | `--api-key` | Required |
+| `VERYFI_BASE_URL` | `--base-url` | Optional, defaults to `https://api.veryfi.com/api/` |
+| `VERYFI_API_VERSION` | `--api-version` | Optional, defaults to `v8` |
+| `VERYFI_TIMEOUT` | `--timeout` | Optional, defaults to `30` seconds |
+
+If any required credential is missing the CLI exits with code `2` and a JSON error on stderr.
+
+### Quick examples
+
+```bash
+export VERYFI_CLIENT_ID=... VERYFI_USERNAME=... VERYFI_API_KEY=...
+# Optional:
+export VERYFI_CLIENT_SECRET=...
+
+# Documents
+veryfi documents process --file /tmp/receipt.jpg --category Travel --category Meals
+veryfi documents process-url --file-url https://cdn.example.com/x.pdf --boost-mode --external-id ref-1
+veryfi documents list --q Walgreens --created-gt 2024-01-01+00:00:00
+veryfi documents get 933760836
+veryfi documents update 933760836 --field category="Meals & Entertainment" --field total=11.23
+veryfi documents delete 933760836
+
+# Nested line-items / tags
+veryfi documents line-items add 933760836 --field description="Extra item" --field total=5.0
+veryfi documents tags add-many 933760836 --tag q1 --tag travel
+
+# Multi-page PDF splitting
+veryfi documents set split --file /tmp/multi.pdf
+veryfi documents set split-url --file-url https://cdn.example.com/multi.pdf --max-pages 5
+
+# Other resources
+veryfi bank-statements process --file /tmp/stmt.pdf --category Transfer
+veryfi checks process-with-remittance --file /tmp/check.pdf
+veryfi business-cards process-url --file-url https://cdn.example.com/card.jpg
+veryfi w2s process --file /tmp/w2.pdf
+veryfi w2s set split --file /tmp/multi_w2.pdf
+veryfi w8s list --created-gt 2024-01-01+00:00:00
+veryfi w9s get 33333
+veryfi any-docs process --blueprint my_blueprint --file /tmp/custom.pdf
+veryfi classify file --file /tmp/unknown.pdf --document-type receipt --document-type invoice
+```
+
+You can also pipe binary file data via stdin by passing `--file -`:
+
+```bash
+curl -s https://cdn.example.com/r.jpg | veryfi documents process --file -
+```
+
+### Output and exit codes
+
+Every command emits a JSON response on stdout. Use `--output raw` for single-line JSON (handy for piping into `jq`) or `--output pretty` for sorted keys. Errors are emitted as JSON on **stderr** and the process exits with a non-zero status:
+
+| Exit code | Meaning |
+|-----------|---------|
+| `0` | Success |
+| `2` | Missing credentials or invalid CLI arguments |
+| `1`-`255` | Veryfi API error — exit code is the HTTP status (clipped to 255) |
+| `70` | Unexpected error (treat as a bug) |
+
+The exact HTTP status is always included in the stderr payload, e.g.:
+
+```json
+{
+  "error": "Document not found",
+  "status": 404,
+  "exception": "ResourceNotFound"
+}
+```
+
+### Passing arbitrary fields
+
+For endpoints that accept `**kwargs` (e.g. `update_document`, `add_line_item`, `update_check`), use repeatable `--field KEY=VALUE` flags or `--json-body '<json>'`. `--field` values are JSON-decoded when possible (so `total=11.23` becomes a number, `enabled=true` becomes a boolean, `data='{"a":1}'` becomes an object) and fall back to plain strings.
+
+### Discovery
+
+Every command at every level supports `--help`, which lists subcommands or options with their descriptions:
+
+```bash
+veryfi --help                        # top-level: lists all resource groups
+veryfi documents --help              # group: lists process, list, get, tags, line-items, set, …
+veryfi documents process --help      # leaf: lists every flag with its description
+```
+
+For AI agents and tooling that prefer a machine-readable contract, `veryfi schema` emits a JSON manifest of every command, its description, and every parameter (name, type, required, repeatable). Agents can ingest this once to register Veryfi as a tool surface without parsing `--help` text:
+
+```bash
+veryfi schema | jq '.commands[] | {name, help}'
+```
+
+---
+
 ## Contributing
 
 Contributions are welcome! To get started:
@@ -377,6 +490,8 @@ Contributions are welcome! To get started:
 pip install -r requirements.txt
 pip install black pytest responses tox
 ```
+
+`requirements.txt` already includes `typer`, which is required for the `veryfi` CLI and its tests.
 
 3. Make your changes, then run the test suite:
 

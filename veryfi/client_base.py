@@ -10,6 +10,24 @@ import requests
 from veryfi.errors import VeryfiClientError
 
 
+def _resolve_package_version() -> str:
+    """Resolve the installed package version once at import time.
+
+    Using ``importlib.metadata`` keeps the User-Agent in sync with whatever
+    ``pbr`` baked from the git tag at release time, so we never have to
+    remember to bump a literal here when cutting a new version.
+    """
+    try:
+        from importlib.metadata import version
+
+        return version("veryfi")
+    except Exception:
+        return "unknown"
+
+
+_PACKAGE_VERSION = _resolve_package_version()
+
+
 class Client:
     API_VERSION = "v8"
     API_TIMEOUT = 30
@@ -42,7 +60,7 @@ class Client:
         :return: Dictionary with headers
         """
         final_headers = {
-            "User-Agent": "Python Veryfi-Python/5.0.1",
+            "User-Agent": f"Python Veryfi-Python/{_PACKAGE_VERSION}",
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Client-Id": self.client_id,
