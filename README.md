@@ -103,6 +103,15 @@ response = client.process_document_url(
 )
 ```
 
+Run thinking on the line items with `thinking` (`"light"` or `"deep"`; omit it to turn it off). Both `process_document` and `process_document_url` accept it, and `"deep"` takes longer than `"light"`. It only takes effect if thinking mode is enabled for your account.
+
+```python
+response = client.process_document(
+    file_path="/tmp/receipt.jpg",
+    thinking="light",
+)
+```
+
 The response contains the extracted fields. A typical result looks like:
 
 ```python

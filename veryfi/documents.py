@@ -96,6 +96,7 @@ class Documents(Tags, LineItems, PDFSplit):
         file_path: str,
         categories: Optional[List] = None,
         delete_after_processing: bool = False,
+        thinking: Optional[str] = None,
         **kwargs,
     ) -> Dict:
         """
@@ -105,6 +106,7 @@ class Documents(Tags, LineItems, PDFSplit):
         :param file_path: Path on disk to a file to submit for data extraction
         :param categories: List of categories Veryfi can use to categorize the document
         :param delete_after_processing: Delete this document from Veryfi after data has been extracted
+        :param thinking: Extra LLM pass on the line items: "light" or "deep" (slower). Omit to turn it off. Needs thinking mode enabled for your account.
         :param kwargs: Additional body parameters
         :return: Data extracted from the document
         """
@@ -119,6 +121,8 @@ class Documents(Tags, LineItems, PDFSplit):
             "categories": categories,
             "auto_delete": delete_after_processing,
         }
+        if thinking is not None:
+            request_arguments["thinking"] = thinking
         request_arguments.update(kwargs)
         return self.client._request("POST", "/documents/", request_arguments)
 
@@ -131,6 +135,7 @@ class Documents(Tags, LineItems, PDFSplit):
         external_id: Optional[str] = None,
         max_pages_to_process: Optional[int] = None,
         file_urls: Optional[List[str]] = None,
+        thinking: Optional[str] = None,
         **kwargs,
     ) -> Dict:
         """Process Document from url and extract all the fields from it.
@@ -143,6 +148,7 @@ class Documents(Tags, LineItems, PDFSplit):
         :param max_pages_to_process: When sending a long document to Veryfi for processing, this parameter controls how many pages of the document will be read and processed, starting from page 1.
         :param boost_mode: Flag that tells Veryfi whether boost mode should be enabled. When set to 1, Veryfi will skip data enrichment steps, but will process the document faster. Default value for this flag is 0
         :param external_id: Optional custom document identifier. Use this if you would like to assign your own ID to documents
+        :param thinking: Extra LLM pass on the line items: "light" or "deep" (slower). Omit to turn it off. Needs thinking mode enabled for your account.
         :param kwargs: Additional body parameters
         :return: Data extracted from the document.
         """
@@ -156,6 +162,8 @@ class Documents(Tags, LineItems, PDFSplit):
             "file_urls": file_urls,
             "max_pages_to_process": max_pages_to_process,
         }
+        if thinking is not None:
+            request_arguments["thinking"] = thinking
         request_arguments.update(kwargs)
         return self.client._request("POST", endpoint_name, request_arguments)
 
