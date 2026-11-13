@@ -11,6 +11,7 @@ the HTTP status of the underlying API error.
 from __future__ import annotations
 
 import json
+import typing
 from typing import Optional
 
 import typer
@@ -141,17 +142,18 @@ def schema_command(ctx: typer.Context) -> None:
 
 
 def _build_schema(typer_app: typer.Typer) -> dict:
-    """Walk the Typer app graph and produce a serialisable description."""
-    import click
+    """Walk the Typer app graph and produce a serialisable description.
+
+    The command and parameter objects are read by duck typing because newer
+    Typer versions ship their own copy of click instead of depending on it.
+    """
     from typer.main import get_command
 
-    cli: click.Command = get_command(typer_app)
+    cli = get_command(typer_app)
     return _describe_command(cli, [])
 
 
 def _describe_command(command, path):  # type: ignore[no-untyped-def]
-    import click
-
     name = command.name or ""
     full_path = path + ([name] if name else [])
     entry: dict = {
@@ -159,7 +161,7 @@ def _describe_command(command, path):  # type: ignore[no-untyped-def]
         "path": full_path,
         "help": (command.help or "").strip(),
     }
-    if isinstance(command, click.Group):
+    if hasattr(command, "list_commands"):  # a command group
         entry["commands"] = [
             _describe_command(command.get_command(None, sub), full_path)
             for sub in sorted(command.list_commands(None))
@@ -170,22 +172,37 @@ def _describe_command(command, path):  # type: ignore[no-untyped-def]
 
 
 def _describe_param(param):  # type: ignore[no-untyped-def]
-    import click
-
+    is_argument = getattr(param, "param_type_name", "option") == "argument"
     info: dict = {
         "name": param.name,
-        "kind": "argument" if isinstance(param, click.Argument) else "option",
+        "kind": "argument" if is_argument else "option",
         "required": bool(param.required),
         "multiple": bool(getattr(param, "multiple", False)),
         "default": _serialise_default(param.default),
     }
-    if isinstance(param, click.Option):
+    if not is_argument:
         info["flags"] = list(param.opts) + list(param.secondary_opts)
         info["help"] = (param.help or "").strip()
         info["is_flag"] = bool(param.is_flag)
         info["envvar"] = param.envvar
-    info["type"] = getattr(param.type, "name", str(param.type))
+    info["type"] = _param_type_name(param)
     return info
+
+
+_TYPE_NAMES = {str: "text", int: "integer", float: "float", bool: "boolean"}
+
+
+def _param_type_name(param):  # type: ignore[no-untyped-def]
+    param_type = getattr(param, "type", None)
+    if param_type is not None:  # click-based Typer
+        return getattr(param_type, "name", str(param_type))
+    descriptor = getattr(param, "type_descriptor", None)  # Typer with its own click
+    annotation = getattr(descriptor, "annotation", None)
+    if annotation is None:
+        return None
+    args = typing.get_args(annotation)  # List[str] / Optional[str] -> str
+    inner = args[0] if args else annotation
+    return _TYPE_NAMES.get(inner, getattr(inner, "__name__", str(inner)).lower())
 
 
 def _serialise_default(value):  # type: ignore[no-untyped-def]
