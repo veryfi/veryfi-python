@@ -1,3 +1,5 @@
+import json
+
 import pytest
 import responses
 
@@ -194,6 +196,42 @@ def test_process_document_url():
         boost_mode=True,
     )
     assert d == mock
+
+
+@pytest.mark.parametrize("thinking", [None, "light", "deep"])
+@responses.activate
+def test_process_document_thinking(thinking):
+    client = Client(client_id="v", client_secret=None, username="o", api_key="c")
+    responses.add(
+        responses.POST,
+        f"{client.versioned_url}/partner/documents/",
+        json={"id": 1},
+        status=200,
+    )
+    client.process_document(file_path="tests/assets/receipt_public.jpg", thinking=thinking)
+    body = json.loads(responses.calls[0].request.body)
+    if thinking is None:
+        assert "thinking" not in body
+    else:
+        assert body["thinking"] == thinking
+
+
+@pytest.mark.parametrize("thinking", [None, "light", "deep"])
+@responses.activate
+def test_process_document_url_thinking(thinking):
+    client = Client(client_id="v", client_secret=None, username="o", api_key="c")
+    responses.add(
+        responses.POST,
+        f"{client.versioned_url}/partner/documents/",
+        json={"id": 1},
+        status=200,
+    )
+    client.process_document_url(file_url="https://example.com/receipt.jpg", thinking=thinking)
+    body = json.loads(responses.calls[0].request.body)
+    if thinking is None:
+        assert "thinking" not in body
+    else:
+        assert body["thinking"] == thinking
 
 
 @responses.activate
